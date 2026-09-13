@@ -1,0 +1,50 @@
+---
+import Icon from './Icon.astro';
+import Link from './Link.astro';
+import { STORIES } from '../data/homepage';
+import { site } from '../data/site';
+---
+<section id="stories" class="section-stories py-28" style={{ background: "var(--color-navy-900)" }}>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="h-px w-8" style={{ background: "var(--color-gold-500)" }} />
+          <span class="text-[10px] tracking-[0.3em] uppercase" style={{ color: "var(--color-gold-500)" }}>Engineering Stories</span>
+        </div>
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+          <h2 class="font-display font-bold uppercase text-5xl leading-tight" style={{ letterSpacing: "0.02em" }}>
+            Proof,<br />Not Promises
+          </h2>
+          <Link href={site.links.allStories} class="text-xs tracking-widest uppercase font-medium transition-colors duration-200 flex items-center gap-2" style={{ color: "var(--color-gold-500)" }}>
+            All Stories
+            <Icon class="w-4 h-4" />
+          </Link>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {STORIES.map((s) => (
+            <Link href={s.href} class="group  block">
+              <div class="overflow-hidden relative mb-4" style={{ height: "260px", background: "var(--color-navy-950)" }}>
+                <img
+                  src={`/images/${s.img}-400.jpg`} width="600" height="400" loading="lazy" decoding="async"
+                  alt={s.title}
+                  class="w-full h-full object-cover transition-transform duration-700"
+                  style={{ transform: "scale(1)", filter: "brightness(0.45) saturate(0.25)" }}
+                />
+                <div class="absolute top-4 left-4">
+                  <span class="text-[10px] tracking-widest uppercase font-semibold px-3 py-1.5"
+                    style={{ background: "var(--color-gold-500)", color: "var(--color-navy-950)" }}>
+                    {s.tag}
+                  </span>
+                </div>
+              </div>
+              <div class="pt-2">
+                <div class="text-[10px] tracking-widest uppercase mb-3 font-light" style={{ color: "rgba(196,154,46,0.5)" }}>{s.date}</div>
+                <h3 class="font-display font-bold uppercase text-xl leading-tight transition-colors duration-200" style={{ letterSpacing: "0.03em", color: "#ffffff" }}>
+                  {s.title}
+                </h3>
+                <div class="mt-4 h-px transition-all duration-300" style={{ background: "var(--color-gold-500)", width: "24px" }} />
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>

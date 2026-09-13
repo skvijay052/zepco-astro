@@ -1,0 +1,38 @@
+---
+import Icon from './Icon.astro';
+import Link from './Link.astro';
+import { site } from '../data/site';
+---
+<section id="contact" class="section-contact relative min-h-screen flex items-center justify-center overflow-hidden" style={{ background: "#040C1E" }}>
+      <!-- Background grid -->
+      <div class="absolute inset-0 pointer-events-none" style={{
+        backgroundImage: "linear-gradient(rgba(196,154,46,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(196,154,46,0.05) 1px, transparent 1px)",
+        backgroundSize: "60px 60px"
+      }} />
+      <!-- Glow -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+        style={{ width: "800px", height: "800px", background: "radial-gradient(ellipse at center, rgba(196,154,46,0.07) 0%, transparent 70%)" }} />
+      <!-- Accent lines -->
+      <div class="absolute top-0 left-0 w-px h-full opacity-40" style={{ background: "linear-gradient(to bottom, transparent, #C49A2E 50%, transparent)" }} />
+      <div class="absolute top-0 right-0 w-px h-full opacity-40" style={{ background: "linear-gradient(to bottom, transparent, #C49A2E 50%, transparent)" }} />
+      <div class="relative text-center px-6 max-w-4xl mx-auto">
+        <div class="flex items-center justify-center gap-3 mb-8">
+          <div class="h-px w-12" style={{ background: "var(--color-gold-500)" }} />
+          <span class="text-[10px] tracking-[0.3em] uppercase" style={{ color: "var(--color-gold-500)" }}>Let's Work Together</span>
+          <div class="h-px w-12" style={{ background: "var(--color-gold-500)" }} />
+        </div>
+        <h2 class="font-display font-bold uppercase leading-none mb-8"
+          style={{ fontSize: "clamp(3rem, 8vw, 6rem)", letterSpacing: "0.02em" }}>
+          Let's Build<br /><span style={{ color: "var(--color-gold-500)" }}>What's Next.</span>
+        </h2>
+        <p class="text-base leading-relaxed max-w-xl mx-auto mb-12 font-light" style={{ color: "var(--color-slate-blue)" }}>
+          Whether you're developing an advanced electric platform, mission-critical power system or next-generation propulsion technology, our engineers are ready to help.
+        </p>
+        <Link href={site.links.contact}
+          class="inline-flex items-center gap-3 px-12 py-4 text-sm tracking-widest uppercase font-semibold transition-all duration-200"
+          style={{ background: "var(--color-gold-500)", color: "var(--color-navy-950)" }}>
+          Start a Conversation
+          <Icon class="w-4 h-4" />
+        </Link>
+      </div>
+    </section>

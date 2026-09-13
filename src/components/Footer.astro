@@ -1,0 +1,45 @@
+---
+import Brand from './Brand.astro';
+import Link from './Link.astro';
+import { site, navigation } from '../data/site';
+import { CAPABILITIES } from '../data/homepage';
+const companyLinks = [
+  { label: 'About Zepco', href: '#about' },
+  { label: 'The Zepco Story', href: site.links.companyStory },
+  ...navigation.filter((link) => !['Capabilities', 'About'].includes(link.label)),
+];
+const capabilityLinks = [CAPABILITIES[0], CAPABILITIES[1], CAPABILITIES[4], CAPABILITIES[2], CAPABILITIES[5]];
+---
+<footer class="site-footer py-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+      <div class="md:col-span-2">
+        <a href="#top" aria-label="Zepco Technologies home" class="inline-block mb-4"><Brand /></a>
+        <p class="text-xs leading-relaxed font-light max-w-xs text-slate-blue">Engineering advanced power electronics and electric propulsion systems for aerospace, defence, industrial, mobility and energy applications.</p>
+      </div>
+      <nav aria-label="Footer capabilities">
+        <h2 class="text-[10px] tracking-widest uppercase mb-4 font-semibold text-gold">Capabilities</h2>
+        {capabilityLinks.map((item) => (
+          <Link href={item.href ?? '#capabilities'} class="block text-xs mb-2.5 font-light transition-colors duration-200 text-slate-blue hover:text-gold-500">{item.title.replace(' & ATE', '')}</Link>
+        ))}
+      </nav>
+      <nav aria-label="Footer company">
+        <h2 class="text-[10px] tracking-widest uppercase mb-4 font-semibold text-gold">Company</h2>
+        {companyLinks.map(({ label, href }) => (
+          <Link href={href} class="block text-xs mb-2.5 font-light transition-colors duration-200 text-slate-blue hover:text-gold-500">{label}</Link>
+        ))}
+      </nav>
+    </div>
+    <div class="footer-bottom pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-[10px] tracking-widest uppercase font-light">© {new Date().getFullYear()} Zepco Technologies Pvt. Ltd. · Bengaluru, India</p>
+      <div class="flex items-center gap-6">
+        <Link href={site.links.linkedin} class="text-[10px] tracking-widest uppercase font-light transition-colors duration-200 hover:text-gold-500">LinkedIn</Link>
+        <Link href={site.links.twitter} class="text-[10px] tracking-widest uppercase font-light transition-colors duration-200 hover:text-gold-500">X / Twitter</Link>
+      </div>
+    </div>
+  </div>
+</footer>
+<style>
+  .site-footer { background: var(--color-navy-950); border-top: 1px solid rgba(196,154,46,.15); }
+  .footer-bottom { border-top: 1px solid rgba(196,154,46,.1); color: rgba(139,155,180,.7); }
+</style>

@@ -1,0 +1,62 @@
+---
+import Icon from './Icon.astro';
+import Link from './Link.astro';
+import { CAPABILITIES } from '../data/homepage';
+---
+<section id="capabilities" class="section-capabilities py-28" style={{ background: "var(--color-navy-950)" }}>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="h-px w-8" style={{ background: "var(--color-gold-500)" }} />
+          <span class="text-[10px] tracking-[0.3em] uppercase" style={{ color: "var(--color-gold-500)" }}>What We Do</span>
+        </div>
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+          <h2 class="font-display font-bold uppercase text-5xl leading-tight" style={{ letterSpacing: "0.02em" }}>
+            Engineering<br />Capabilities
+          </h2>
+          <p class="text-sm max-w-sm font-light" style={{ color: "var(--color-slate-blue)" }}>
+            Deep Engineering Across the Power Electronics Stack
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {CAPABILITIES.map((cap, i) => (
+            <div
+              class="capability-card group relative overflow-hidden "
+              style={{ background: "var(--color-navy-900)", border: "1px solid rgba(196,154,46,0.1)" }}>
+              <div class="h-48 overflow-hidden relative">
+                <img
+                  src={`/images/${cap.img}-300.jpg`} width="600" height="300" loading="lazy" decoding="async"
+                  alt={cap.title}
+                  class="w-full h-full object-cover transition-transform duration-700"
+                  style={{ transform: "scale(1)", filter: "brightness(0.4) saturate(0.3)" }}
+                />
+                <div class="absolute inset-0" style={{ background: "linear-gradient(to bottom, transparent 50%, #060F26 100%)" }} />
+                <div class="absolute top-4 left-4">
+                  <span class="text-[10px] tracking-widest uppercase font-medium" style={{ color: "rgba(196,154,46,0.7)" }}>
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="font-display font-bold uppercase text-xl mb-3 leading-tight" style={{ letterSpacing: "0.04em" }}>
+                  {cap.title}
+                </h3>
+                <p class="text-sm leading-relaxed font-light" style={{ color: "var(--color-slate-blue)" }}>{cap.desc}</p>
+                <Link href={cap.href} class="learn-more mt-5 flex items-center gap-2 text-[10px] tracking-widest uppercase font-medium transition-colors duration-200"
+                  style={{ color: "rgba(196,154,46,0.4)" }}>
+                  Learn More
+                  <Icon class="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="mt-12 text-center">
+          <Link href="#industries"
+            class="inline-flex items-center gap-2 px-10 py-3.5 text-xs tracking-widest uppercase font-semibold transition-all duration-200"
+            style={{ background: "var(--color-gold-500)", color: "var(--color-navy-950)" }}>
+            Explore Industries & Technologies
+            <Icon class="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+    </section>

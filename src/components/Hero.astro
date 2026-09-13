@@ -1,0 +1,73 @@
+---
+import Icon from './Icon.astro';
+import Link from './Link.astro';
+---
+<section id="top" class="section-top relative min-h-screen flex items-center" style={{ background: "var(--color-navy-950)" }}>
+      <!-- Hero background image -->
+      <div class="absolute inset-0 overflow-hidden">
+        <img
+          src="/images/drone-hero.png" width="1672" height="941" fetchpriority="high" loading="eager"
+          alt=""
+          aria-hidden="true"
+          class="w-full h-full object-cover object-center"
+          style={{ opacity: 0.55 }}
+        />
+        <!-- Dark gradient overlay — heavier on left where text sits -->
+        <div class="absolute inset-0" style={{
+          background: "linear-gradient(105deg, rgba(3,9,26,0.92) 0%, rgba(3,9,26,0.75) 45%, rgba(3,9,26,0.35) 100%)"
+        }} />
+        <!-- Bottom fade back to page colour -->
+        <div class="absolute bottom-0 left-0 right-0 h-40" style={{ background: "linear-gradient(to bottom, transparent, #03091A)" }} />
+      </div>
+      <!-- Grid overlay -->
+      <div class="absolute inset-0 pointer-events-none" style={{
+        backgroundImage: "linear-gradient(rgba(196,154,46,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(196,154,46,0.03) 1px, transparent 1px)",
+        backgroundSize: "80px 80px"
+      }} />
+      <!-- Accent line -->
+      <div class="absolute top-0 left-0 w-1 h-full" style={{ background: "linear-gradient(to bottom, transparent, #C49A2E, transparent)" }} />
+      <div class="relative max-w-7xl mx-auto px-6 pt-32 pb-24 w-full">
+        <div class="max-w-4xl">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="h-px w-12" style={{ background: "var(--color-gold-500)" }} />
+            <span class="text-[10px] tracking-[0.3em] uppercase font-medium" style={{ color: "var(--color-gold-500)" }}>Est. 2022 · Bengaluru, India</span>
+          </div>
+          <h1 class="font-display font-bold uppercase leading-none mb-8"
+            style={{ fontSize: "clamp(3rem, 8vw, 6.5rem)", letterSpacing: "0.02em" }}>
+            Engineering <span style={{ color: "var(--color-gold-500)" }}>Advanced</span><br />
+            Power Electronics<br />
+            and Electric<br />
+            Propulsion
+          </h1>
+          <p class="text-base leading-relaxed max-w-2xl mb-12 font-light" style={{ color: "var(--color-slate-blue)" }}>
+            We design and manufacture advanced power electronics and electric propulsion systems that enable the next generation of aerospace, industrial, mobility and energy technologies. From concept and development to manufacturing and lifecycle support, we help customers solve complex engineering challenges with confidence.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <Link href="#solutions"
+              class="inline-flex items-center gap-2 px-8 py-3.5 text-xs tracking-widest uppercase font-semibold transition-all duration-200"
+              style={{ background: "var(--color-gold-500)", color: "var(--color-navy-950)" }}>
+              Explore Solutions
+              <Icon class="w-4 h-4" />
+            </Link>
+            <Link href="#contact"
+              class="inline-flex items-center gap-2 px-8 py-3.5 text-xs tracking-widest uppercase font-semibold transition-all duration-200"
+              style={{ border: "1px solid rgba(139,155,180,0.4)", color: "#ffffff" }}>
+              Talk to an Engineer
+            </Link>
+          </div>
+        </div>
+        <!-- Stats row -->
+        <div class="grid grid-cols-3 gap-0 mt-24 max-w-2xl" style={{ borderTop: "1px solid rgba(196,154,46,0.2)" }}>
+          {[
+            { num: "2022", label: "Founded" },
+            { num: "3→", label: "From 3 to a growing team" },
+            { num: "6+", label: "Industries served" },
+          ].map((s) => (
+            <div class="pt-6 pr-8">
+              <div class="font-display font-bold text-3xl" style={{ color: "var(--color-gold-500)" }}>{s.num}</div>
+              <div class="text-[10px] tracking-widest uppercase mt-1 font-light" style={{ color: "var(--color-slate-blue)" }}>{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>

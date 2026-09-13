@@ -1,0 +1,38 @@
+---
+import { INDUSTRIES } from '../data/homepage';
+---
+<section id="industries" class="section-industries py-28" style={{ background: "var(--color-navy-900)" }}>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="h-px w-8" style={{ background: "var(--color-gold-500)" }} />
+          <span class="text-[10px] tracking-[0.3em] uppercase" style={{ color: "var(--color-gold-500)" }}>Industries</span>
+        </div>
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+          <h2 class="font-display font-bold uppercase text-5xl leading-tight" style={{ letterSpacing: "0.02em" }}>
+            Industries<br />We Serve
+          </h2>
+          <p class="text-sm tracking-widest uppercase font-medium max-w-xs" style={{ color: "var(--color-gold-500)" }}>
+            Engineering that Powers Progress
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: "rgba(196,154,46,0.1)" }}>
+          {INDUSTRIES.map((ind, i) => (
+            <div
+              class="industry-card p-8 transition-all duration-300"
+              style={{ background: "var(--color-navy-900)" }}>
+              <div class="flex items-start justify-between mb-6">
+                <span class="text-xs tracking-widest uppercase font-semibold" style={{ color: "rgba(196,154,46,0.5)" }}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span class="transition-colors duration-300" style={{ color: "rgba(196,154,46,0.2)", fontSize: "18px" }}>✦</span>
+              </div>
+              <h3 class="font-display font-bold uppercase text-2xl mb-3 leading-tight" style={{ letterSpacing: "0.04em" }}>
+                {ind.title}
+              </h3>
+              <p class="text-sm leading-relaxed font-light" style={{ color: "var(--color-slate-blue)" }}>{ind.desc}</p>
+              <div class="mt-6 h-px transition-all duration-300" style={{ background: "transparent", width: "0px" }} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>

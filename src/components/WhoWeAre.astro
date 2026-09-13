@@ -1,0 +1,37 @@
+---
+import Icon from './Icon.astro';
+import Link from './Link.astro';
+import { site } from '../data/site';
+---
+<section id="about" class="section-about py-28" style={{ background: "var(--color-navy-950)" }}>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+          <div class="md:col-span-4">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="h-px w-8" style={{ background: "var(--color-gold-500)" }} />
+              <span class="text-[10px] tracking-[0.3em] uppercase" style={{ color: "var(--color-gold-500)" }}>Who We Are</span>
+            </div>
+            <h2 class="font-display font-bold uppercase text-5xl leading-tight" style={{ letterSpacing: "0.02em" }}>
+              Every company begins<br />with an idea.<br /><span style={{ color: "var(--color-gold-500)" }}>Zepco began</span><br />with a conviction.
+            </h2>
+            <Link href={site.links.companyStory} class="inline-flex items-center gap-2 mt-10 text-xs tracking-widest uppercase font-medium transition-colors duration-200" style={{ color: "var(--color-gold-500)" }}>
+              Read The Zepco Story
+              <Icon class="w-4 h-4" />
+            </Link>
+          </div>
+          <div class="md:col-span-8 md:pl-16" style={{ borderLeft: "1px solid rgba(196,154,46,0.15)" }}>
+            <p class="text-base leading-relaxed mb-6 font-light" style={{ color: "var(--color-slate-blue)" }}>
+              In 2022, Zepco started with three people working from a two-bedroom apartment in Bengaluru — not a large factory or an impressive customer list, but a conviction that advanced power electronics and electric propulsion would become foundational technologies of the future, and that they deserved uncompromising engineering.
+            </p>
+            <p class="text-base leading-relaxed font-light" style={{ color: "var(--color-slate-blue)" }}>
+              That conviction still guides every product we develop, every engineering challenge we take on and every partnership we build. Zepco Technologies is an engineering company specialising in advanced power electronics and electric propulsion systems, combining deep engineering expertise, indigenous product development and global industry experience to deliver reliable technology for aerospace, defence, industrial, mobility and energy applications.
+            </p>
+            <div class="mt-12 p-6" style={{ background: "var(--color-navy-900)", borderLeft: "3px solid #C49A2E" }}>
+              <p class="text-sm italic leading-relaxed" style={{ color: "#ffffff" }}>
+                "We believe advanced power electronics and electric propulsion should be engineered without compromise."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

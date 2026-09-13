@@ -1,0 +1,83 @@
+---
+import Brand from './Brand.astro';
+import Icon from './Icon.astro';
+import Link from './Link.astro';
+import { navigation } from '../data/site';
+---
+<header class="site-header fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+    <a href="#top" aria-label="Zepco Technologies home"><Brand /></a>
+    <nav aria-label="Main navigation" class="desktop-navigation items-center gap-8">
+      {navigation.map(({ label, href }) => (
+        <Link href={href} class="nav-link text-xs tracking-widest uppercase font-medium transition-colors duration-200">{label}</Link>
+      ))}
+    </nav>
+    <a href="#contact" class="header-cta items-center px-5 py-2 text-xs tracking-widest uppercase font-semibold transition-all duration-200">Talk to an Engineer</a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation" hidden>
+      <span class="menu-open-icon"><Icon name="menu" /></span>
+      <span class="menu-close-icon" hidden><Icon name="close" /></span>
+    </button>
+  </div>
+  <nav id="mobile-navigation" aria-label="Mobile navigation" class="mobile-navigation px-6 py-4 flex flex-col gap-4">
+    {navigation.map(({ label, href }) => (
+      <Link href={href} class="nav-link text-xs tracking-widest uppercase">{label}</Link>
+    ))}
+    <a class="text-gold text-xs tracking-widest uppercase py-2" href="#contact">Talk to an Engineer</a>
+  </nav>
+</header>
+<script>
+  const header = document.querySelector<HTMLElement>('.site-header');
+  const toggle = header?.querySelector<HTMLButtonElement>('.menu-toggle');
+  const menu = header?.querySelector<HTMLElement>('#mobile-navigation');
+  const openIcon = toggle?.querySelector<HTMLElement>('.menu-open-icon');
+  const closeIcon = toggle?.querySelector<HTMLElement>('.menu-close-icon');
+  const desktop = window.matchMedia('(min-width: 1200px)');
+
+  if (header && toggle && menu && openIcon && closeIcon) {
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      menu.hidden = !open;
+      openIcon.hidden = open;
+      closeIcon.hidden = !open;
+    };
+    header.classList.add('enhanced');
+    toggle.hidden = false;
+    setOpen(false);
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    menu.addEventListener('click', (event) => {
+      if (event.target instanceof Element && event.target.closest('a')) setOpen(false);
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+    document.addEventListener('click', (event) => {
+      if (event.target instanceof Node && !header.contains(event.target)) setOpen(false);
+    });
+    desktop.addEventListener('change', () => setOpen(false));
+  }
+</script>
+<style>
+  .site-header { background: rgba(3,9,26,.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(196,154,46,.15); }
+  .desktop-navigation, .header-cta { display: none; }
+  .nav-link { color: var(--color-slate-blue); }
+  .nav-link:hover, .nav-link:focus-visible { color: var(--color-gold-500); }
+  .header-cta { border: 1px solid var(--color-gold-500); color: var(--color-gold-500); }
+  .header-cta:hover { background: var(--color-gold-500); color: var(--color-navy-950); }
+  .menu-toggle { color: var(--color-gold-500); width: 44px; height: 44px; align-items: center; justify-content: center; cursor: pointer; }
+  .menu-toggle:not([hidden]) { display: flex; }
+  .menu-toggle :global(.icon) { width: 24px; height: 24px; }
+  .mobile-navigation { border-top: 1px solid rgba(196,154,46,.15); max-height: calc(100svh - 64px); overflow-y: auto; }
+  .mobile-navigation :global(a) { min-height: 36px; display: flex; align-items: center; }
+  /* The unenhanced fallback remains usable when JavaScript is disabled. */
+  .site-header:not(.enhanced) { position: relative; }
+  @media (min-width: 1200px) {
+    .desktop-navigation { display: flex; }
+    .header-cta { display: inline-flex; }
+    .menu-toggle:not([hidden]), .mobile-navigation { display: none; }
+    .site-header:not(.enhanced) { position: fixed; }
+  }
+</style>

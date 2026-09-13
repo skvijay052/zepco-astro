@@ -1,0 +1,8 @@
+---
+interface Props { name?: 'arrow' | 'menu' | 'close'; class?: string; }
+const { name = 'arrow', class: className } = Astro.props;
+---
+<span aria-hidden="true" class:list={['icon', className ?? 'w-4 h-4']} style={{ '--icon': `url('/icons/${name}.svg')` }}></span>
+<style>
+  .icon { display: inline-block; flex-shrink: 0; background: currentColor; mask: var(--icon) center / contain no-repeat; }
+</style>

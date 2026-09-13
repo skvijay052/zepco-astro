@@ -1,0 +1,12 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+interface Props extends Omit<HTMLAttributes<'a'>, 'href'> {
+  href?: string;
+}
+const { href, class: className, ...attributes } = Astro.props;
+---
+{href ? (
+  <a href={href} class={className} {...attributes}><slot /></a>
+) : (
+  <span role="link" aria-disabled="true" title="More information coming soon" class:list={[className, 'unavailable-link']} {...attributes}><slot /></span>
+)}
