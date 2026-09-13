@@ -1,41 +1,41 @@
 // Content and image identifiers preserved from the supplied Figma Make export.
 
 export const INDUSTRIES = [
-  { title: "Aerospace", desc: "Reliable power conversion and propulsion technologies engineered for demanding airborne platforms.", icon: "✦" },
-  { title: "Defence", desc: "Mission-ready power electronics designed to meet stringent performance and environmental requirements.", icon: "✦" },
-  { title: "Industrial", desc: "Custom power conversion solutions for automation, testing and high-performance industrial systems.", icon: "✦" },
-  { title: "Unmanned Systems", desc: "High-performance propulsion and power electronics engineered for UAVs, drones and autonomous platforms.", icon: "✦" },
-  { title: "Mobility", desc: "Advanced motor control and propulsion technologies accelerating the transition to electrified mobility.", icon: "✦" },
-  { title: "Energy", desc: "Efficient power conversion platforms supporting next-generation energy systems.", icon: "✦" },
+  { id: "industry-aerospace", title: "Aerospace", desc: "Reliable power conversion and propulsion technologies engineered for demanding airborne platforms.", icon: "✦" },
+  { id: "industry-defence", title: "Defence", desc: "Mission-ready power electronics designed to meet stringent performance and environmental requirements.", icon: "✦" },
+  { id: "industry-industrial", title: "Industrial", desc: "Custom power conversion solutions for automation, testing and high-performance industrial systems.", icon: "✦" },
+  { id: "industry-unmanned", title: "Unmanned Systems", desc: "High-performance propulsion and power electronics engineered for UAVs, drones and autonomous platforms.", icon: "✦" },
+  { id: "industry-mobility", title: "Mobility", desc: "Advanced motor control and propulsion technologies accelerating the transition to electrified mobility.", icon: "✦" },
+  { id: "industry-energy", title: "Energy", desc: "Efficient power conversion platforms supporting next-generation energy systems.", icon: "✦" },
 ];
 
 export const CAPABILITIES = [
-  {
+  { id: "capability-power-conversion",
     href: undefined as string | undefined, title: "Power Conversion",
     desc: "Power conversion technologies engineered for demanding industrial, aerospace and mobility applications.",
     img: "photo-1518770660439-4636190af475"
   },
-  {
+  { id: "capability-electric-propulsion",
     href: undefined as string | undefined, title: "Electric Propulsion",
     desc: "High-performance propulsion systems designed for UAVs, autonomous platforms and next-generation mobility.",
     img: "photo-1446776877081-d282a0f896e2"
   },
-  {
+  { id: "capability-embedded-electronics",
     href: undefined as string | undefined, title: "Embedded Electronics & ATE",
     desc: "Intelligent test and control platforms designed for safety, performance and reliability.",
     img: "photo-1518770660439-4636190af475"
   },
-  {
+  { id: "capability-engineering-services",
     href: undefined as string | undefined, title: "Engineering Services",
     desc: "From architecture and simulation to validation and manufacturing support, we help customers solve complex engineering challenges.",
     img: "photo-1581091226825-a6a2a5aee158"
   },
-  {
+  { id: "capability-motor-controllers",
     href: undefined as string | undefined, title: "Motor Controllers",
     desc: "Precision motor drive electronics delivering reliable, high-efficiency control across demanding operating environments.",
     img: "photo-1565043589221-1a6fd9ae45c7"
   },
-  {
+  { id: "capability-programmable-power-supplies",
     href: undefined as string | undefined, title: "Programmable Power Supplies",
     desc: "Configurable power supply platforms built for testing, validation and high-performance system integration.",
     img: "photo-1531297484001-80022131f5a1"
@@ -51,12 +51,12 @@ export const PILLARS = [
 ];
 
 export const SOLUTIONS = [
-  { href: undefined as string | undefined, title: "Drone Propulsion Systems", img: "photo-1508614999368-9260051292e5" },
-  { href: undefined as string | undefined, title: "Motor Controllers", img: "photo-1565043589221-1a6fd9ae45c7" },
-  { href: undefined as string | undefined, title: "Programmable Power Supplies", img: "photo-1531297484001-80022131f5a1" },
-  { href: undefined as string | undefined, title: "Power Conversion Systems", img: "photo-1518770660439-4636190af475" },
-  { href: undefined as string | undefined, title: "Embedded Electronics", img: "photo-1581091226825-a6a2a5aee158" },
-  { href: undefined as string | undefined, title: "Automatic Test Equipment", img: "photo-1573164713714-d95e436ab8d6" },
+  { id: "solution-drone-propulsion", href: undefined as string | undefined, title: "Drone Propulsion Systems", img: "photo-1508614999368-9260051292e5" },
+  { id: "solution-motor-controllers", href: undefined as string | undefined, title: "Motor Controllers", img: "photo-1565043589221-1a6fd9ae45c7" },
+  { id: "solution-programmable-power-supplies", href: undefined as string | undefined, title: "Programmable Power Supplies", img: "photo-1531297484001-80022131f5a1" },
+  { id: "solution-power-conversion", href: undefined as string | undefined, title: "Power Conversion Systems", img: "photo-1518770660439-4636190af475" },
+  { id: "solution-embedded-electronics", href: undefined as string | undefined, title: "Embedded Electronics", img: "photo-1581091226825-a6a2a5aee158" },
+  { id: "solution-automatic-test-equipment", href: undefined as string | undefined, title: "Automatic Test Equipment", img: "photo-1573164713714-d95e436ab8d6" },
 ];
 
 export const STORIES = [

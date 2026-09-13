@@ -19,7 +19,7 @@ import { SOLUTIONS } from '../data/homepage';
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: "rgba(196,154,46,0.1)" }}>
           {SOLUTIONS.map((sol) => (
-            <Link href={sol.href}
+            <Link id={sol.id} href={sol.href}
               class="relative overflow-hidden block group"
               style={{ aspectRatio: "4/3" }}>
               <img

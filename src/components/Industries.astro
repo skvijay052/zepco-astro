@@ -17,7 +17,7 @@ import { INDUSTRIES } from '../data/homepage';
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: "rgba(196,154,46,0.1)" }}>
           {INDUSTRIES.map((ind, i) => (
-            <div
+            <div id={ind.id}
               class="industry-card p-8 transition-all duration-300"
               style={{ background: "var(--color-navy-900)" }}>
               <div class="flex items-start justify-between mb-6">

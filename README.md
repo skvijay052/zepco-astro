@@ -50,10 +50,12 @@ The original React/Vite entry point, React dependencies, and Figma Make developm
 The uploaded design contains only the homepage. It does **not** include working product/story detail routes, a contact email or endpoint, career pages, or social profile URLs.
 
 - Set `site.links.contact` to the real contact URL or `mailto:` address in `src/data/site.ts`.
-- Set `site.links.careers`, `linkedin`, and `twitter` when those destinations are known.
+- Set `site.links.media`, `blogs`, `linkedin`, and `twitter` when dedicated destinations are known.
 - Set the `href` values in `src/data/homepage.ts` to the real detail pages.
 - `undefined` destinations render with `aria-disabled="true"` and a “More information coming soon” title. They never pretend to submit a message or jump to the top of the page.
-- Header navigation and available section links work now. The company-story and all-stories links currently point to their corresponding homepage sections and can be replaced with dedicated routes later.
+- Header and mobile navigation share the screenshot labels: Our Story, Industries, Technologies, Solutions, Contact, Media, and Blogs. Industries has 5 submenu entries, Technologies has 4, and Solutions has 12.
+- Grouped items open as desktop dropdowns and mobile accordions; only one group opens at a time. Escape closes the active group and returns focus to its label; a second Escape closes the mobile menu.
+- Submenu links use existing homepage cards where available. Battery topics fall back to their parent overview; converter variants use Power Conversion Systems. Media and Blogs currently use the Engineering Stories section. Set the corresponding `href` values in `src/data/site.ts` when dedicated URLs become available.
 
 ## GitHub
 

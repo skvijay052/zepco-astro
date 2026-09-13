@@ -22,7 +22,7 @@ This project was converted from the user-supplied `Homepage layout design.zip` F
 - React state for decorative hover effects replaced with CSS.
 - Mobile menu implemented with a small, compiled TypeScript script: toggling, correct accessible labels, Escape dismissal with focus return, section-link dismissal, outside-click dismissal, and closing when entering the desktop breakpoint.
 - Menu links remain visible in the no-JavaScript fallback.
-- Desktop navigation breakpoint moved to 1200px so all six links and the header CTA have adequate space; narrower screens use the mobile menu.
+- Desktop navigation breakpoint moved to 1200px so the navigation and header CTA have adequate space; narrower screens use the mobile menu.
 - Original exported SVG path data retained as local assets and rendered with CSS masks to inherit the correct foreground color.
 - Below-the-fold images are lazy-loaded with explicit dimensions. Hero image bytes are unchanged.
 - Fonts and all referenced photography are local, with font license notices and asset provenance included.
@@ -31,14 +31,14 @@ This project was converted from the user-supplied `Homepage layout design.zip` F
 
 ## Verification performed
 
-- `pnpm check`: **0 errors, 0 warnings, 0 hints** across 19 files.
+- `pnpm check`: **0 errors, 0 warnings, 0 hints** across 20 files.
 - `pnpm build`: succeeded; one static homepage generated.
 - Parsed the production HTML and verified all eight section IDs.
 - Verified that every local image, icon link, stylesheet, and preload target referenced directly by the HTML exists.
 - Verified all internal anchor destinations exist.
 - Decoded all 15 image files successfully.
 - Verified the generated CSS style strings correctly serialize camelCase source properties such as `letterSpacing` and `aspectRatio`.
-- Confirmed the production page contains only the small inline mobile-navigation script (882 bytes at the verified build), without a React browser runtime.
+- Confirmed the production page uses native Astro HTML and a small navigation script without a React browser runtime.
 - Pinned exact dependency versions and included the pnpm lockfile and GitHub Actions check/build workflow.
 
 ## Remaining limits
@@ -46,3 +46,13 @@ This project was converted from the user-supplied `Homepage layout design.zip` F
 - Browser preview was unavailable in this execution environment. Responsive rules and menu code are implemented, but visual browser comparison, real viewport overflow checks, and browser interaction tests were not completed. No pixel-perfect or end-to-end browser QA claim is made.
 - Only the homepage was supplied. Contact delivery, product detail pages, full case studies, careers, and social URLs require the actual destination information and any applicable backend.
 - The user supplied the GitHub repository `skvijay052/zepco-astro`. Its default branch is `main`; the repository includes the check/build workflow.
+
+## Menu update from the supplied screenshots
+
+- Main labels and order: Our Story, Industries, Technologies, Solutions, Contact, Media, Blogs.
+- Industries: Aerospace & Defence; Unmanned & Autonomous Systems; Industrial Systems; Electric Mobility; Energy.
+- Technologies: Advanced Power Electronics; Electric Propulsion; Battery Systems; Engineering Services.
+- Solutions: Drone Motors; Electronic Speed Controllers; Motor Controllers; Programmable Power Supplies; AC-DC Power Supplies; DC-DC Converters; Inverters; Rectifiers; Battery Management Systems; Battery Packs; Automatic Test Equipment; Custom Solutions.
+- Desktop dropdowns and mobile accordions use a shared Astro component and native details/summary elements. Mobile rows have separators, indented children, directional chevrons, a scrollable panel, and the outlined engineer CTA.
+- Added stable IDs to existing industry, capability, and solution cards for menu destinations. No new product pages or company information were invented. Battery topics use existing overview sections; Media and Blogs use Engineering Stories until dedicated routes are provided.
+- Footer company links share the same main navigation labels.

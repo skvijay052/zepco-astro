@@ -3,11 +3,7 @@ import Brand from './Brand.astro';
 import Link from './Link.astro';
 import { site, navigation } from '../data/site';
 import { CAPABILITIES } from '../data/homepage';
-const companyLinks = [
-  { label: 'About Zepco', href: '#about' },
-  { label: 'The Zepco Story', href: site.links.companyStory },
-  ...navigation.filter((link) => !['Capabilities', 'About'].includes(link.label)),
-];
+const companyLinks = navigation;
 const capabilityLinks = [CAPABILITIES[0], CAPABILITIES[1], CAPABILITIES[4], CAPABILITIES[2], CAPABILITIES[5]];
 ---
 <footer class="site-footer py-12">

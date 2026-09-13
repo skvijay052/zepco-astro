@@ -1,0 +1,48 @@
+---
+import type { NavigationItem } from '../data/site';
+
+interface Props {
+  items: readonly NavigationItem[];
+  variant: 'desktop' | 'mobile';
+}
+const { items, variant } = Astro.props;
+---
+<ul class:list={['navigation-list', variant]}>
+  {items.map((item) => (
+    <li class="navigation-item">
+      {item.children?.length ? (
+        <details class="navigation-group" name={`${variant}-navigation`}>
+          <summary class="nav-link" aria-controls={`${variant}-${item.id}-submenu`}>
+            <span>{item.label}</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </summary>
+          <ul id={`${variant}-${item.id}-submenu`} class="submenu">
+            {item.children.map(({ label, href }) => (
+              <li><a href={href}>{label}</a></li>
+            ))}
+          </ul>
+        </details>
+      ) : (
+        <a class="nav-link" href={item.href}>{item.label}</a>
+      )}
+    </li>
+  ))}
+</ul>
+<style>
+  .navigation-list, .submenu { list-style: none; margin: 0; padding: 0; }
+  .nav-link { display: flex; align-items: center; justify-content: space-between; gap: .6rem; min-height: 44px; color: var(--color-slate-blue); font-size: .75rem; font-weight: 500; letter-spacing: .1em; line-height: 1.5; text-transform: uppercase; text-decoration: none; transition: color .2s; }
+  .nav-link:hover, .nav-link:focus-visible, .submenu a:hover, .submenu a:focus-visible { color: var(--color-gold-400); }
+  summary { cursor: pointer; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary:focus-visible { outline: 2px solid var(--color-gold-400); outline-offset: 3px; }
+  .chevron { width: .35rem; height: .35rem; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg); flex-shrink: 0; margin: 0 .2rem .2rem; transition: transform .2s; }
+  details[open] > summary .chevron { transform: rotate(225deg); margin-bottom: -.1rem; }
+  .submenu a { display: flex; align-items: center; min-height: 34px; padding: .4rem 1rem; color: var(--color-slate-blue); font-size: .6875rem; font-weight: 400; line-height: 1.65; letter-spacing: .075em; text-transform: uppercase; text-decoration: none; transition: color .2s; }
+  .mobile > .navigation-item { border-bottom: 1px solid rgba(139,155,180,.06); }
+  .mobile .submenu { padding: .25rem 0 .8rem; }
+  .desktop { display: flex; align-items: center; gap: clamp(.75rem, 1.4vw, 1.5rem); }
+  .desktop .navigation-group { position: relative; }
+  .desktop .submenu { position: absolute; top: 100%; left: -.75rem; z-index: 1; width: 20rem; max-width: calc(100vw - 3rem); max-height: calc(100svh - 88px); overflow-y: auto; overscroll-behavior: contain; padding: .75rem 0; background: var(--color-navy-950); border: 1px solid rgba(196,154,46,.18); box-shadow: 0 16px 32px rgba(0,0,0,.25); }
+  .desktop .submenu a { min-height: 40px; padding-inline: 1.25rem; }
+  .desktop details[open] > summary { color: var(--color-gold-400); }
+</style>
