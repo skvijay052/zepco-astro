@@ -1,73 +1,108 @@
 ---
 import Icon from './Icon.astro';
-import Link from './Link.astro';
 ---
-<section id="top" class="section-top relative min-h-screen flex items-center" style={{ background: "var(--color-navy-950)" }}>
-      <!-- Hero background image -->
-      <div class="absolute inset-0 overflow-hidden">
-        <img
-          src="/images/drone-hero.png" width="1672" height="941" fetchpriority="high" loading="eager"
-          alt=""
-          aria-hidden="true"
-          class="w-full h-full object-cover object-center"
-          style={{ opacity: 0.55 }}
-        />
-        <!-- Dark gradient overlay — heavier on left where text sits -->
-        <div class="absolute inset-0" style={{
-          background: "linear-gradient(105deg, rgba(3,9,26,0.92) 0%, rgba(3,9,26,0.75) 45%, rgba(3,9,26,0.35) 100%)"
-        }} />
-        <!-- Bottom fade back to page colour -->
-        <div class="absolute bottom-0 left-0 right-0 h-40" style={{ background: "linear-gradient(to bottom, transparent, #03091A)" }} />
+<section id="top" class="section-top hero relative min-h-screen flex items-center">
+  <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
+    <img class="hero-image w-full h-full object-cover object-center"
+      src="/images/drone-hero.png" width="1672" height="941"
+      fetchpriority="high" loading="eager" alt="" />
+    <div class="hero-shade absolute inset-0"></div>
+    <div class="hero-bottom-shade absolute bottom-0 left-0 right-0 h-48"></div>
+  </div>
+  <div class="hero-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+  <div class="hero-accent absolute top-0 left-0 w-px h-full" aria-hidden="true"></div>
+
+  <div class="hero-content relative max-w-7xl mx-auto px-6 pt-32 pb-24 w-full">
+    <div class="max-w-4xl">
+      <div class="hero-reveal flex items-center gap-3 mb-7">
+        <span class="hero-eyebrow-line" aria-hidden="true"></span>
+        <span class="hero-eyebrow text-[10px] tracking-[0.35em] uppercase font-medium text-gold">Advanced Power Electronics</span>
       </div>
-      <!-- Grid overlay -->
-      <div class="absolute inset-0 pointer-events-none" style={{
-        backgroundImage: "linear-gradient(rgba(196,154,46,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(196,154,46,0.03) 1px, transparent 1px)",
-        backgroundSize: "80px 80px"
-      }} />
-      <!-- Accent line -->
-      <div class="absolute top-0 left-0 w-1 h-full" style={{ background: "linear-gradient(to bottom, transparent, #C49A2E, transparent)" }} />
-      <div class="relative max-w-7xl mx-auto px-6 pt-32 pb-24 w-full">
-        <div class="max-w-4xl">
-          <div class="flex items-center gap-3 mb-8">
-            <div class="h-px w-12" style={{ background: "var(--color-gold-500)" }} />
-            <span class="text-[10px] tracking-[0.3em] uppercase font-medium" style={{ color: "var(--color-gold-500)" }}>Est. 2022 · Bengaluru, India</span>
-          </div>
-          <h1 class="font-display font-bold uppercase leading-none mb-8"
-            style={{ fontSize: "clamp(3rem, 8vw, 6.5rem)", letterSpacing: "0.02em" }}>
-            Engineering <span style={{ color: "var(--color-gold-500)" }}>Advanced</span><br />
-            Power Electronics<br />
-            and Electric<br />
-            Propulsion
-          </h1>
-          <p class="text-base leading-relaxed max-w-2xl mb-12 font-light" style={{ color: "var(--color-slate-blue)" }}>
-            We design and manufacture advanced power electronics and electric propulsion systems that enable the next generation of aerospace, industrial, mobility and energy technologies. From concept and development to manufacturing and lifecycle support, we help customers solve complex engineering challenges with confidence.
-          </p>
-          <div class="flex flex-wrap gap-4">
-            <Link href="#solutions"
-              class="inline-flex items-center gap-2 px-8 py-3.5 text-xs tracking-widest uppercase font-semibold transition-all duration-200"
-              style={{ background: "var(--color-gold-500)", color: "var(--color-navy-950)" }}>
-              Explore Solutions
-              <Icon class="w-4 h-4" />
-            </Link>
-            <Link href="#contact"
-              class="inline-flex items-center gap-2 px-8 py-3.5 text-xs tracking-widest uppercase font-semibold transition-all duration-200"
-              style={{ border: "1px solid rgba(139,155,180,0.4)", color: "#ffffff" }}>
-              Talk to an Engineer
-            </Link>
-          </div>
-        </div>
-        <!-- Stats row -->
-        <div class="grid grid-cols-3 gap-0 mt-24 max-w-2xl" style={{ borderTop: "1px solid rgba(196,154,46,0.2)" }}>
-          {[
-            { num: "2022", label: "Founded" },
-            { num: "3→", label: "From 3 to a growing team" },
-            { num: "6+", label: "Industries served" },
-          ].map((s) => (
-            <div class="pt-6 pr-8">
-              <div class="font-display font-bold text-3xl" style={{ color: "var(--color-gold-500)" }}>{s.num}</div>
-              <div class="text-[10px] tracking-widest uppercase mt-1 font-light" style={{ color: "var(--color-slate-blue)" }}>{s.label}</div>
-            </div>
-          ))}
-        </div>
+      <h1 class="font-display font-bold uppercase leading-none mb-8">
+        <span class="hero-intro hero-reveal" style="--reveal-delay: 120ms">Engineering Advanced</span>
+        <span class="hero-headline hero-reveal" style="--reveal-delay: 240ms">Power Electronics</span>
+        <span class="hero-headline hero-reveal" style="--reveal-delay: 360ms">and Electric</span>
+        <span class="hero-headline hero-reveal" style="--reveal-delay: 480ms">Propulsion</span>
+      </h1>
+      <p class="hero-reveal text-base leading-relaxed max-w-2xl mb-12 font-light mt-6 text-slate-blue" style="--reveal-delay: 600ms">
+        We engineer advanced power electronics and electric propulsion systems that power the future of aerospace, mobility, industry and energy.
+      </p>
+      <div class="hero-reveal flex flex-wrap gap-4" style="--reveal-delay: 720ms">
+        <a href="#solutions" class="hero-primary inline-flex items-center gap-2 px-8 py-3.5 text-xs tracking-widest uppercase font-semibold transition-all duration-200">
+          Explore Solutions <Icon class="w-4 h-4" />
+        </a>
+        <a href="#contact" class="hero-secondary inline-flex items-center gap-2 px-8 py-3.5 text-xs tracking-widest uppercase font-semibold transition-all duration-200">Talk to an Engineer</a>
       </div>
-    </section>
+    </div>
+  </div>
+
+  <div class="hero-scroll absolute bottom-10 left-1/2 -translate-x-1/2" aria-hidden="true">
+    <div class="hero-reveal flex flex-col items-center gap-2" style="--reveal-delay: 900ms">
+      <span class="text-[9px] tracking-[0.3em] uppercase">Scroll</span>
+      <span class="hero-scroll-line"></span>
+    </div>
+  </div>
+</section>
+
+<script>
+  const hero = document.querySelector<HTMLElement>('.hero');
+  const content = hero?.querySelector<HTMLElement>('.hero-content');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (hero && content) {
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const bounds = hero.getBoundingClientRect();
+      // Allow the complete content to be read before fading on shorter screens.
+      const start = Math.max(0, hero.offsetHeight - window.innerHeight);
+      const ratio = reducedMotion.matches ? 0 : Math.min(Math.max((-bounds.top - start) / (window.innerHeight * .8), 0), 1);
+      hero.style.setProperty('--hero-opacity', String(Math.max(0, 1 - ratio * 1.4)));
+      hero.style.setProperty('--hero-offset', `${ratio * 40}px`);
+      hero.style.setProperty('--hero-scale', String(1 + ratio * .06));
+      hero.style.setProperty('--cue-opacity', String(Math.max(0, 1 - ratio * 3)));
+      content.dataset.faded = String(ratio >= 1 / 1.4);
+    };
+    const scheduleUpdate = () => { if (!frame) frame = requestAnimationFrame(update); };
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate);
+    window.addEventListener('pageshow', scheduleUpdate);
+    reducedMotion.addEventListener('change', scheduleUpdate);
+    update();
+  }
+</script>
+
+<style>
+  .hero { background: var(--color-navy-950); }
+  .hero-image { opacity: .55; transform: scale(var(--hero-scale, 1)); transition: transform .05s linear; }
+  .hero-shade { background: linear-gradient(105deg, rgba(3,9,26,.93) 0%, rgba(3,9,26,.76) 45%, rgba(3,9,26,.35) 100%); }
+  .hero-bottom-shade { background: linear-gradient(to bottom, transparent, #03091A); }
+  .hero-grid { background-image: linear-gradient(rgba(196,154,46,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(196,154,46,.03) 1px, transparent 1px); background-size: 80px 80px; }
+  .hero-accent { background: linear-gradient(to bottom, transparent 10%, #C49A2E 50%, transparent 90%); }
+  .hero-content { opacity: var(--hero-opacity, 1); transform: translateY(var(--hero-offset, 0px)); transition: opacity .05s linear, transform .05s linear; }
+  .hero-content[data-faded='true']:not(:focus-within) { pointer-events: none; }
+  .hero-content:focus-within { opacity: 1; transform: none; }
+  .hero-content:focus-within .hero-reveal { animation: none; }
+  .hero-eyebrow-line { height: 1px; width: 48px; flex-shrink: 0; background: var(--color-gold-500); }
+  .hero-intro { display: block; font-size: clamp(1.4rem, 3.2vw, 2.6rem); letter-spacing: .12em; color: var(--color-gold-500); margin-bottom: .15em; }
+  .hero-headline { display: block; font-size: clamp(3rem, 7.5vw, 6.2rem); letter-spacing: .02em; line-height: .95; }
+  .hero-primary { background: var(--color-gold-500); color: var(--color-navy-950); }
+  .hero-primary:hover { background: var(--color-gold-400); }
+  .hero-secondary { border: 1px solid rgba(139,155,180,.4); color: white; }
+  .hero-secondary:hover { border-color: var(--color-gold-500); color: var(--color-gold-500); }
+  .hero-scroll { opacity: var(--cue-opacity, 1); color: rgba(196,154,46,.5); pointer-events: none; }
+  .hero-scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, #C49A2E, transparent); }
+  @keyframes hero-fade-up { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes hero-line-grow { from { transform: scaleX(0); opacity: 0; } to { transform: scaleX(1); opacity: 1; } }
+  @keyframes hero-pulse { 0%, 100% { opacity: .6; } 50% { opacity: 1; } }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-reveal { animation: hero-fade-up .9s ease calc(var(--reveal-delay, 0ms) + 60ms) both; }
+    .hero-eyebrow-line { transform-origin: left; animation: hero-line-grow .8s ease .16s both; }
+    .hero-eyebrow { animation: hero-pulse 3s ease 1s infinite; }
+    .hero-scroll-line { animation: hero-pulse 1.8s ease infinite; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-content { opacity: 1; transform: none; }
+    .hero-image { transform: none; }
+  }
+</style>

@@ -26,7 +26,7 @@ export interface NavigationItem extends NavigationLink {
   children?: readonly NavigationLink[];
 }
 
-/** Menu labels and order match the supplied September 2026 screenshots.
+/** Menu labels and order match the latest homepage.zip Figma Make export.
  * Use the existing homepage content until dedicated page URLs are supplied.
  */
 export const navigation: readonly NavigationItem[] = [

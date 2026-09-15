@@ -1,8 +1,22 @@
 ---
 import { INDUSTRIES } from '../data/homepage';
 ---
-<section id="industries" class="section-industries py-28" style={{ background: "var(--color-navy-900)" }}>
-      <div class="max-w-7xl mx-auto px-6">
+<section id="industries" class="section-industries py-28 relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div class="industry-glow-blue absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full"></div>
+        <div class="industry-glow-gold absolute -bottom-40 -right-20 w-[700px] h-[700px] rounded-full"></div>
+        <div class="industry-haze absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px]"></div>
+        <div class="industry-horizon absolute bottom-0 left-0 right-0 h-px"></div>
+      </div>
+      <div class="industry-backdrops absolute inset-0 pointer-events-none" aria-hidden="true">
+        {INDUSTRIES.map((ind) => (
+          <div class="industry-backdrop absolute inset-0" data-backdrop={ind.id}>
+            <div data-src={`/images/${ind.background}-900.jpg`} class="industry-photo w-full h-full"></div>
+            <div class="industry-vignette absolute inset-0"></div>
+          </div>
+        ))}
+      </div>
+      <div class="max-w-7xl mx-auto px-6 relative">
         <div class="flex items-center gap-3 mb-4">
           <div class="h-px w-8" style={{ background: "var(--color-gold-500)" }} />
           <span class="text-[10px] tracking-[0.3em] uppercase" style={{ color: "var(--color-gold-500)" }}>Industries</span>
@@ -18,8 +32,7 @@ import { INDUSTRIES } from '../data/homepage';
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: "rgba(196,154,46,0.1)" }}>
           {INDUSTRIES.map((ind, i) => (
             <div id={ind.id}
-              class="industry-card p-8 transition-all duration-300"
-              style={{ background: "var(--color-navy-900)" }}>
+              class="industry-card p-8 transition-all duration-300">
               <div class="flex items-start justify-between mb-6">
                 <span class="text-xs tracking-widest uppercase font-semibold" style={{ color: "rgba(196,154,46,0.5)" }}>
                   {String(i + 1).padStart(2, "0")}
@@ -36,3 +49,52 @@ import { INDUSTRIES } from '../data/homepage';
         </div>
       </div>
     </section>
+
+<script>
+  const industries = document.querySelector<HTMLElement>('.section-industries');
+  if (industries) {
+    const cards = Array.from(industries.querySelectorAll<HTMLElement>('.industry-card'));
+    const backdrops = Array.from(industries.querySelectorAll<HTMLElement>('.industry-backdrop'));
+    let hovered: HTMLElement | null = null;
+    const updateBackground = () => {
+      const active = hovered ?? cards.find((card) => card.contains(document.activeElement));
+      backdrops.forEach((backdrop) => {
+        const selected = backdrop.dataset.backdrop === active?.id;
+        if (selected) {
+          const image = backdrop.querySelector<HTMLElement>('.industry-photo');
+          if (image?.dataset.src) {
+            image.style.backgroundImage = `url("${image.dataset.src}")`;
+            delete image.dataset.src;
+          }
+        }
+        backdrop.classList.toggle('active', selected);
+      });
+    };
+    cards.forEach((card) => {
+      card.addEventListener('pointerenter', (event) => {
+        if (event.pointerType === 'touch') return;
+        hovered = card;
+        updateBackground();
+      });
+      card.addEventListener('pointerleave', () => { hovered = null; updateBackground(); });
+      card.addEventListener('focusin', updateBackground);
+      card.addEventListener('focusout', () => queueMicrotask(updateBackground));
+    });
+  }
+</script>
+
+<style>
+  .section-industries { background: #04091E; }
+  .industry-glow-blue { background: radial-gradient(ellipse at center, rgba(30,60,120,.22) 0%, transparent 70%); }
+  .industry-glow-gold { background: radial-gradient(ellipse at center, rgba(196,154,46,.09) 0%, transparent 65%); }
+  .industry-haze { background: radial-gradient(ellipse at center, rgba(15,35,80,.3) 0%, transparent 70%); }
+  .industry-horizon { background: linear-gradient(to right, transparent, rgba(196,154,46,.12), transparent); }
+  .industry-backdrop { opacity: 0; transition: opacity .7s ease; }
+  .industry-backdrop.active { opacity: .07; }
+  .industry-photo { background-size: cover; background-position: center; filter: saturate(.2) brightness(1.4); }
+  .industry-vignette { background: radial-gradient(ellipse at center, transparent 20%, #04091E 80%); }
+  .industry-card { background: rgba(4,10,28,.6); }
+  .industry-card:is(:hover, :focus-within) { background: rgba(12,27,56,.9); }
+  .industry-card:is(:hover, :focus-within) > div:first-child > span:last-child { color: var(--color-gold-500) !important; }
+  .industry-card:is(:hover, :focus-within) > div:last-child { width: 40px !important; background: var(--color-gold-500) !important; }
+</style>

@@ -72,12 +72,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--color-gold-400)
 .unavailable-link { cursor: default; }
 .section-top { min-height: 100svh; }
 .section-contact { min-height: 100svh; padding-block: 7rem; }
-.section-top a:first-child:hover, .section-capabilities a:hover, .section-contact a:hover { background: var(--color-gold-400) !important; }
-.section-top a:nth-child(2):hover { border-color: var(--color-gold-500) !important; color: var(--color-gold-500) !important; }
+.section-capabilities a:hover, .section-contact a:hover { background: var(--color-gold-400) !important; }
 .section-about a:hover, .section-stories a:hover { opacity: .85; }
-.industry-card:hover { background: var(--color-navy-800) !important; }
-.industry-card:hover > div:first-child > span:last-child { color: var(--color-gold-500) !important; }
-.industry-card:hover > div:last-child { width: 40px !important; background: var(--color-gold-500) !important; }
 .capability-card:hover img, .section-stories .group:hover img { transform: scale(1.06) !important; }
 .capability-card:hover .learn-more { color: var(--color-gold-500) !important; }
 .section-solutions .group:hover img { transform: scale(1.08) !important; }
@@ -88,8 +84,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--color-gold-400)
 @media (max-width: 767px) {
   section.py-28 { padding-block: 5rem; }
   .section-about .md\:col-span-8 { padding-left: 1.5rem; }
-  .section-top .grid-cols-3 > div { padding-right: .75rem; }
-  .section-top .mt-24 { margin-top: 4rem; }
   .section-contact a, .section-contact .unavailable-link { padding-inline: 1.5rem; }
 }
 @media (min-width: 768px) and (max-width: 1023px) {

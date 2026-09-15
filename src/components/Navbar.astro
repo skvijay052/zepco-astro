@@ -29,6 +29,7 @@ import { navigation } from '../data/site';
   const closeIcon = toggle?.querySelector<HTMLElement>('.menu-close-icon');
   const groups = Array.from(header?.querySelectorAll<HTMLDetailsElement>('.navigation-group') ?? []);
   const desktop = window.matchMedia('(min-width: 1200px)');
+  const hoverAvailable = window.matchMedia('(hover: hover) and (pointer: fine)');
 
   if (header && toggle && menu && openIcon && closeIcon) {
     const closeGroups = () => groups.forEach((group) => { group.open = false; });
@@ -45,6 +46,15 @@ import { navigation } from '../data/site';
     setOpen(false);
     toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
     groups.forEach((group) => {
+      group.addEventListener('pointerenter', () => {
+        if (desktop.matches && hoverAvailable.matches) group.open = true;
+      });
+      group.addEventListener('pointerleave', () => {
+        if (desktop.matches && !group.contains(document.activeElement)) group.open = false;
+      });
+      group.addEventListener('focusout', () => queueMicrotask(() => {
+        if (desktop.matches && !group.contains(document.activeElement) && !group.matches(':hover')) group.open = false;
+      }));
       group.addEventListener('toggle', () => {
         if (group.open) {
           groups.forEach((other) => {
@@ -88,14 +98,14 @@ import { navigation } from '../data/site';
   }
 </script>
 <style>
-  .site-header { background: rgba(3,9,26,.98); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(196,154,46,.15); }
+  .site-header { background: rgba(3,9,26,.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(196,154,46,.15); }
   .desktop-navigation, .header-cta { display: none; }
   .header-cta { border: 1px solid var(--color-gold-500); color: var(--color-gold-500); }
   .header-cta:hover { background: var(--color-gold-500); color: var(--color-navy-950); }
   .menu-toggle { color: var(--color-gold-500); width: 44px; height: 44px; align-items: center; justify-content: center; cursor: pointer; }
   .menu-toggle:not([hidden]) { display: flex; }
   .menu-toggle :global(.icon) { width: 24px; height: 24px; }
-  .mobile-navigation { border-top: 1px solid rgba(139,155,180,.06); max-height: calc(100svh - 64px); overflow-y: auto; overscroll-behavior: contain; }
+  .mobile-navigation { border-top: 1px solid rgba(196,154,46,.15); max-height: min(80vh, calc(100svh - 64px)); overflow-y: auto; overscroll-behavior: contain; }
   .mobile-cta { display: flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 1.25rem; padding: .65rem 1rem; border: 1px solid var(--color-gold-500); color: var(--color-gold-400); text-align: center; }
   .mobile-cta:hover, .mobile-cta:focus-visible { color: var(--color-navy-950); background: var(--color-gold-400); }
   /* The unenhanced fallback remains usable when JavaScript is disabled. */

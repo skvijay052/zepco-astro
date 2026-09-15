@@ -1,12 +1,12 @@
 // Content and image identifiers preserved from the supplied Figma Make export.
 
 export const INDUSTRIES = [
-  { id: "industry-aerospace", title: "Aerospace", desc: "Reliable power conversion and propulsion technologies engineered for demanding airborne platforms.", icon: "✦" },
-  { id: "industry-defence", title: "Defence", desc: "Mission-ready power electronics designed to meet stringent performance and environmental requirements.", icon: "✦" },
-  { id: "industry-industrial", title: "Industrial", desc: "Custom power conversion solutions for automation, testing and high-performance industrial systems.", icon: "✦" },
-  { id: "industry-unmanned", title: "Unmanned Systems", desc: "High-performance propulsion and power electronics engineered for UAVs, drones and autonomous platforms.", icon: "✦" },
-  { id: "industry-mobility", title: "Mobility", desc: "Advanced motor control and propulsion technologies accelerating the transition to electrified mobility.", icon: "✦" },
-  { id: "industry-energy", title: "Energy", desc: "Efficient power conversion platforms supporting next-generation energy systems.", icon: "✦" },
+  { id: "industry-aerospace", background: "photo-1446776811953-b23d57bd21aa", title: "Aerospace", desc: "Reliable power conversion and propulsion technologies engineered for demanding airborne platforms.", icon: "✦" },
+  { id: "industry-defence", background: "photo-1564410267841-915d8e4d71ea", title: "Defence", desc: "Mission-ready power electronics designed to meet stringent performance and environmental requirements.", icon: "✦" },
+  { id: "industry-industrial", background: "photo-1565043589221-1a6fd9ae45c7", title: "Industrial", desc: "Custom power conversion solutions for automation, testing and high-performance industrial systems.", icon: "✦" },
+  { id: "industry-unmanned", background: "photo-1508614999368-9260051292e5", title: "Unmanned Systems", desc: "High-performance propulsion and power electronics engineered for UAVs, drones and autonomous platforms.", icon: "✦" },
+  { id: "industry-mobility", background: "photo-1558618666-fcd25c85cd64", title: "Mobility", desc: "Advanced motor control and propulsion technologies accelerating the transition to electrified mobility.", icon: "✦" },
+  { id: "industry-energy", background: "photo-1466611653911-95081537e5b7", title: "Energy", desc: "Efficient power conversion platforms supporting next-generation energy systems.", icon: "✦" },
 ];
 
 export const CAPABILITIES = [

@@ -1,6 +1,6 @@
 # Zepco Technologies — Astro homepage
 
-Native Astro conversion of the supplied **Homepage layout design** Figma Make export. It preserves the navy-and-gold palette, Barlow Condensed headings, Inter body text, drone hero, section order, content, card grids, and hover treatments.
+Native Astro conversion of the latest supplied **homepage.zip** Figma Make export. It preserves the navy-and-gold palette, Barlow Condensed headings, Inter body text, animated drone hero, section order, content, card grids, and industry background treatments.
 
 ## Run locally
 
@@ -41,7 +41,7 @@ The static, deployable website is generated in `dist/`. Upload that directory to
 
 ## How this uses Astro
 
-The `.astro` components render HTML at build time. Typed arrays are mapped into HTML on the build side. Reusable components receive props and slots. The header's small TypeScript script handles the mobile navigation; decorative hover effects are handled by CSS. Tailwind integrates through its Vite plugin in `astro.config.mjs`.
+The `.astro` components render HTML at build time. Typed arrays are mapped into HTML on the build side. Reusable components receive props and slots. Small compiled TypeScript scripts handle navigation, the hero's scroll fade and zoom, and industry background selection. CSS handles entrance animations and card hover effects, with reduced-motion support. Tailwind integrates through its Vite plugin in `astro.config.mjs`.
 
 The original React/Vite entry point, React dependencies, and Figma Make development plugins have been removed. This is an Astro application with a standard Astro directory layout and static build, rather than a React application wrapped inside Astro.
 
@@ -53,8 +53,8 @@ The uploaded design contains only the homepage. It does **not** include working 
 - Set `site.links.media`, `blogs`, `linkedin`, and `twitter` when dedicated destinations are known.
 - Set the `href` values in `src/data/homepage.ts` to the real detail pages.
 - `undefined` destinations render with `aria-disabled="true"` and a “More information coming soon” title. They never pretend to submit a message or jump to the top of the page.
-- Header and mobile navigation share the screenshot labels: Our Story, Industries, Technologies, Solutions, Contact, Media, and Blogs. Industries has 5 submenu entries, Technologies has 4, and Solutions has 12.
-- Grouped items open as desktop dropdowns and mobile accordions; only one group opens at a time. Escape closes the active group and returns focus to its label; a second Escape closes the mobile menu.
+- Header and mobile navigation share the latest export's labels: Our Story, Industries, Technologies, Solutions, Contact, Media, and Blogs. Industries has 5 submenu entries, Technologies has 4, and Solutions has 12.
+- Numbered desktop dropdowns open on hover or click, with two columns for Solutions. Mobile uses accordions; only one group opens at a time. Escape closes the active group and returns focus to its label; a second Escape closes the mobile menu.
 - Submenu links use existing homepage cards where available. Battery topics fall back to their parent overview; converter variants use Power Conversion Systems. Media and Blogs currently use the Engineering Stories section. Set the corresponding `href` values in `src/data/site.ts` when dedicated URLs become available.
 
 ## GitHub
@@ -77,4 +77,4 @@ The GitHub Actions workflow checks the Astro types and production build on pushe
 - [Astro styles and Tailwind integration](https://docs.astro.build/en/guides/styling/)
 - [Astro scripts and event handling](https://docs.astro.build/en/guides/client-side-scripts/)
 
-The attached export is the implementation reference: the connected Figma account could not retrieve the live file because it lacked edit access. Brand text, imagery, company statements, and story titles are supplied content, not independently verified claims.
+The latest attached `homepage.zip` is the implementation reference. Live Figma access returned source links, but reading those resources failed, so this conversion uses the uploaded source. Brand text, imagery, company statements, and story titles are supplied content, not independently verified claims.
