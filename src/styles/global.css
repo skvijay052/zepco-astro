@@ -177,12 +177,11 @@ html[data-theme='light'] .section-stories .group img { filter: brightness(.92) s
 html[data-theme='light'] .section-stories .group h3 { color: #111111 !important; }
 html[data-theme='light'] .section-stories .group .text-\\[10px\\] { color: #8A6919 !important; }
 
-/* Final CTA */
-html[data-theme='light'] .section-contact > .absolute.pointer-events-none { display: none !important; }
-html[data-theme='light'] .section-contact h2,
-html[data-theme='light'] .section-contact p { color: #111111 !important; }
-html[data-theme='light'] .section-contact p { color: #5F5F5F !important; }
-html[data-theme='light'] .section-contact a { background: #C49A2E !important; color: #111111 !important; }
-html[data-theme='light'] .section-contact a:hover { background: #D4A93A !important; }
+/* Final CTA — keep "Let's Work Together" visually identical to dark mode. */
+html[data-theme='light'] .section-contact { background: #040C1E !important; color: #FFFFFF !important; }
+html[data-theme='light'] .section-contact h2 { color: #FFFFFF !important; }
+html[data-theme='light'] .section-contact p { color: #8B9BB4 !important; }
+html[data-theme='light'] .section-contact a { background: #C49A2E !important; color: #03091A !important; }
+html[data-theme='light'] .section-contact a:hover { background: #D4A93A !important; color: #03091A !important; }
 
 html[data-theme='dark'] body { background: #03091A; color: #FFFFFF; }
