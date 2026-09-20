@@ -101,15 +101,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--color-gold-400)
  * The existing dark theme remains the untouched fallback when data-theme="dark".
  * These overrides intentionally change only presentation; layout, content and behavior stay shared.
  */
-html[data-theme='light'] body {
-  background: #FFFFFF;
-  color: #111111;
-}
-
+html[data-theme='light'] body { background: #FFFFFF; color: #111111; }
 html[data-theme='light'] ::-webkit-scrollbar-track { background: #F7F7F7; }
 html[data-theme='light'] ::-webkit-scrollbar-thumb { background: #CFCFCF; }
 html[data-theme='light'] ::-webkit-scrollbar-thumb:hover { background: #5F5F5F; }
 html[data-theme='light'] .brand-logo { filter: brightness(0) !important; }
+html[data-theme='light'] [style*='var(--color-slate-blue)'] { color: #5F5F5F !important; }
+html[data-theme='light'] [style*='#ffffff'] { color: #111111 !important; }
 
 html[data-theme='light'] .site-header {
   background: rgba(255,255,255,.96) !important;
@@ -117,16 +115,10 @@ html[data-theme='light'] .site-header {
   backdrop-filter: blur(12px);
 }
 html[data-theme='light'] .header-cta,
-html[data-theme='light'] .mobile-cta {
-  border-color: #C49A2E !important;
-  color: #8A6919 !important;
-}
+html[data-theme='light'] .mobile-cta { border-color: #C49A2E !important; color: #8A6919 !important; }
 html[data-theme='light'] .header-cta:hover,
 html[data-theme='light'] .mobile-cta:hover,
-html[data-theme='light'] .mobile-cta:focus-visible {
-  background: #C49A2E !important;
-  color: #111111 !important;
-}
+html[data-theme='light'] .mobile-cta:focus-visible { background: #C49A2E !important; color: #111111 !important; }
 html[data-theme='light'] .menu-toggle { color: #8A6919 !important; }
 html[data-theme='light'] .mobile-navigation { border-top-color: #E5E5E5 !important; }
 html[data-theme='light'] .mobile > .navigation-item { border-bottom-color: #E5E5E5 !important; }
@@ -137,19 +129,15 @@ html[data-theme='light'] .nav-link:focus-visible,
 html[data-theme='light'] .submenu a:hover,
 html[data-theme='light'] .submenu a:focus-visible,
 html[data-theme='light'] .desktop details[open] > summary { color: #8A6919 !important; }
-html[data-theme='light'] .desktop .submenu {
-  background: #FFFFFF !important;
-  border-color: #E5E5E5 !important;
-  box-shadow: 0 16px 40px rgba(0,0,0,.10) !important;
-}
+html[data-theme='light'] .desktop .submenu { background: #FFFFFF !important; border-color: #E5E5E5 !important; box-shadow: 0 16px 40px rgba(0,0,0,.10) !important; }
 html[data-theme='light'] .desktop .submenu a:is(:hover, :focus-visible) { background: #F7F7F7 !important; }
 html[data-theme='light'] .submenu-number { color: #8A6919 !important; }
+html[data-theme='light'] .theme-toggle { border-color: #D0D0D0 !important; color: #5F5F5F !important; background: #FFFFFF !important; }
+html[data-theme='light'] .theme-toggle:hover,
+html[data-theme='light'] .theme-toggle:focus-visible { border-color: #8A6919 !important; color: #8A6919 !important; }
 
 /* Hero */
-html[data-theme='light'] .hero {
-  background: #FFFFFF !important;
-  color: #111111;
-}
+html[data-theme='light'] .hero { background: #FFFFFF !important; color: #111111; }
 html[data-theme='light'] .hero-shade { background: rgba(255,255,255,.78) !important; }
 html[data-theme='light'] .hero-bottom-shade { background: rgba(255,255,255,.88) !important; }
 html[data-theme='light'] .hero-grid { background-image: none !important; }
@@ -183,7 +171,7 @@ html[data-theme='light'] .section-stories h2,
 html[data-theme='light'] .section-contact h2 { color: #111111 !important; }
 
 /* About */
-html[data-theme='light'] .section-about [style*='borderLeft'] { border-left-color: #E5E5E5 !important; }
+html[data-theme='light'] .section-about .md\\:col-span-8 { border-left-color: #E5E5E5 !important; }
 html[data-theme='light'] .section-about .mt-12 { background: #F7F7F7 !important; border-left-color: #C49A2E !important; }
 html[data-theme='light'] .section-about .mt-12 p { color: #1F1F1F !important; }
 
@@ -201,10 +189,7 @@ html[data-theme='light'] .industry-card p { color: #5F5F5F !important; }
 html[data-theme='light'] .industry-card > div:first-child > span { color: #8A6919 !important; }
 
 /* Capabilities */
-html[data-theme='light'] .capability-card {
-  background: #F7F7F7 !important;
-  border-color: #E5E5E5 !important;
-}
+html[data-theme='light'] .capability-card { background: #F7F7F7 !important; border-color: #E5E5E5 !important; }
 html[data-theme='light'] .capability-card img { filter: brightness(.9) saturate(.8) !important; }
 html[data-theme='light'] .capability-card .absolute.inset-0 { background: transparent !important; }
 html[data-theme='light'] .capability-card h3 { color: #111111 !important; }
@@ -231,7 +216,7 @@ html[data-theme='light'] .section-stories .group img { filter: brightness(.92) s
 html[data-theme='light'] .section-stories .group h3 { color: #111111 !important; }
 html[data-theme='light'] .section-stories .group .text-\\[10px\\] { color: #8A6919 !important; }
 
-/* Final CTA: remove dark decorative treatment rather than introducing gradients in light mode. */
+/* Final CTA: remove the dark decorative treatment rather than introducing gradients in light mode. */
 html[data-theme='light'] .section-contact > .absolute.pointer-events-none { display: none !important; }
 html[data-theme='light'] .section-contact h2,
 html[data-theme='light'] .section-contact p { color: #111111 !important; }
