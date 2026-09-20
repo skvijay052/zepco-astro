@@ -21,44 +21,16 @@ body {
   --font-sans: 'Barlow', sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #03091A;
-  color: #ffffff;
-  -webkit-font-smoothing: antialiased;
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #060F26;
-}
-::-webkit-scrollbar-thumb {
-  background: #1A305F;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #C49A2E;
-}
-
-.font-display {
-  font-family: 'Inter', sans-serif;
-}
-
-.text-gold {
-  color: #C49A2E;
-}
-.bg-gold {
-  background-color: #C49A2E;
-}
-.border-gold {
-  border-color: #C49A2E;
-}
+* { box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background-color: #03091A; color: #ffffff; -webkit-font-smoothing: antialiased; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #060F26; }
+::-webkit-scrollbar-thumb { background: #1A305F; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #C49A2E; }
+.font-display { font-family: 'Inter', sans-serif; }
+.text-gold { color: #C49A2E; }
+.bg-gold { background-color: #C49A2E; }
+.border-gold { border-color: #C49A2E; }
 
 /* Layout and interaction refinements for the static Astro implementation. */
 html { scroll-behavior: smooth; scroll-padding-top: 88px; }
@@ -96,11 +68,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--color-gold-400)
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
-/*
- * V2 light theme.
- * The existing dark theme remains the untouched fallback when data-theme="dark".
- * These overrides intentionally change only presentation; layout, content and behavior stay shared.
- */
+/* V2 light theme. */
 html[data-theme='light'] body { background: #FFFFFF; color: #111111; }
 html[data-theme='light'] ::-webkit-scrollbar-track { background: #F7F7F7; }
 html[data-theme='light'] ::-webkit-scrollbar-thumb { background: #CFCFCF; }
@@ -108,12 +76,7 @@ html[data-theme='light'] ::-webkit-scrollbar-thumb:hover { background: #5F5F5F; 
 html[data-theme='light'] .brand-logo { filter: brightness(0) !important; }
 html[data-theme='light'] [style*='var(--color-slate-blue)'] { color: #5F5F5F !important; }
 html[data-theme='light'] [style*='#ffffff'] { color: #111111 !important; }
-
-html[data-theme='light'] .site-header {
-  background: rgba(255,255,255,.96) !important;
-  border-bottom-color: #E5E5E5 !important;
-  backdrop-filter: blur(12px);
-}
+html[data-theme='light'] .site-header { background: rgba(255,255,255,.96) !important; border-bottom-color: #E5E5E5 !important; backdrop-filter: blur(12px); }
 html[data-theme='light'] .header-cta,
 html[data-theme='light'] .mobile-cta { border-color: #C49A2E !important; color: #8A6919 !important; }
 html[data-theme='light'] .header-cta:hover,
@@ -157,8 +120,8 @@ html[data-theme='light'] .section-about,
 html[data-theme='light'] .section-capabilities,
 html[data-theme='light'] .section-solutions { background: #FFFFFF !important; color: #111111 !important; }
 html[data-theme='light'] .section-industries,
+html[data-theme='light'] .section-trust,
 html[data-theme='light'] .section-stories { background: #F7F7F7 !important; color: #111111 !important; }
-html[data-theme='light'] .section-trust { background: #FFFFFF !important; color: #111111 !important; }
 html[data-theme='light'] .section-contact { background: #FFFFFF !important; color: #111111 !important; }
 html[data-theme='light'] .site-footer { background: #FFFFFF !important; color: #111111 !important; border-top-color: #E5E5E5 !important; }
 html[data-theme='light'] .footer-bottom { border-top-color: #E5E5E5 !important; color: #5F5F5F !important; }
@@ -216,7 +179,7 @@ html[data-theme='light'] .section-stories .group img { filter: brightness(.92) s
 html[data-theme='light'] .section-stories .group h3 { color: #111111 !important; }
 html[data-theme='light'] .section-stories .group .text-\\[10px\\] { color: #8A6919 !important; }
 
-/* Final CTA: remove the dark decorative treatment rather than introducing gradients in light mode. */
+/* Final CTA */
 html[data-theme='light'] .section-contact > .absolute.pointer-events-none { display: none !important; }
 html[data-theme='light'] .section-contact h2,
 html[data-theme='light'] .section-contact p { color: #111111 !important; }
@@ -224,5 +187,4 @@ html[data-theme='light'] .section-contact p { color: #5F5F5F !important; }
 html[data-theme='light'] .section-contact a { background: #C49A2E !important; color: #111111 !important; }
 html[data-theme='light'] .section-contact a:hover { background: #D4A93A !important; }
 
-/* Keep the existing dark implementation exactly as the fallback theme. */
 html[data-theme='dark'] body { background: #03091A; color: #FFFFFF; }
