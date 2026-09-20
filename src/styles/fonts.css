@@ -1,12 +1,4 @@
 @font-face {
-  font-family: 'Barlow Condensed';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(/fonts/barlow-condensed-latin-700-normal.ttf) format('truetype');
-}
-
-@font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 300;
