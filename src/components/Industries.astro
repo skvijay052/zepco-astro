@@ -30,20 +30,54 @@ import { INDUSTRIES } from '../data/homepage';
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: "rgba(196,154,46,0.1)" }}>
-          {INDUSTRIES.map((ind, i) => (
+          {INDUSTRIES.map((ind) => (
             <div id={ind.id}
-              class="industry-card p-8 transition-all duration-300">
-              <div class="flex items-start justify-between mb-6">
-                <span class="text-xs tracking-widest uppercase font-semibold" style={{ color: "rgba(196,154,46,0.5)" }}>
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span class="transition-colors duration-300" style={{ color: "rgba(196,154,46,0.2)", fontSize: "18px" }}>✦</span>
+              class="industry-card p-8 transition-all duration-300 text-center">
+              <div class="industry-icon-wrap flex items-center justify-center mb-6 mx-auto" aria-hidden="true">
+                {ind.icon === "aerospace" && (
+                  <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M3 11.5 21 3l-6.5 18-3.5-7-8-2.5Z" />
+                    <path d="m11 14 3-4" />
+                  </svg>
+                )}
+                {ind.icon === "defence" && (
+                  <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 3 20 6v5c0 5-3.2 8.2-8 10-4.8-1.8-8-5-8-10V6l8-3Z" />
+                    <path d="m8.5 12 2.2 2.2 4.8-5" />
+                  </svg>
+                )}
+                {ind.icon === "industrial" && (
+                  <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M3 21V10l6 3V8l6 3V5h6v16H3Z" />
+                    <path d="M7 17h2m3 0h2m3 0h2M7 13h2m3 0h2m3 0h2" />
+                  </svg>
+                )}
+                {ind.icon === "unmanned" && (
+                  <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 10v4m-3-2h6m-3-2-2-5m2 5 2-5m-2 9 3 4m-3-4-3 4" />
+                    <path d="M7 8H4a2 2 0 0 0-2 2v1h5m10-3h3a2 2 0 0 1 2 2v1h-5" />
+                    <circle cx="12" cy="14" r="2.5" />
+                  </svg>
+                )}
+                {ind.icon === "mobility" && (
+                  <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M5 16h14l-1-6H6l-1 6Z" />
+                    <path d="m7 10 1.5-3h7L17 10M4 16v2m16-2v2" />
+                    <circle cx="8" cy="16.5" r="1.5" />
+                    <circle cx="16" cy="16.5" r="1.5" />
+                  </svg>
+                )}
+                {ind.icon === "energy" && (
+                  <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M13 2 4 14h7l-1 8 10-13h-7l0-7Z" />
+                  </svg>
+                )}
               </div>
               <h3 class="font-display font-bold uppercase text-2xl mb-3 leading-tight" style={{ letterSpacing: "0.04em" }}>
                 {ind.title}
               </h3>
-              <p class="text-sm leading-relaxed font-light" style={{ color: "var(--color-slate-blue)" }}>{ind.desc}</p>
-              <div class="mt-6 h-px transition-all duration-300" style={{ background: "transparent", width: "0px" }} />
+              <p class="text-sm leading-relaxed font-light max-w-sm mx-auto" style={{ color: "var(--color-slate-blue)" }}>{ind.desc}</p>
+              <div class="mt-6 h-px transition-all duration-300 mx-auto" style={{ background: "transparent", width: "0px" }} />
             </div>
           ))}
         </div>
@@ -95,6 +129,8 @@ import { INDUSTRIES } from '../data/homepage';
   .industry-vignette { background: radial-gradient(ellipse at center, transparent 20%, #04091E 80%); }
   .industry-card { background: rgba(4,10,28,.6); }
   .industry-card:is(:hover, :focus-within) { background: rgba(12,27,56,.9); }
-  .industry-card:is(:hover, :focus-within) > div:first-child > span:last-child { color: var(--color-gold-500) !important; }
+  .industry-icon-wrap { width: 52px; height: 52px; color: rgba(196,154,46,0.7); }
+  .industry-icon { width: 40px; height: 40px; transition: color .3s ease, transform .3s ease; }
+  .industry-card:is(:hover, :focus-within) .industry-icon { color: var(--color-gold-500); transform: translateY(-2px); }
   .industry-card:is(:hover, :focus-within) > div:last-child { width: 40px !important; background: var(--color-gold-500) !important; }
 </style>
