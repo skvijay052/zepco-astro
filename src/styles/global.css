@@ -197,9 +197,9 @@ html[data-theme='light'] .capability-card p { color: #5F5F5F !important; }
 html[data-theme='light'] .capability-card .learn-more { color: #8A6919 !important; }
 
 /* Trust */
-html[data-theme='light'] .section-trust > .max-w-7xl > .grid { background: #E5E5E5 !important; }
+html[data-theme='light'] .section-trust > .max-w-7xl > .grid { background: #FFFFFF !important; }
 html[data-theme='light'] .section-trust .group { background: #FFFFFF !important; }
-html[data-theme='light'] .section-trust .group:hover { background: #F7F7F7 !important; }
+html[data-theme='light'] .section-trust .group:hover { background: #FFFFFF !important; }
 html[data-theme='light'] .section-trust .group h3 { color: #111111 !important; }
 html[data-theme='light'] .section-trust .group p { color: #5F5F5F !important; }
 
