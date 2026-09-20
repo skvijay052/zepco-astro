@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Icon from '../components/Icon.astro';
+import Link from '../components/Link.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/site';
+
+const industries = [
+  { name: 'Aerospace', text: 'Reliable power conversion and propulsion technologies engineered for demanding airborne platforms.' },
+  { name: 'Defence', text: 'Mission-ready power electronics designed for stringent performance and environmental requirements.' },
+  { name: 'Industrial', text: 'Custom power conversion solutions for automation, testing and high-performance industrial systems.' },
+  { name: 'Unmanned Systems', text: 'High-performance propulsion and power electronics for UAVs, drones and autonomous platforms.' },
+  { name: 'Mobility', text: 'Advanced motor control and propulsion technologies supporting the transition to electrified mobility.' },
+  { name: 'Energy', text: 'Efficient power conversion platforms supporting next-generation energy systems.' },
+];
+
+const principles = [
+  { number: '01', title: 'Engineering First', text: 'We approach every challenge from the engineering fundamentals up, balancing performance, reliability, manufacturability and real-world operating conditions.' },
+  { number: '02', title: 'Built for Demanding Applications', text: 'Our systems are developed for environments where power, efficiency, thermal performance and reliability matter.' },
+  { number: '03', title: 'From Concept to Product', text: 'We bring design, embedded systems, validation, testing and manufacturing thinking together to move ideas toward production.' },
+  { number: '04', title: 'Purposeful Innovation', text: 'We focus innovation on practical technology that creates measurable value for customers and enables the next generation of mobility, energy and industrial systems.' },
+];
+---
+
+<BaseLayout title="About Zepco Technologies | Engineering Power & Propulsion" description="Learn about Zepco Technologies, an engineering company focused on advanced power electronics and electric propulsion systems.">
+  <Navbar />
+  <main id="main-content" tabindex="-1" class="about-page">
+    <section class="about-hero">
+      <div class="about-grid"></div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-5xl">
+          <div class="eyebrow"><span></span> About Zepco Technologies</div>
+          <h1 class="font-display font-bold uppercase">Engineering Power.<br /><em>Enabling Progress.</em></h1>
+          <p class="hero-copy">We engineer advanced power electronics and electric propulsion systems for applications where performance, reliability and execution matter.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-intro">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="section-label"><span></span> Who We Are</div>
+        <div class="intro-grid">
+          <div>
+            <h2 class="font-display font-bold uppercase">Built on engineering.<br /><em>Driven by purpose.</em></h2>
+          </div>
+          <div class="intro-copy">
+            <p>Zepco Technologies is an engineering company specialising in advanced power electronics and electric propulsion systems. From our base in Bengaluru, we bring together product development, engineering expertise and manufacturing capability to solve demanding technology challenges.</p>
+            <p>Our journey began with a simple conviction: advanced power electronics and electric propulsion would become foundational technologies for the future. That conviction continues to guide the products we develop and the partnerships we build.</p>
+            <p>We work across aerospace, defence, industrial, unmanned systems, mobility and energy applications, developing solutions designed for dependable performance in the real world.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-capability">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="section-label"><span></span> What We Do</div>
+        <div class="capability-heading">
+          <h2 class="font-display font-bold uppercase">From engineering challenge<br /><em>to working system.</em></h2>
+          <p>Our work spans the technology stack needed to turn complex power and propulsion requirements into practical products.</p>
+        </div>
+        <div class="capability-grid">
+          <article><div class="cap-number">01</div><h3 class="font-display">Power Electronics</h3><p>Power conversion, inverters, rectifiers, programmable power supplies and high-performance power systems.</p></article>
+          <article><div class="cap-number">02</div><h3 class="font-display">Electric Propulsion</h3><p>Motors, motor controllers and propulsion systems for electric mobility and unmanned platforms.</p></article>
+          <article><div class="cap-number">03</div><h3 class="font-display">Embedded Engineering</h3><p>Control electronics and embedded intelligence that connect power hardware to the application.</p></article>
+          <article><div class="cap-number">04</div><h3 class="font-display">Validation & Manufacturing</h3><p>Engineering validation, testing and manufacturing-oriented development that helps products move toward deployment.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-industries">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="section-label"><span></span> Where We Apply It</div>
+        <div class="industry-heading">
+          <h2 class="font-display font-bold uppercase">Technology for<br /><em>demanding environments.</em></h2>
+        </div>
+        <div class="industry-grid">
+          {industries.map((industry, index) => (
+            <article>
+              <div class="industry-number">0{index + 1}</div>
+              <h3 class="font-display">{industry.name}</h3>
+              <p>{industry.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="about-principles">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="section-label"><span></span> Our Engineering DNA</div>
+        <div class="principle-heading">
+          <h2 class="font-display font-bold uppercase">How we<br /><em>think & build.</em></h2>
+          <p>Good engineering is more than technical capability. It is the discipline to make the right decisions repeatedly—from the first architecture to the final product.</p>
+        </div>
+        <div class="principle-grid">
+          {principles.map((item) => (
+            <article>
+              <div class="principle-number">{item.number}</div>
+              <h3 class="font-display">{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="about-journey">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="journey-layout">
+          <div>
+            <div class="section-label"><span></span> Our Journey</div>
+            <h2 class="font-display font-bold uppercase">From a small beginning<br /><em>to bigger challenges.</em></h2>
+          </div>
+          <div class="timeline">
+            <div><span>2022</span><h3 class="font-display">The journey begins</h3><p>Zepco starts operations in Bengaluru with a small engineering team and a focus on electric propulsion and power electronics.</p></div>
+            <div><span>2024</span><h3 class="font-display">Capability expands</h3><p>Engineering, motor testing and power electronics capabilities grow as Zepco develops its first motor, controller and power solutions.</p></div>
+            <div><span>2025</span><h3 class="font-display">Research & validation</h3><p>Advanced motor research and development expands alongside continued work across demanding mobility, aerospace, defence and industrial applications.</p></div>
+            <div><span>Today</span><h3 class="font-display">Engineering what is next</h3><p>Zepco continues to combine deep engineering expertise with integrated development and manufacturing to build high-performance systems.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-cta">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="eyebrow center"><span></span> Work With Us <span></span></div>
+        <h2 class="font-display font-bold uppercase">Let's build<br /><em>what's next.</em></h2>
+        <p>Have a demanding power, propulsion or electrification challenge? Let's talk about the engineering behind it.</p>
+        <Link href={site.links.contact} class="cta-button">Start a Conversation <Icon class="w-4 h-4" /></Link>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .about-page { background: #fff; color: #111; }
+  .about-hero { min-height: 78vh; display:flex; align-items:flex-end; position:relative; overflow:hidden; padding: 9rem 0 7rem; background:#03091a; color:#fff; }
+  .about-grid { position:absolute; inset:0; opacity:.5; background-image: linear-gradient(rgba(196,154,46,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(196,154,46,.07) 1px, transparent 1px); background-size:72px 72px; mask-image: linear-gradient(to bottom, #000, transparent 85%); }
+  .eyebrow,.section-label { display:flex; align-items:center; gap:.75rem; color:#9b7620; font-size:10px; letter-spacing:.3em; text-transform:uppercase; font-weight:600; }
+  .eyebrow span,.section-label span { display:block; width:32px; height:1px; background:#c49a2e; }
+  .eyebrow.center { justify-content:center; }
+  .about-hero h1 { margin:1.75rem 0 2rem; font-size:clamp(3.4rem,8vw,7.8rem); line-height:.9; letter-spacing:.015em; max-width:1000px; }
+  .about-hero h1 em,.about-page h2 em { color:#c49a2e; font-style:normal; }
+  .hero-copy { max-width:660px; color:#b4bfd0; font-size:1.1rem; line-height:1.8; font-weight:300; }
+  .about-intro,.about-capability,.about-principles,.about-journey { padding:7rem 0; }
+  .about-intro { background:#fff; }
+  .intro-grid,.capability-heading,.principle-heading,.journey-layout { display:grid; grid-template-columns: 1fr 1.35fr; gap:5rem; margin-top:2rem; }
+  .about-page h2 { font-size:clamp(2.6rem,5vw,4.7rem); line-height:.98; letter-spacing:.01em; }
+  .intro-copy { border-left:1px solid #ddd; padding-left:3rem; }
+  .intro-copy p,.capability-heading>p,.principle-heading>p { color:#5f5f5f; line-height:1.85; font-size:1rem; font-weight:300; margin:0 0 1.25rem; }
+  .about-capability,.about-principles { background:#f7f7f7; }
+  .capability-heading>p,.principle-heading>p { align-self:end; max-width:540px; margin-bottom:0; }
+  .capability-grid,.principle-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:#ddd; margin-top:4rem; }
+  .capability-grid article,.principle-grid article { background:#fff; padding:2rem; min-height:260px; }
+  .cap-number,.industry-number,.principle-number { color:#9b7620; font-size:10px; letter-spacing:.18em; }
+  .capability-grid h3,.industry-grid h3,.principle-grid h3 { margin:4rem 0 1rem; font-size:1.55rem; line-height:1.05; text-transform:uppercase; letter-spacing:.02em; }
+  .capability-grid p,.industry-grid p,.principle-grid p { color:#666; font-size:.9rem; line-height:1.7; font-weight:300; margin:0; }
+  .about-industries { padding:7rem 0; background:#fff; }
+  .industry-heading { margin-top:2rem; }
+  .industry-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:#ddd; margin-top:4rem; }
+  .industry-grid article { background:#f7f7f7; padding:2rem; min-height:220px; transition:background .2s; }
+  .industry-grid article:hover { background:#fff; }
+  .about-principles .principle-grid { margin-top:4rem; }
+  .about-journey { background:#fff; }
+  .journey-layout { align-items:start; }
+  .timeline { border-left:1px solid #ccc; }
+  .timeline>div { padding:0 0 3rem 2rem; position:relative; }
+  .timeline>div:last-child { padding-bottom:0; }
+  .timeline>div::before { content:''; position:absolute; left:-4px; top:3px; width:7px; height:7px; border-radius:50%; background:#c49a2e; }
+  .timeline span { color:#9b7620; font-size:10px; letter-spacing:.2em; text-transform:uppercase; }
+  .timeline h3 { font-size:1.4rem; text-transform:uppercase; margin:.7rem 0 .6rem; }
+  .timeline p { color:#666; max-width:600px; line-height:1.7; font-size:.9rem; margin:0; }
+  .about-cta { padding:8rem 0; background:#03091a; color:#fff; }
+  .about-cta h2 { margin:1.5rem 0 1.5rem; font-size:clamp(3rem,7vw,6rem); line-height:.9; }
+  .about-cta p { max-width:620px; margin:0 auto 2.5rem; color:#aeb8c8; line-height:1.8; font-weight:300; }
+  .cta-button { display:inline-flex; align-items:center; gap:.75rem; background:#c49a2e; color:#03091a; padding:1rem 2.25rem; font-size:.75rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700; }
+  @media (max-width:900px) {
+    .intro-grid,.capability-heading,.principle-heading,.journey-layout { grid-template-columns:1fr; gap:2rem; }
+    .intro-copy { border-left:0; border-top:1px solid #ddd; padding:2rem 0 0; }
+    .capability-grid { grid-template-columns:repeat(2,1fr); }
+    .industry-grid { grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width:600px) {
+    .about-hero { min-height:72vh; padding:8rem 0 4.5rem; }
+    .about-hero h1 { font-size:3.25rem; }
+    .hero-copy { font-size:1rem; }
+    .about-intro,.about-capability,.about-industries,.about-principles,.about-journey { padding:5rem 0; }
+    .capability-grid,.industry-grid,.principle-grid { grid-template-columns:1fr; }
+    .capability-grid article,.industry-grid article,.principle-grid article { min-height:0; }
+    .capability-grid h3,.industry-grid h3,.principle-grid h3 { margin-top:2.5rem; }
+  }
+  html[data-theme='dark'] .about-page { background:#03091a; color:#fff; }
+  html[data-theme='dark'] .about-intro,.about-page[data-theme='dark'] .about-intro { background:#03091a; }
+  html[data-theme='dark'] .about-capability,html[data-theme='dark'] .about-principles { background:#071127; }
+  html[data-theme='dark'] .about-industries,html[data-theme='dark'] .about-journey { background:#03091a; }
+  html[data-theme='dark'] .intro-copy { border-color:rgba(196,154,46,.18); }
+  html[data-theme='dark'] .intro-copy p,html[data-theme='dark'] .capability-heading>p,html[data-theme='dark'] .principle-heading>p,
+  html[data-theme='dark'] .capability-grid p,html[data-theme='dark'] .industry-grid p,html[data-theme='dark'] .principle-grid p,html[data-theme='dark'] .timeline p { color:#aeb8c8; }
+  html[data-theme='dark'] .capability-grid,html[data-theme='dark'] .industry-grid,html[data-theme='dark'] .principle-grid { background:rgba(196,154,46,.15); }
+  html[data-theme='dark'] .capability-grid article,html[data-theme='dark'] .principle-grid article { background:#071127; }
+  html[data-theme='dark'] .industry-grid article { background:#071127; }
+  html[data-theme='dark'] .industry-grid article:hover { background:#0b1831; }
+  html[data-theme='dark'] .timeline { border-color:rgba(196,154,46,.25); }
+</style>
