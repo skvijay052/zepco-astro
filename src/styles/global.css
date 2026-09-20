@@ -96,21 +96,21 @@ html[data-theme='light'] .theme-toggle { border-color: #D0D0D0 !important; color
 html[data-theme='light'] .theme-toggle:hover,
 html[data-theme='light'] .theme-toggle:focus-visible { border-color: #8A6919 !important; color: #8A6919 !important; }
 
-/* Hero */
-html[data-theme='light'] .hero { background: #FFFFFF !important; color: #111111; }
-html[data-theme='light'] .hero-shade { background: rgba(255,255,255,.78) !important; }
-html[data-theme='light'] .hero-bottom-shade { background: rgba(255,255,255,.88) !important; }
-html[data-theme='light'] .hero-grid { background-image: none !important; }
-html[data-theme='light'] .hero-accent { background: #C49A2E !important; }
+/* Hero — keep the homepage banner visually identical to dark mode. */
+html[data-theme='light'] .hero { background: #03091A !important; color: #FFFFFF !important; }
+html[data-theme='light'] .hero-shade { background: linear-gradient(105deg, rgba(3,9,26,.93) 0%, rgba(3,9,26,.76) 45%, rgba(3,9,26,.35) 100%) !important; }
+html[data-theme='light'] .hero-bottom-shade { background: linear-gradient(to bottom, transparent, #03091A) !important; }
+html[data-theme='light'] .hero-grid { background-image: linear-gradient(rgba(196,154,46,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(196,154,46,.03) 1px, transparent 1px) !important; background-size: 80px 80px !important; }
+html[data-theme='light'] .hero-accent { background: linear-gradient(to bottom, transparent 10%, #C49A2E 50%, transparent 90%) !important; }
 html[data-theme='light'] .hero-intro,
-html[data-theme='light'] .hero-eyebrow,
-html[data-theme='light'] .hero-secondary:hover { color: #8A6919 !important; }
-html[data-theme='light'] .hero-secondary { border-color: #BDBDBD !important; color: #111111 !important; }
-html[data-theme='light'] .hero-primary { background: #C49A2E !important; color: #111111 !important; }
-html[data-theme='light'] .hero-primary:hover { background: #D4A93A !important; }
-html[data-theme='light'] .hero-scroll { color: #8A6919 !important; }
-html[data-theme='light'] .hero-scroll-line { background: #C49A2E !important; }
-html[data-theme='light'] .text-slate-blue { color: #5F5F5F !important; }
+html[data-theme='light'] .hero-eyebrow { color: #C49A2E !important; }
+html[data-theme='light'] .hero-secondary { border-color: rgba(139,155,180,.4) !important; color: #FFFFFF !important; }
+html[data-theme='light'] .hero-secondary:hover { border-color: #C49A2E !important; color: #C49A2E !important; }
+html[data-theme='light'] .hero-primary { background: #C49A2E !important; color: #03091A !important; }
+html[data-theme='light'] .hero-primary:hover { background: #D4A93A !important; color: #03091A !important; }
+html[data-theme='light'] .hero-scroll { color: rgba(196,154,46,.5) !important; }
+html[data-theme='light'] .hero-scroll-line { background: linear-gradient(to bottom, #C49A2E, transparent) !important; }
+html[data-theme='light'] .hero-content .text-slate-blue { color: #8B9BB4 !important; }
 
 /* Shared light surfaces and typography */
 html[data-theme='light'] .section-about,
