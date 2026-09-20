@@ -16,7 +16,7 @@ body {
   --color-gold-500: #C49A2E;
   --color-gold-600: #A07C1E;
   --color-slate-blue: #8B9BB4;
-  --font-display: 'Barlow Condensed', sans-serif;
+  --font-display: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-sans: 'Barlow', sans-serif;
 }
@@ -47,7 +47,7 @@ body {
 }
 
 .font-display {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .text-gold {
