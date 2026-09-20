@@ -2,9 +2,7 @@
 @import 'tailwindcss';
 
 html,
-body {
-  height: 100%;
-}
+body { height: 100%; }
 
 @theme inline {
   --color-navy-950: #03091A;
@@ -32,7 +30,6 @@ body { font-family: 'Inter', sans-serif; background-color: #03091A; color: #ffff
 .bg-gold { background-color: #C49A2E; }
 .border-gold { border-color: #C49A2E; }
 
-/* Layout and interaction refinements for the static Astro implementation. */
 html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 [hidden] { display: none !important; }
 section[id] { scroll-margin-top: 88px; }
@@ -161,6 +158,7 @@ html[data-theme='light'] .capability-card .learn-more { color: #8A6919 !importan
 
 /* Trust */
 html[data-theme='light'] .section-trust > .max-w-7xl > .grid { background: #FFFFFF !important; }
+html[data-theme='light'] .section-trust > .max-w-7xl > .grid.mb-16 { background: transparent !important; }
 html[data-theme='light'] .section-trust .group { background: #FFFFFF !important; }
 html[data-theme='light'] .section-trust .group:hover { background: #FFFFFF !important; }
 html[data-theme='light'] .section-trust .group h3 { color: #111111 !important; }
