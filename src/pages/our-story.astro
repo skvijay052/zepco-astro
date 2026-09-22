@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Link from '../components/Link.astro';
+import Icon from '../components/Icon.astro';
+
+const imageOne = '/images/photo-1531297484001-80022131f5a1-900.jpg';
+const imageTwo = '/images/photo-1518770660439-4636190af475-900.jpg';
+---
+
+<BaseLayout
+  title="Our Story | Zepco Technologies"
+  description="The story of Zepco Technologies — built on conviction, driven by people, and focused on solving hard power electronics and electric propulsion challenges."
+>
+  <Navbar />
+
+  <main id="top" class="our-story-page">
+    <section class="story-hero">
+      <img src={imageOne} alt="Engineers working together on advanced technology" />
+      <div class="hero-overlay"></div>
+      <div class="hero-grid"></div>
+      <div class="story-container hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow"><span></span> Our Story</div>
+          <h1>Built on<br />Conviction.<br /><em>Driven by People.</em></h1>
+          <p>From a small apartment in Bengaluru to a multidisciplinary engineering company, our journey has always been about one thing — solving hard problems, together.</p>
+        </div>
+      </div>
+      <div class="hero-scroll">Scroll <span></span></div>
+    </section>
+
+    <section class="story-section section-white" id="story">
+      <div class="story-container two-column">
+        <div class="section-heading">
+          <div class="section-kicker">01 <i></i> A Conviction</div>
+          <h2>A conviction<br />became <em>Zepco.</em></h2>
+        </div>
+        <div class="section-content">
+          <p class="large-copy">In 2022, Zepco started with three people working out of a two-bedroom apartment in Bengaluru.</p>
+          <p>We didn't begin with a large office, a manufacturing facility or a long customer list.</p>
+          <p>What we had was a conviction: that the future would belong to technologies powered by advanced power electronics and electric propulsion, and that those technologies deserved uncompromising engineering. That conviction became Zepco.</p>
+          <div class="image-card">
+            <img src={imageOne} alt="Engineering team working on advanced technology" />
+            <div class="image-card-label"><strong>A small team.<br />A big vision.</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section section-blue">
+      <div class="story-container people-grid">
+        <div class="people-image"><img src={imageTwo} alt="Engineers collaborating on electronics" /></div>
+        <div class="section-content">
+          <div class="section-kicker light">02 <i></i> More Than Technology</div>
+          <h2>More Than<br />Technology</h2>
+          <p>Technology was only one part of the vision. The other was people. We set out to build a company where young engineers could work alongside industry veterans with decades of experience designing, developing and commercialising world-class power electronics and propulsion systems.</p>
+          <p>Our belief was simple: knowledge should not retire, it should be transferred. Every design review, prototype, customer interaction and engineering challenge became an opportunity to pass knowledge to the next generation — a culture that still defines Zepco today.</p>
+          <div class="people-callout"><span class="callout-icon">↗</span><span>Experience meets<br />tomorrow.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section section-white compromise-section">
+      <div class="story-container two-column compromise-grid">
+        <div class="section-content">
+          <div class="section-kicker">03 <i></i> Engineering Without Compromise</div>
+          <h2>Harder problems.<br /><em>Better solutions.</em></h2>
+          <p>From day one, we chose to work on difficult engineering problems — the kind where efficiency, thermal performance, power density, control and reliability are constantly challenged.</p>
+          <p>Rather than build products for their own sake, we engineer solutions that perform in demanding real-world environments.</p>
+          <p>Every project begins with understanding the problem. Every solution is validated with discipline. Every partnership is built for the long term.</p>
+          <div class="principles">
+            <div><b>01</b><span>Understand<br />the problem</span></div>
+            <div><b>02</b><span>Validate<br />with discipline</span></div>
+            <div><b>03</b><span>Build for<br />the long term</span></div>
+          </div>
+        </div>
+        <figure class="feature-image">
+          <img src={imageTwo} alt="Engineer working with an electronics prototype" />
+          <figcaption><span>Engineering in practice</span><strong>Knowledge transferred.<br />Problems solved.</strong></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="today-section">
+      <div class="today-image"><img src={imageTwo} alt="Zepco engineering work" /><div class="today-image-overlay"></div></div>
+      <div class="today-content">
+        <div class="section-kicker light">04 <i></i> Zepco Today</div>
+        <h2>Zepco Today</h2>
+        <p class="large-copy">From a small apartment in Bengaluru, Zepco has grown into a multidisciplinary engineering company serving aerospace, defence, industrial and mobility customers.</p>
+        <p>Today we bring together 300+ years of combined leadership experience, 45+ design engineers, end-to-end engineering from concept to manufacturing, deep expertise in power electronics and electric propulsion, and long-term partnerships with customers developing mission-critical systems.</p>
+        <div class="stats">
+          <div><strong>300+</strong><span>years of combined<br />leadership experience</span></div>
+          <div><strong>45+</strong><span>design<br />engineers</span></div>
+          <div><strong>360°</strong><span>concept-to-manufacturing<br />engineering</span></div>
+          <div><strong>5</strong><span>core<br />industries</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="future-section">
+      <div class="future-shape shape-one"></div><div class="future-shape shape-two"></div>
+      <div class="story-container future-grid">
+        <div class="section-content">
+          <div class="section-kicker">05 <i></i> Looking Ahead</div>
+          <h2>The work<br /><em>moves forward.</em></h2>
+          <p>The boundaries of physics haven't stopped moving. Neither have we. As electrification reshapes industries worldwide, Zepco remains committed to solving increasingly complex engineering challenges while preparing the next generation of engineers to carry that mission forward.</p>
+          <p>We are not building products alone — we are building the engineering capability that will power the technologies of tomorrow.</p>
+        </div>
+        <div class="future-visual"><div class="future-sun"></div><div class="future-horizon"></div><div class="future-person"></div><div class="future-label">Same mission.<br />Bigger horizons.</div></div>
+      </div>
+    </section>
+
+    <section class="story-cta">
+      <div class="story-container text-center">
+        <div class="section-kicker center light"><i></i> The Next Chapter <i></i></div>
+        <h2>Let's build<br /><em>what's next.</em></h2>
+        <p>Have a demanding power, propulsion or electrification challenge? Let's talk about the engineering behind it.</p>
+        <Link href="/#contact" class="cta-button">Start a Conversation <Icon class="w-4 h-4" /></Link>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .our-story-page{background:#fff;color:#111;overflow:hidden}
+  .story-container{width:min(1180px,calc(100% - 48px));margin:0 auto}
+  .story-hero{min-height:88vh;position:relative;display:flex;align-items:flex-end;background:#03091a;color:#fff;overflow:hidden}
+  .story-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.58}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,9,26,.96),rgba(3,9,26,.68) 50%,rgba(3,9,26,.24)),linear-gradient(0deg,#03091a 0,transparent 30%)}
+  .hero-grid{position:absolute;inset:0;opacity:.18;background-image:linear-gradient(rgba(196,154,46,.2) 1px,transparent 1px),linear-gradient(90deg,rgba(196,154,46,.2) 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(to bottom,transparent,#000 20%,transparent 90%)}
+  .hero-inner{position:relative;z-index:2;padding:9rem 0 7rem}.hero-copy{max-width:780px}.eyebrow,.section-kicker{display:flex;align-items:center;gap:12px;color:#c49a2e;font-size:10px;letter-spacing:.25em;text-transform:uppercase;font-weight:600}.eyebrow span,.section-kicker i{display:block;width:32px;height:1px;background:#c49a2e}.hero-copy h1{font-size:clamp(3.4rem,7vw,7.2rem);line-height:.9;letter-spacing:-.02em;text-transform:uppercase;margin:24px 0}.hero-copy h1 em,h2 em{font-style:normal;color:#c49a2e}.hero-copy p{max-width:650px;color:#b7c1d0;font-size:1.05rem;line-height:1.8;font-weight:300}.hero-scroll{position:absolute;right:32px;bottom:38px;z-index:2;color:rgba(255,255,255,.55);font-size:9px;letter-spacing:.25em;text-transform:uppercase;display:flex;align-items:center;gap:12px;writing-mode:vertical-rl}.hero-scroll span{width:1px;height:48px;background:#c49a2e}
+  .story-section{padding:8rem 0}.section-white{background:#fff}.section-blue{background:#071a2b;color:#fff}.two-column{display:grid;grid-template-columns:.85fr 1.15fr;gap:90px;align-items:start}.section-heading h2,.section-content h2,.today-content h2,.future-section h2,.story-cta h2{font-size:clamp(2.8rem,5vw,5rem);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;margin:22px 0 34px}.section-content p{max-width:680px;color:#5f5f5f;font-size:1rem;line-height:1.85;font-weight:300;margin:0 0 20px}.section-content .large-copy{font-size:1.25rem;line-height:1.7;color:#1f1f1f}.section-blue .section-content p{color:rgba(255,255,255,.67)}.section-blue .section-content .large-copy{color:#fff}.section-kicker.light{color:#d4a93a}.image-card{position:relative;height:390px;margin-top:42px;overflow:hidden;background:#071a2b}.image-card img{width:100%;height:100%;object-fit:cover}.image-card:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 50%,rgba(3,17,28,.85))}.image-card-label{position:absolute;right:0;top:0;bottom:0;width:34%;min-width:180px;z-index:2;display:flex;align-items:center;padding:25px;color:#fff;font-size:11px;line-height:1.55;text-transform:uppercase;letter-spacing:.08em;background:linear-gradient(90deg,transparent,rgba(3,17,28,.9) 30%)}
+  .people-grid{display:grid;grid-template-columns:1fr 1fr;gap:85px;align-items:center}.people-image{height:510px;overflow:hidden}.people-image img{width:100%;height:100%;object-fit:cover}.people-callout{display:flex;align-items:center;gap:18px;margin-top:31px;padding-top:23px;border-top:1px solid rgba(191,211,223,.35);color:#8cc7ed;font-size:11px;line-height:1.45;text-transform:uppercase;letter-spacing:.08em}.callout-icon{width:36px;height:36px;border:1px solid #8cc7ed;border-radius:50%;display:grid;place-items:center;font-size:15px}
+  .compromise-grid{align-items:stretch}.feature-image{position:relative;height:620px;margin:0;overflow:hidden;background:#061827;clip-path:polygon(9% 0,100% 0,100% 100%,0 100%)}.feature-image img{width:100%;height:100%;object-fit:cover}.feature-image:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,17,28,.78),rgba(3,17,28,.12) 52%,rgba(3,17,28,.05)),linear-gradient(0deg,rgba(3,17,28,.2),transparent)}.feature-image figcaption{position:absolute;z-index:2;left:13%;bottom:38px;color:#fff;text-transform:uppercase;letter-spacing:.08em}.feature-image figcaption span{display:block;color:rgba(255,255,255,.62);font-size:10px;margin-bottom:10px}.feature-image figcaption strong{font-size:14px;line-height:1.55}.principles{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #ddd;margin-top:34px;padding-top:22px;gap:20px}.principles div{display:flex;gap:9px;align-items:flex-start;font-size:10px;line-height:1.45;text-transform:uppercase;letter-spacing:.06em}.principles b{color:#9b7620}
+  .today-section{display:grid;grid-template-columns:1fr 1fr;min-height:620px;background:#03091a;color:#fff}.today-image{position:relative;min-height:620px;overflow:hidden}.today-image img{width:100%;height:100%;object-fit:cover}.today-image-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,16,28,.02),rgba(3,16,28,.8))}.today-content{padding:86px max(42px,6vw) 80px 70px;display:flex;flex-direction:column;justify-content:center}.today-content p{color:rgba(255,255,255,.66)}.today-content .large-copy{color:#fff}.stats{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid rgba(196,154,46,.2);margin-top:28px;padding-top:26px;gap:28px 35px}.stats div{display:flex;flex-direction:column}.stats strong{color:#63bcff;font-size:43px;line-height:1;letter-spacing:-.055em;font-weight:500}.stats span{margin-top:8px;color:rgba(255,255,255,.58);font-size:10px;line-height:1.45;text-transform:uppercase;letter-spacing:.06em}
+  .future-section{position:relative;overflow:hidden;padding:120px 0;background:linear-gradient(120deg,#eef6fa,#f8fbfc 52%,#d8e8f0)}.future-grid{position:relative;z-index:2;display:grid;grid-template-columns:.9fr 1.1fr;gap:75px;align-items:center}.future-section .section-content p{color:#4f6572}.future-visual{position:relative;height:390px;overflow:hidden;background:linear-gradient(160deg,#c0d9e6,#7b98a8 54%,#324e5e)}.future-sun{position:absolute;width:85px;height:85px;border-radius:50%;right:20%;top:16%;background:#f6d99e;box-shadow:0 0 70px 24px rgba(246,217,158,.4)}.future-horizon{position:absolute;left:-8%;right:-8%;bottom:-10%;height:66%;background:#334f5e;clip-path:polygon(0 100%,18% 57%,34% 73%,48% 39%,63% 65%,78% 43%,100% 75%,100% 100%);transform:skewX(-14deg)}.future-horizon:after{content:'';position:absolute;inset:20% 0 0;background:#506b7b;clip-path:polygon(0 100%,21% 69%,37% 79%,52% 47%,66% 69%,82% 50%,100% 75%,100% 100%)}.future-person{position:absolute;z-index:3;left:55%;bottom:22%;width:18px;height:67px;background:#1c2e39;border-radius:9px 9px 3px 3px}.future-person:before{content:'';position:absolute;left:2px;top:-18px;width:14px;height:14px;border-radius:50%;background:#172a35}.future-person:after{content:'';position:absolute;z-index:-1;left:-11px;top:11px;width:40px;height:52px;border-radius:10px;background:#d86e32}.future-label{position:absolute;z-index:4;right:24px;top:24px;color:#17384f;font-size:10px;line-height:1.5;text-transform:uppercase;letter-spacing:.08em}.future-shape{position:absolute;border:1px solid rgba(78,124,148,.16);transform:rotate(-12deg)}.shape-one{width:650px;height:190px;right:-120px;bottom:-55px}.shape-two{width:540px;height:150px;right:160px;bottom:40px}
+  .story-cta{padding:8rem 0;background:#03091a;color:#fff}.story-cta .center{justify-content:center}.story-cta p{max-width:620px;margin:0 auto 2.5rem;color:#aeb8c8;line-height:1.8;font-weight:300}.cta-button{display:inline-flex;align-items:center;gap:.75rem;background:#c49a2e;color:#03091a;padding:1rem 2.25rem;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700}.text-center{text-align:center}
+  html[data-theme='light'] .our-story-page{background:#fff;color:#111}.our-story-page{color:#111}html[data-theme='dark'] .section-white{background:#03091a;color:#fff}html[data-theme='dark'] .section-content p{color:#aeb8c8}.our-story-page .section-white h2{color:#111}html[data-theme='dark'] .our-story-page .section-white h2{color:#fff}html[data-theme='dark'] .future-section{background:linear-gradient(120deg,#071a2b,#0b2235 52%,#102f45)}html[data-theme='dark'] .future-section .section-content p{color:#aeb8c8}
+  @media(max-width:900px){.story-container{width:min(100% - 36px,680px)}.two-column,.people-grid,.future-grid{grid-template-columns:1fr;gap:45px}.story-hero{min-height:78vh}.hero-inner{padding:8rem 0 5rem}.people-image{height:420px}.feature-image{height:520px}.today-section{grid-template-columns:1fr}.today-image{min-height:420px;height:420px}.today-content{padding:70px 9vw}.future-section{padding:80px 0}.future-visual{height:340px}}
+  @media(max-width:600px){.story-container{width:calc(100% - 32px)}.story-section{padding:5rem 0}.hero-copy h1{font-size:3.2rem}.hero-copy p{font-size:.95rem}.hero-scroll{right:16px;bottom:24px}.image-card{height:300px}.image-card-label{width:42%;min-width:140px}.people-image{height:320px}.feature-image{height:420px;clip-path:none}.principles{grid-template-columns:1fr}.today-image{min-height:320px;height:320px}.today-content{padding:55px 8vw}.stats strong{font-size:35px}.future-section{padding:65px 0}.future-visual{height:290px}.story-cta{padding:6rem 0}}
+</style>
