@@ -51,7 +51,7 @@ import { navigation } from '../data/site';
       const label = button.querySelector('.theme-toggle-label') as HTMLElement | null;
       if (label) label.textContent = dark ? (button.classList.contains('mobile-theme-toggle') ? 'Light mode' : 'Light') : (button.classList.contains('mobile-theme-toggle') ? 'Dark mode' : 'Dark');
       const icon = button.querySelector('.theme-icon') as HTMLElement | null;
-      if (icon) { icon.classList.toggle('theme-icon-sun', dark); icon.classList.toggle('theme-icon-moon', !dark); icon.innerHTML = dark ? '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>' : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.7A8.5 8.5 0 0 1 9.3 3a8.5 8.5 0 1 0 11.7 11.7Z"></path></svg>'; }
+      if (icon) { icon.classList.toggle('theme-icon-sun', dark); icon.classList.toggle('theme-icon-moon', !dark); icon.innerHTML = dark ? '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>' : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.7A8.5 8.5 0 1 0 9.3 3a8.5 8.5 0 0 0 11.7 11.7Z"></path></svg>'; }
     });
     const metaTheme = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement | null;
     if (metaTheme) metaTheme.content = theme === 'dark' ? '#03091A' : '#FFFFFF';
@@ -101,7 +101,6 @@ import { navigation } from '../data/site';
       const link = event.target.closest('a') as HTMLAnchorElement | null;
       if (!link) return;
       setOpen(false);
-      // Keep keyboard focus in the destination content after collapsing navigation.
       if (link.hash) {
         const target = document.getElementById(link.hash.slice(1));
         if (target) {
@@ -133,7 +132,7 @@ import { navigation } from '../data/site';
 <style>
   .site-header { background: rgba(3,9,26,.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(196,154,46,.15); }
   .desktop-navigation, .header-actions { display: none; }
-  .desktop-navigation { position: absolute; left: 50%; transform: translateX(-50%); }
+  .desktop-navigation { position: absolute; left: 50%; transform: translateX(-50%); padding-right: 1.5rem; }
   @media (min-width: 1200px) { .header-actions { gap: 1rem; } }
   .header-actions { margin-left: auto; }
   .header-cta { border: 1px solid var(--color-gold-500); color: var(--color-gold-500); }
@@ -152,7 +151,6 @@ import { navigation } from '../data/site';
   .mobile-theme-toggle { width: 100%; margin-top: 1.25rem; }
   .mobile-cta { display: flex; align-items: center; justify-content: center; min-height: 44px; margin-top: .75rem; padding: .65rem 1rem; border: 1px solid var(--color-gold-500); color: var(--color-gold-400); text-align: center; }
   .mobile-cta:hover, .mobile-cta:focus-visible { color: var(--color-navy-950); background: var(--color-gold-400); }
-  /* The unenhanced fallback remains usable when JavaScript is disabled. */
   .site-header:not(.enhanced) { position: relative; }
   @media (min-width: 1200px) {
     .desktop-navigation { display: flex; }
