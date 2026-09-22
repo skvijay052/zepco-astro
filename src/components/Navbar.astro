@@ -29,31 +29,31 @@ import { navigation } from '../data/site';
     <a class="mobile-cta text-xs tracking-widest uppercase font-semibold" href="#contact" data-open-engineer>Talk to an Engineer</a>
   </nav>
 </header>
-<script lang="ts">
-  const header = document.querySelector<HTMLElement>('.site-header');
-  const toggle = header?.querySelector<HTMLButtonElement>('.menu-toggle');
-  const menu = header?.querySelector<HTMLElement>('#mobile-navigation');
-  const openIcon = toggle?.querySelector<HTMLElement>('.menu-open-icon');
-  const closeIcon = toggle?.querySelector<HTMLElement>('.menu-close-icon');
-  const groups = Array.from(header?.querySelectorAll<HTMLDetailsElement>('.navigation-group') ?? []);
-  const themeToggles = Array.from(header?.querySelectorAll<HTMLButtonElement>('.theme-toggle') ?? []);
+<script>
+  const header = document.querySelector('.site-header');
+  const toggle = header?.querySelector('.menu-toggle');
+  const menu = header?.querySelector('#mobile-navigation');
+  const openIcon = toggle?.querySelector('.menu-open-icon');
+  const closeIcon = toggle?.querySelector('.menu-close-icon');
+  const groups = Array.from(header?.querySelectorAll('.navigation-group') ?? []);
+  const themeToggles = Array.from(header?.querySelectorAll('.theme-toggle') ?? []);
   const desktop = window.matchMedia('(min-width: 1200px)');
   const hoverAvailable = window.matchMedia('(hover: hover) and (pointer: fine)');
   const root = document.documentElement;
 
-  const setTheme = (theme: 'light' | 'dark') => {
+  const setTheme = (theme) => {
     root.dataset.theme = theme;
     try { localStorage.setItem('zepco-theme', theme); } catch {}
     themeToggles.forEach((button) => {
       const dark = theme === 'dark';
       button.setAttribute('aria-pressed', String(dark));
       button.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
-      const label = button.querySelector<HTMLElement>('.theme-toggle-label');
+      const label = button.querySelector('.theme-toggle-label');
       if (label) label.textContent = dark ? (button.classList.contains('mobile-theme-toggle') ? 'Light mode' : 'Light') : (button.classList.contains('mobile-theme-toggle') ? 'Dark mode' : 'Dark');
-      const icon = button.querySelector<HTMLElement>('.theme-icon');
+      const icon = button.querySelector('.theme-icon');
       if (icon) { icon.classList.toggle('theme-icon-sun', dark); icon.classList.toggle('theme-icon-moon', !dark); icon.innerHTML = dark ? '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>' : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.7A8.5 8.5 0 0 1 9.3 3a8.5 8.5 0 1 0 11.7 11.7Z"></path></svg>'; }
     });
-    const metaTheme = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
     if (metaTheme) metaTheme.content = theme === 'dark' ? '#03091A' : '#FFFFFF';
   };
 
@@ -66,7 +66,7 @@ import { navigation } from '../data/site';
 
   if (header && toggle && menu && openIcon && closeIcon) {
     const closeGroups = () => groups.forEach((group) => { group.open = false; });
-    const setOpen = (open: boolean) => {
+    const setOpen = (open) => {
       toggle.setAttribute('aria-expanded', String(open));
       toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
       menu.hidden = !open;
@@ -98,7 +98,7 @@ import { navigation } from '../data/site';
     });
     header.addEventListener('click', (event) => {
       if (!(event.target instanceof Element)) return;
-      const link = event.target.closest<HTMLAnchorElement>('a');
+      const link = event.target.closest('a');
       if (!link) return;
       setOpen(false);
       // Keep keyboard focus in the destination content after collapsing navigation.
