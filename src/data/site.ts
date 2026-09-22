@@ -7,7 +7,7 @@ export const site = {
   description: 'Advanced power electronics and electric propulsion systems for aerospace, defence, industrial, unmanned systems, mobility and energy applications.',
   links: {
     contact: undefined as string | undefined,
-    companyStory: '/about',
+    companyStory: '/our-story',
     allStories: '#stories',
     media: '#stories',
     blogs: '#stories',
