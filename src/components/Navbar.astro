@@ -12,7 +12,7 @@ import { navigation } from '../data/site';
     </nav>
     <div class="header-actions items-center gap-3">
       <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
-        <span class="theme-icon theme-icon-moon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 14.7A8.5 8.5 0 0 1 9.3 3a8.5 8.5 0 1 0 11.7 11.7Z"/></svg></span><span class="theme-toggle-label">Dark</span>
+        <span class="theme-icon theme-icon-moon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.5 14.8A8.5 8.5 0 1 1 9.2 3.5 7 7 0 0 0 20.5 14.8Z"/></svg></span><span class="theme-toggle-label">Dark</span>
       </button>
       <a href="#contact" data-open-engineer class="header-cta items-center px-5 py-2 text-xs tracking-widest uppercase font-semibold transition-all duration-200">Talk to an Engineer</a>
     </div>
@@ -24,7 +24,7 @@ import { navigation } from '../data/site';
   <nav id="mobile-navigation" aria-label="Mobile navigation" class="mobile-navigation px-6 pb-6">
     <NavigationItems items={navigation} variant="mobile" />
     <button class="theme-toggle mobile-theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
-      <span class="theme-icon theme-icon-moon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 14.7A8.5 8.5 0 0 1 9.3 3a8.5 8.5 0 1 0 11.7 11.7Z"/></svg></span><span class="theme-toggle-label">Dark mode</span>
+      <span class="theme-icon theme-icon-moon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.5 14.8A8.5 8.5 0 1 1 9.2 3.5 7 7 0 0 0 20.5 14.8Z"/></svg></span><span class="theme-toggle-label">Dark mode</span>
     </button>
     <a class="mobile-cta text-xs tracking-widest uppercase font-semibold" href="#contact" data-open-engineer>Talk to an Engineer</a>
   </nav>
@@ -51,7 +51,13 @@ import { navigation } from '../data/site';
       const label = button.querySelector('.theme-toggle-label') as HTMLElement | null;
       if (label) label.textContent = dark ? (button.classList.contains('mobile-theme-toggle') ? 'Light mode' : 'Light') : (button.classList.contains('mobile-theme-toggle') ? 'Dark mode' : 'Dark');
       const icon = button.querySelector('.theme-icon') as HTMLElement | null;
-      if (icon) { icon.classList.toggle('theme-icon-sun', dark); icon.classList.toggle('theme-icon-moon', !dark); icon.innerHTML = dark ? '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>' : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.7A8.5 8.5 0 1 0 9.3 3a8.5 8.5 0 0 0 11.7 11.7Z"></path></svg>'; }
+      if (icon) {
+        icon.classList.toggle('theme-icon-sun', dark);
+        icon.classList.toggle('theme-icon-moon', !dark);
+        icon.innerHTML = dark
+          ? '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>'
+          : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.8A8.5 8.5 0 1 1 9.2 3.5 7 7 0 0 0 20.5 14.8Z"></path></svg>';
+      }
     });
     const metaTheme = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement | null;
     if (metaTheme) metaTheme.content = theme === 'dark' ? '#03091A' : '#FFFFFF';
@@ -111,8 +117,7 @@ import { navigation } from '../data/site';
     });
     document.addEventListener('keydown', (event) => {
       if (event.key !== 'Escape') return;
-      const activeGroup = groups.find((group) => group.open && group.contains(document.activeElement))
-        ?? groups.find((group) => group.open);
+      const activeGroup = groups.find((group) => group.open && group.contains(document.activeElement)) ?? groups.find((group) => group.open);
       if (activeGroup) {
         event.preventDefault();
         activeGroup.open = false;
@@ -137,13 +142,13 @@ import { navigation } from '../data/site';
   .header-actions { margin-left: auto; }
   .header-cta { border: 1px solid var(--color-gold-500); color: var(--color-gold-500); }
   .header-cta:hover { background: var(--color-gold-500); color: var(--color-navy-950); }
-  .theme-toggle { min-height: 36px; padding: .5rem .7rem; border: 1px solid rgba(139,155,180,.35); color: var(--color-slate-blue); background: transparent; cursor: pointer; font-size: .625rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; transition: color .2s, border-color .2s, background .2s; }
-  .theme-toggle:hover, .theme-toggle:focus-visible { color: var(--color-gold-500); border-color: var(--color-gold-500); }
-  .theme-icon { display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; }
-  .theme-icon svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .theme-toggle { min-height: 36px; padding: .5rem .7rem; border: 0; color: var(--color-slate-blue); background: transparent; cursor: pointer; font-size: .625rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; transition: color .2s, background .2s; }
+  .theme-toggle:hover, .theme-toggle:focus-visible { color: var(--color-gold-500); }
+  .theme-icon { display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; }
+  .theme-icon svg { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
   .theme-icon-sun svg { color:#FFFFFF; stroke:#FFFFFF; }
   .theme-icon-moon svg { fill:currentColor; stroke:none; }
-  @media (min-width: 1200px) { .header-actions .theme-toggle { width:38px; min-width:38px; height:36px; padding:.5rem; display:inline-flex; align-items:center; justify-content:center; } .header-actions .theme-toggle .theme-toggle-label { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; } }
+  @media (min-width: 1200px) { .header-actions .theme-toggle { width:40px; min-width:40px; height:36px; padding:.4rem; display:inline-flex; align-items:center; justify-content:center; } .header-actions .theme-toggle .theme-toggle-label { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; } }
   .menu-toggle { color: var(--color-gold-500); width: 44px; height: 44px; align-items: center; justify-content: center; cursor: pointer; }
   .menu-toggle:not([hidden]) { display: flex; }
   .menu-toggle :global(.icon) { width: 24px; height: 24px; }
