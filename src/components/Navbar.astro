@@ -14,7 +14,7 @@ import { navigation } from '../data/site';
       <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
         <span class="theme-icon theme-icon-moon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 14.7A8.5 8.5 0 0 1 9.3 3a8.5 8.5 0 1 0 11.7 11.7Z"/></svg></span><span class="theme-toggle-label">Dark</span>
       </button>
-      <a href="#contact" class="header-cta items-center px-5 py-2 text-xs tracking-widest uppercase font-semibold transition-all duration-200">Talk to an Engineer</a>
+      <a href="#contact" data-open-engineer class="header-cta items-center px-5 py-2 text-xs tracking-widest uppercase font-semibold transition-all duration-200">Talk to an Engineer</a>
     </div>
     <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation" hidden>
       <span class="menu-open-icon"><Icon name="menu" /></span>
@@ -26,7 +26,7 @@ import { navigation } from '../data/site';
     <button class="theme-toggle mobile-theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
       <span class="theme-icon theme-icon-moon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 14.7A8.5 8.5 0 0 1 9.3 3a8.5 8.5 0 1 0 11.7 11.7Z"/></svg></span><span class="theme-toggle-label">Dark mode</span>
     </button>
-    <a class="mobile-cta text-xs tracking-widest uppercase font-semibold" href="#contact">Talk to an Engineer</a>
+    <a class="mobile-cta text-xs tracking-widest uppercase font-semibold" href="#contact" data-open-engineer>Talk to an Engineer</a>
   </nav>
 </header>
 <script>
