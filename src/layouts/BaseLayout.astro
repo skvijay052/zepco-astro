@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
 import { site } from '../data/site';
-import EngineerDrawer from '../components/EngineerDrawer.astro';
 interface Props { title?: string; description?: string; }
 const { title = site.title, description = site.description } = Astro.props;
 ---
@@ -29,6 +28,5 @@ const { title = site.title, description = site.description } = Astro.props;
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <slot />
-    <EngineerDrawer />
   </body>
 </html>
