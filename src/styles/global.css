@@ -70,7 +70,6 @@ html[data-theme='light'] body { background: #FFFFFF; color: #111111; }
 html[data-theme='light'] ::-webkit-scrollbar-track { background: #F7F7F7; }
 html[data-theme='light'] ::-webkit-scrollbar-thumb { background: #CFCFCF; }
 html[data-theme='light'] ::-webkit-scrollbar-thumb:hover { background: #5F5F5F; }
-html[data-theme='light'] .brand-logo { filter: brightness(0) !important; }
 html[data-theme='light'] [style*='var(--color-slate-blue)'] { color: #5F5F5F !important; }
 html[data-theme='light'] [style*='#ffffff'] { color: #111111 !important; }
 html[data-theme='light'] .site-header { background: rgba(255,255,255,.96) !important; border-bottom-color: #E5E5E5 !important; backdrop-filter: blur(12px); }
