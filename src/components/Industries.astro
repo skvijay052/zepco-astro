@@ -106,6 +106,17 @@ import { INDUSTRIES } from '../data/homepage';
   .industry-icon { width: 84px; height: 72px; display: block; transition: color .3s ease, transform .3s ease; }
   .industry-card:is(:hover, :focus-within) .industry-icon { color: var(--color-gold-500); transform: translateY(-2px); }
   .industry-card:is(:hover, :focus-within) > div:last-child { width: 40px !important; background: var(--color-gold-500) !important; }
+
+  /* Light mode: keep the same hover mapping, but make the selected industry image clearly visible. */
+  html[data-theme='light'] .section-industries { background: #eef2f7; }
+  html[data-theme='light'] .industry-backdrop.active { opacity: .32; }
+  html[data-theme='light'] .industry-photo { filter: saturate(.62) brightness(1.08) contrast(.98); }
+  html[data-theme='light'] .industry-vignette {
+    background: radial-gradient(ellipse at center, rgba(255,255,255,.02) 8%, rgba(238,242,247,.18) 58%, rgba(238,242,247,.62) 100%);
+  }
+  html[data-theme='light'] .industry-card { background: rgba(255,255,255,.62); }
+  html[data-theme='light'] .industry-card:is(:hover, :focus-within) { background: rgba(255,255,255,.78); }
+
   @media (prefers-reduced-motion: reduce) {
     .industry-backdrop { transition: none; }
     .industry-photo { transform: none; }
