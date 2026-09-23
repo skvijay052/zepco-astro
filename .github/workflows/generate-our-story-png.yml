@@ -1,0 +1,40 @@
+name: Generate Our Story PNG
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Convert engineering image to PNG
+        run: |
+          python3 -m pip install --quiet Pillow
+          python3 - <<'PY'
+          from PIL import Image
+          src = "public/images/our-story-engineering.webp"
+          dst = "public/images/our-story-engineering.png"
+          image = Image.open(src).convert("RGB")
+          image.save(dst, "PNG", optimize=True)
+          print(f"Created {dst}: {image.size}")
+          PY
+
+      - name: Commit PNG
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/images/our-story-engineering.png
+          if git diff --cached --quiet; then
+            echo "PNG already exists"
+            exit 0
+          fi
+          git commit -m "Add Our Story engineering PNG"
+          git push
