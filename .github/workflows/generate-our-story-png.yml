@@ -17,15 +17,8 @@ jobs:
 
       - name: Convert engineering image to PNG
         run: |
-          python3 -m pip install --quiet Pillow
-          python3 - <<'PY'
-          from PIL import Image
-          src = "public/images/our-story-engineering.avif"
-          dst = "public/images/our-story-engineering.png"
-          image = Image.open(src).convert("RGB")
-          image.save(dst, "PNG", optimize=True)
-          print(f"Created {dst}: {image.size}")
-          PY
+          magick public/images/our-story-engineering.avif -strip -define png:compression-level=9 public/images/our-story-engineering.png
+          file public/images/our-story-engineering.png
 
       - name: Commit PNG
         run: |
