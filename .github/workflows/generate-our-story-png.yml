@@ -21,7 +21,7 @@ jobs:
           B64=$(printf '%s' "$B64" | tr -cd 'A-Za-z0-9+/=')
           REM=$(( ${#B64} % 4 ))
           if [ "$REM" -ne 0 ]; then B64="${B64}$(printf '=%.0s' $(seq 1 $((4-REM))))"; fi
-          python3 - <<'PY'
+          python3 - <<PY
           import base64
           value = '''${B64}'''
           value += '=' * ((4 - len(value) % 4) % 4)
