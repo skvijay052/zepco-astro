@@ -6,7 +6,7 @@ on:
 
 jobs:
   restore-image:
-    if: contains(github.event.head_commit.message, 'Restore full Our Story engineering image') == false
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     permissions:
       contents: write
