@@ -36,6 +36,27 @@ const { title = site.title, description = site.description } = Astro.props;
       [data-reveal][data-delay="2"] { transition-delay: .16s; }
       [data-reveal][data-delay="3"] { transition-delay: .24s; }
       [data-reveal][data-delay="4"] { transition-delay: .32s; }
+      [data-reveal] > h1, [data-reveal] > h2, [data-reveal] > h3, [data-reveal] > p,
+      [data-reveal] > div > h1, [data-reveal] > div > h2, [data-reveal] > div > h3,
+      [data-reveal] > div > p, [data-reveal] > div > .eyebrow, [data-reveal] > div > .section-label,
+      [data-reveal] > div > a, [data-reveal] > div > nav, [data-reveal] > div > article {
+        opacity: 0;
+        transform: translate3d(0, 18px, 0);
+        transition: opacity .65s ease, transform .65s cubic-bezier(.22,1,.36,1);
+      }
+      [data-reveal].is-visible > h1, [data-reveal].is-visible > h2, [data-reveal].is-visible > h3,
+      [data-reveal].is-visible > p, [data-reveal].is-visible > div > h1, [data-reveal].is-visible > div > h2,
+      [data-reveal].is-visible > div > h3, [data-reveal].is-visible > div > p, [data-reveal].is-visible > div > .eyebrow,
+      [data-reveal].is-visible > div > .section-label, [data-reveal].is-visible > div > a,
+      [data-reveal].is-visible > div > nav, [data-reveal].is-visible > div > article {
+        opacity: 1;
+        transform: none;
+      }
+      [data-reveal].is-visible > div > article:nth-child(2) { transition-delay: .08s; }
+      [data-reveal].is-visible > div > article:nth-child(3) { transition-delay: .16s; }
+      [data-reveal].is-visible > div > article:nth-child(4) { transition-delay: .24s; }
+      [data-reveal].is-visible > div > article:nth-child(5) { transition-delay: .32s; }
+      [data-reveal].is-visible > div > article:nth-child(6) { transition-delay: .4s; }
       @media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; transition: none; } }
     </style>
     <script is:inline>
