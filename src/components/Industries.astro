@@ -67,7 +67,7 @@ import { INDUSTRIES } from '../data/homepage';
       const image = backdrop.querySelector('.industry-photo') as HTMLElement | null;
       const src = image?.dataset.src;
       if (image && src && !image.style.backgroundImage) {
-        image.style.backgroundImage = \`url("${src}")\`;
+        image.style.backgroundImage = `url("${src}")`;
         image.style.backgroundPosition = 'center';
       }
     };
