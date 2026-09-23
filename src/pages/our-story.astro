@@ -7,7 +7,7 @@ import Icon from '../components/Icon.astro';
 import EngineerDrawer from '../components/EngineerDrawer.astro';
 
 const storyBanner = '/images/our-story-banner.webp';
-const imageTwo = '/images/our-story-engineering.webp';
+const imageTwo = '/images/our-story-engineering.png';
 ---
 
 <BaseLayout
@@ -47,7 +47,7 @@ const imageTwo = '/images/our-story-engineering.webp';
 
     <section class="story-section section-blue" data-reveal>
       <div class="story-container people-grid">
-        <div class="people-image"><picture><source srcset="/images/our-story-engineering.avif" type="image/avif" /><img src={imageTwo} alt="Engineers collaborating on electronics" loading="lazy" decoding="async" /></picture></div>
+        <div class="people-image"><img src={imageTwo} alt="Engineers collaborating on electronics" loading="lazy" decoding="async" /></div>
         <div class="section-content">
           <div class="section-kicker light">02 <i></i> More Than Technology</div>
           <h2>More Than<br />Technology</h2>
@@ -73,14 +73,14 @@ const imageTwo = '/images/our-story-engineering.webp';
           </div>
         </div>
         <figure class="feature-image">
-          <picture><source srcset="/images/our-story-engineering.avif" type="image/avif" /><img src={imageTwo} alt="Engineer working with an electronics prototype" loading="lazy" decoding="async" /></picture>
+          <img src={imageTwo} alt="Engineer working with an electronics prototype" loading="lazy" decoding="async" />
           <figcaption><span>Engineering in practice</span><strong>Knowledge transferred.<br />Problems solved.</strong></figcaption>
         </figure>
       </div>
     </section>
 
     <section class="today-section" data-reveal>
-      <div class="today-image"><picture><source srcset="/images/our-story-engineering.avif" type="image/avif" /><img src={imageTwo} alt="Zepco engineering work" loading="lazy" decoding="async" /></picture><div class="today-image-overlay"></div></div>
+      <div class="today-image"><img src={imageTwo} alt="Zepco engineering work" loading="lazy" decoding="async" /><div class="today-image-overlay"></div></div>
       <div class="today-content">
         <div class="section-kicker light">04 <i></i> Zepco Today</div>
         <h2>Zepco Today</h2>
