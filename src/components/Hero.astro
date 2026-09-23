@@ -74,7 +74,7 @@ import Icon from './Icon.astro';
 
 <style>
   .hero { background: var(--color-navy-950); }
-  .hero-image { opacity: .55; transform: scale(var(--hero-scale, 1)); transition: transform .05s linear; }
+  .hero-image { opacity: .55; transform: scale(var(--hero-scale, 1)); transition: transform .05s linear; animation: hero-bg-drift 22s ease-in-out infinite alternate; transform-origin: center center; }
   .hero-shade { background: linear-gradient(105deg, rgba(3,9,26,.93) 0%, rgba(3,9,26,.76) 45%, rgba(3,9,26,.35) 100%); }
   .hero-bottom-shade { background: linear-gradient(to bottom, transparent, #03091A); }
   .hero-grid { background-image: linear-gradient(rgba(196,154,46,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(196,154,46,.03) 1px, transparent 1px); background-size: 80px 80px; }
@@ -92,6 +92,7 @@ import Icon from './Icon.astro';
   .hero-secondary:hover { border-color: var(--color-gold-500); color: var(--color-gold-500); }
   .hero-scroll { opacity: var(--cue-opacity, 1); color: rgba(196,154,46,.5); pointer-events: none; }
   .hero-scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, #C49A2E, transparent); }
+  @keyframes hero-bg-drift { from { translate: -1.2% -0.6%; scale: 1.02; } to { translate: 1.2% 0.6%; scale: 1.08; } }
   @keyframes hero-fade-up { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes hero-line-grow { from { transform: scaleX(0); opacity: 0; } to { transform: scaleX(1); opacity: 1; } }
   @keyframes hero-pulse { 0%, 100% { opacity: .6; } 50% { opacity: 1; } }
@@ -103,6 +104,6 @@ import Icon from './Icon.astro';
   }
   @media (prefers-reduced-motion: reduce) {
     .hero-content { opacity: 1; transform: none; }
-    .hero-image { transform: none; }
+    .hero-image { transform: none; animation: none; }
   }
 </style>
