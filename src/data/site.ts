@@ -1,12 +1,10 @@
-/** Set these destinations when the additional pages and contact channel are ready.
- * No email address, external account, or product page was included in the export.
- */
+/** Set these destinations when the additional pages and contact channel are ready. */
 export const site = {
   name: 'Zepco Technologies',
   title: 'Zepco Technologies | Power Electronics & Electric Propulsion',
   description: 'Advanced power electronics and electric propulsion systems for aerospace, defence, industrial, unmanned systems, mobility and energy applications.',
   links: {
-    contact: undefined as string | undefined,
+    contact: '/contact' as string | undefined,
     companyStory: '/our-story',
     allStories: '#stories',
     media: '#stories',
@@ -26,9 +24,6 @@ export interface NavigationItem extends NavigationLink {
   children?: readonly NavigationLink[];
 }
 
-/** Menu labels and order match the latest homepage.zip Figma Make export.
- * Use the existing homepage content until dedicated page URLs are supplied.
- */
 export const navigation: readonly NavigationItem[] = [
   { id: 'story', label: 'Our Story', href: site.links.companyStory },
   {
@@ -64,10 +59,10 @@ export const navigation: readonly NavigationItem[] = [
       { label: 'Battery Management Systems', href: '#solutions' },
       { label: 'Battery Packs', href: '#solutions' },
       { label: 'Automatic Test Equipment', href: '#solution-automatic-test-equipment' },
-      { label: 'Custom Solutions', href: '#contact' },
+      { label: 'Custom Solutions', href: site.links.contact },
     ],
   },
-  { id: 'contact', label: 'Contact', href: '#contact' },
+  { id: 'contact', label: 'Contact', href: site.links.contact },
   { id: 'media', label: 'Media', href: site.links.media },
   { id: 'blogs', label: 'Blogs', href: site.links.blogs },
 ];
