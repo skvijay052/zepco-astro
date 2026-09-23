@@ -30,24 +30,11 @@ import EngineerDrawer from '../components/EngineerDrawer.astro';
             <div class="section-kicker"><span></span> Start a Conversation</div>
             <h2>Talk to<br /><em>an Engineer.</em></h2>
             <p class="intro">Share a few details and our engineering team will get back to you.</p>
-
             <form id="contact-form" class="contact-form">
-              <label>
-                <span>Name</span>
-                <input name="name" type="text" autocomplete="name" required placeholder="Your name" />
-              </label>
-              <label>
-                <span>Email</span>
-                <input name="email" type="email" autocomplete="email" required placeholder="you@company.com" />
-              </label>
-              <label>
-                <span>Phone Number</span>
-                <input name="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210" />
-              </label>
-              <label>
-                <span>Message</span>
-                <textarea name="message" rows="6" required placeholder="Tell us about your requirement..."></textarea>
-              </label>
+              <label><span>Name</span><input name="name" type="text" autocomplete="name" required placeholder="Your name" /></label>
+              <label><span>Email</span><input name="email" type="email" autocomplete="email" required placeholder="you@company.com" /></label>
+              <label><span>Phone Number</span><input name="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210" /></label>
+              <label><span>Message</span><textarea name="message" rows="6" required placeholder="Tell us about your requirement..."></textarea></label>
               <button type="submit">Submit <span aria-hidden="true">→</span></button>
               <p id="contact-form-status" class="form-status" role="status" aria-live="polite"></p>
             </form>
@@ -57,25 +44,12 @@ import EngineerDrawer from '../components/EngineerDrawer.astro';
             <div class="section-kicker"><span></span> Find Us</div>
             <h2>Engineering<br /><em>from Bengaluru.</em></h2>
             <p class="detail-copy">Our engineering and product development work is based in Bengaluru, Karnataka.</p>
-
             <div class="detail-list">
-              <div>
-                <span>Address</span>
-                <strong>Ground Floor, Survey No: 19/3,<br />Bikasipura Main Road,<br />JC Industrial Estate,<br />Bengaluru – 560 062</strong>
-              </div>
-              <div>
-                <span>Email</span>
-                <a href="mailto:info@zepcotek.com">info@zepcotek.com</a>
-              </div>
-              <div>
-                <span>Phone</span>
-                <a href="tel:+918068954293">+91 80 6895 4293</a>
-              </div>
+              <div><span>Address</span><strong>Ground Floor, Survey No: 19/3,<br />Bikasipura Main Road,<br />JC Industrial Estate,<br />Bengaluru – 560 062</strong></div>
+              <div><span>Email</span><a href="mailto:info@zepcotek.com">info@zepcotek.com</a></div>
+              <div><span>Phone</span><a href="tel:+918068954293">+91 80 6895 4293</a></div>
             </div>
-
-            <a class="directions-link" href="https://www.google.com/maps/dir/?api=1&destination=Zepco+Technologies%2C+Bikasipura+Main+Road%2C+Bengaluru%2C+Karnataka+560062" target="_blank" rel="noopener noreferrer">
-              Get Directions <span aria-hidden="true">↗</span>
-            </a>
+            <a class="directions-link" href="https://www.google.com/maps/dir/?api=1&destination=Zepco+Technologies%2C+Bikasipura+Main+Road%2C+Bengaluru%2C+Karnataka+560062" target="_blank" rel="noopener noreferrer">Get Directions <span aria-hidden="true">↗</span></a>
           </aside>
         </div>
       </div>
@@ -84,24 +58,12 @@ import EngineerDrawer from '../components/EngineerDrawer.astro';
     <section class="map-section">
       <div class="max-w-7xl mx-auto px-6">
         <div class="map-heading">
-          <div>
-            <div class="section-kicker"><span></span> Our Location</div>
-            <h2>Come meet<br /><em>the team.</em></h2>
-          </div>
+          <div><div class="section-kicker"><span></span> Our Location</div><h2>Come meet<br /><em>the team.</em></h2></div>
           <p>Visit our Bengaluru facility to discuss your next power electronics, propulsion or electrification challenge.</p>
         </div>
         <div class="map-card">
-          <iframe
-            title="Zepco Technologies location in Bengaluru"
-            src="https://www.google.com/maps?q=Zepco+Technologies%2C+Bikasipura+Main+Road%2C+Bengaluru%2C+Karnataka+560062&output=embed"
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-          <div class="map-label">
-            <span class="map-pin">●</span>
-            <div><strong>Zepco Technologies</strong><small>Bikasipura Main Road · Bengaluru 560 062</small></div>
-          </div>
+          <iframe title="Zepco Technologies location in Bengaluru" src="https://www.google.com/maps?q=Zepco+Technologies%2C+Bikasipura+Main+Road%2C+Bengaluru%2C+Karnataka+560062&output=embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div class="map-label"><span class="map-pin">●</span><div><strong>Zepco Technologies</strong><small>Bikasipura Main Road · Bengaluru 560 062</small></div></div>
         </div>
       </div>
     </section>
@@ -122,7 +84,6 @@ import EngineerDrawer from '../components/EngineerDrawer.astro';
 <script>
   const form = document.querySelector<HTMLFormElement>('#contact-form');
   const status = document.querySelector<HTMLElement>('#contact-form-status');
-
   form?.addEventListener('submit', (event) => {
     event.preventDefault();
     if (!form.reportValidity()) return;
@@ -133,8 +94,9 @@ import EngineerDrawer from '../components/EngineerDrawer.astro';
 
 <style>
   .contact-page { background:#fff; color:#111; }
-  .contact-hero { min-height:68vh; display:flex; align-items:center; position:relative; overflow:hidden; padding:9rem 0 6rem; background:#03091a; color:#fff; }
-  .hero-grid { position:absolute; inset:0; opacity:.32; background-image:linear-gradient(rgba(196,154,46,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(196,154,46,.09) 1px,transparent 1px); background-size:72px 72px; mask-image:linear-gradient(to bottom,#000,transparent 88%); }
+  .contact-hero { min-height:68vh; display:flex; align-items:center; position:relative; overflow:hidden; padding:9rem 0 6rem; background:#03091a url('/images/our-story-engineering.webp') center 42% / cover no-repeat; color:#fff; }
+  .contact-hero::before { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(3,9,26,.94) 0%,rgba(3,9,26,.78) 48%,rgba(3,9,26,.42) 100%); }
+  .hero-grid { position:absolute; inset:0; opacity:.2; background-image:linear-gradient(rgba(196,154,46,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(196,154,46,.09) 1px,transparent 1px); background-size:72px 72px; mask-image:linear-gradient(to bottom,#000,transparent 88%); }
   .hero-copy { max-width:850px; }
   .eyebrow,.section-kicker { display:flex; align-items:center; gap:.75rem; color:#c49a2e; font-size:10px; letter-spacing:.28em; text-transform:uppercase; font-weight:600; }
   .eyebrow span,.section-kicker span { display:block; width:32px; height:1px; background:#c49a2e; }
@@ -197,7 +159,7 @@ import EngineerDrawer from '../components/EngineerDrawer.astro';
     .map-heading { align-items:start; flex-direction:column; gap:1rem; }
   }
   @media(max-width:600px) {
-    .contact-hero { min-height:65vh; padding:8rem 0 4.5rem; }
+    .contact-hero { min-height:65vh; padding:8rem 0 4.5rem; background-position:center center; }
     .contact-hero h1 { font-size:3.5rem; }
     .contact-main { padding:5rem 0; }
     .contact-form-card { padding:1.5rem; }
