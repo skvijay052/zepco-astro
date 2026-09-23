@@ -4,7 +4,7 @@ export const site = {
   title: 'Zepco Technologies | Power Electronics & Electric Propulsion',
   description: 'Advanced power electronics and electric propulsion systems for aerospace, defence, industrial, unmanned systems, mobility and energy applications.',
   links: {
-    contact: '/contact' as string | undefined,
+    contact: '/contact',
     companyStory: '/our-story',
     allStories: '#stories',
     media: '#stories',
