@@ -19,6 +19,8 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq libavif-bin
+          file public/images/our-story-engineering.avif
+          xxd -l 128 public/images/our-story-engineering.avif
           avifdec public/images/our-story-engineering.avif public/images/our-story-engineering.png
           file public/images/our-story-engineering.png
 
