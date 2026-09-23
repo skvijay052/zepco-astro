@@ -139,12 +139,15 @@ html[data-theme='light'] .industry-glow-blue,
 html[data-theme='light'] .industry-glow-gold,
 html[data-theme='light'] .industry-haze,
 html[data-theme='light'] .industry-horizon { background: none !important; }
-html[data-theme='light'] .industry-backdrops { display: none !important; }
-html[data-theme='light'] .section-industries > .max-w-7xl > .grid { background: #E5E5E5 !important; }
-html[data-theme='light'] .industry-card { background: #FFFFFF !important; }
-html[data-theme='light'] .industry-card:is(:hover, :focus-within) { background: #F7F7F7 !important; }
+html[data-theme='light'] .industry-backdrops { display: block !important; opacity: 1 !important; }
+html[data-theme='light'] .industry-backdrop { opacity: .82 !important; }
+html[data-theme='light'] .industry-photo { filter: brightness(1.22) saturate(1.08) !important; transform: scale(1.07); }
+html[data-theme='light'] .industry-vignette { background: linear-gradient(90deg, rgba(247,247,247,.72) 0%, rgba(247,247,247,.42) 48%, rgba(247,247,247,.62) 100%) !important; }
+html[data-theme='light'] .section-industries > .max-w-7xl > .grid { background: rgba(196,154,46,.14) !important; }
+html[data-theme='light'] .industry-card { background: rgba(255,255,255,.78) !important; backdrop-filter: blur(3px); }
+html[data-theme='light'] .industry-card:is(:hover, :focus-within) { background: rgba(247,247,247,.68) !important; }
 html[data-theme='light'] .industry-card h3 { color: #111111 !important; }
-html[data-theme='light'] .industry-card p { color: #5F5F5F !important; }
+html[data-theme='light'] .industry-card p { color: #3F3F3F !important; }
 html[data-theme='light'] .industry-card > div:first-child > span { color: #8A6919 !important; }
 
 /* Capabilities */
