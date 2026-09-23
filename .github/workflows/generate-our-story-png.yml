@@ -17,7 +17,9 @@ jobs:
 
       - name: Convert engineering image to PNG
         run: |
-          magick public/images/our-story-engineering.avif -strip -define png:compression-level=9 public/images/our-story-engineering.png
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq imagemagick
+          convert public/images/our-story-engineering.avif -strip -define png:compression-level=9 public/images/our-story-engineering.png
           file public/images/our-story-engineering.png
 
       - name: Commit PNG
