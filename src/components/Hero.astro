@@ -96,6 +96,10 @@ import Icon from './Icon.astro';
   @keyframes hero-fade-up { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes hero-line-grow { from { transform: scaleX(0); opacity: 0; } to { transform: scaleX(1); opacity: 1; } }
   @keyframes hero-pulse { 0%, 100% { opacity: .6; } 50% { opacity: 1; } }
+  @media (max-width: 1599px) and (min-width: 901px) {
+    .hero-headline { font-size: clamp(2.8rem, 6vw, 5.4rem); }
+    .hero-intro { font-size: clamp(1.3rem, 2.7vw, 2.25rem); }
+  }
   @media (prefers-reduced-motion: no-preference) {
     .hero-reveal { animation: hero-fade-up .9s ease calc(var(--reveal-delay, 0ms) + 60ms) both; }
     .hero-eyebrow-line { transform-origin: left; animation: hero-line-grow .8s ease .16s both; }
