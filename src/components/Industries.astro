@@ -61,6 +61,11 @@ import { INDUSTRIES } from '../data/homepage';
         const isActive = id !== null && backdrop.dataset.backdrop === id;
         backdrop.classList.toggle('active', isActive);
       });
+      if (id) {
+        industries.dataset.activeIndustry = id;
+      } else {
+        delete industries.dataset.activeIndustry;
+      }
     };
 
     const preload = (backdrop: HTMLElement) => {
@@ -100,6 +105,25 @@ import { INDUSTRIES } from '../data/homepage';
   .industry-backdrop.active { opacity: .16; }
   .industry-photo { background-size: cover; background-position: center; filter: saturate(.35) brightness(1.45); transform: scale(1.04); }
   .industry-vignette { background: radial-gradient(ellipse at center, transparent 12%, rgba(4,9,30,.72) 78%, #04091E 100%); }
+
+  /* Light mode uses the exact same active-backdrop mechanism as dark mode.
+     Only the visual treatment changes; hover/focus/tap still toggles .active. */
+  html[data-theme='light'] .section-industries { background: #eef2f7; }
+  html[data-theme='light'] .industry-backdrop { opacity: 0; }
+  html[data-theme='light'] .industry-backdrop.active { opacity: .34; }
+  html[data-theme='light'] .industry-photo {
+    filter: saturate(.7) brightness(1.02) contrast(1.02);
+    transform: scale(1.04);
+  }
+  html[data-theme='light'] .industry-vignette {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(255,255,255,.02) 0%,
+      rgba(255,255,255,.08) 42%,
+      rgba(238,242,247,.35) 78%,
+      rgba(238,242,247,.82) 100%
+    );
+  }
   .industry-card { position: relative; z-index: 2; background: rgba(4,10,28,.54); }
   .industry-card:is(:hover, :focus-within) { background: rgba(12,27,56,.78); }
   .industry-icon-wrap { width: 84px; height: 72px; color: rgba(196,154,46,0.72); }
