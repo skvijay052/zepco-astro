@@ -1,0 +1,58 @@
+/* Shared inner-page banner treatment. Homepage .hero is intentionally excluded. */
+.story-hero,
+.contact-hero,
+.about-hero {
+  min-height: 64vh !important;
+}
+
+.story-hero .hero-grid,
+.contact-hero .hero-grid,
+.about-hero .about-grid {
+  opacity: .22 !important;
+  background-image:
+    linear-gradient(rgba(196,154,46,.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(196,154,46,.16) 1px, transparent 1px) !important;
+  background-size: 80px 80px !important;
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 72%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 72%, transparent 100%);
+}
+
+.story-hero .hero-grid::after,
+.contact-hero .hero-grid::after,
+.about-hero .about-grid::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(196,154,46,.42), transparent);
+}
+
+.story-hero .hero-grid,
+.contact-hero .hero-grid,
+.about-hero .about-grid { position: absolute; inset: 0; }
+
+.story-hero .hero-grid::before,
+.contact-hero .hero-grid::before,
+.about-hero .about-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 18%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(196,154,46,.32), transparent);
+}
+
+@media (max-width: 900px) {
+  .story-hero,
+  .contact-hero,
+  .about-hero { min-height: 58vh !important; }
+}
+
+@media (max-width: 600px) {
+  .story-hero,
+  .contact-hero,
+  .about-hero { min-height: 54vh !important; }
+}
