@@ -7,20 +7,13 @@ import { PILLARS } from '../data/homepage';
           <div class="h-px w-8" style={{ background: "var(--color-gold-500)" }} />
           <span class="text-[10px] tracking-[0.3em] uppercase" style={{ color: "var(--color-gold-500)" }}>Trust</span>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-16 items-end">
-          <div class="md:col-span-6">
-            <h2 class="font-display font-bold uppercase text-5xl leading-tight" style={{ letterSpacing: "0.02em" }}>
-              Why Customers<br />Trust <span style={{ color: "var(--color-gold-500)" }}>Zepco</span>
-            </h2>
-          </div>
-          <div class="md:col-span-6">
-            <p class="text-sm leading-relaxed font-light" style={{ color: "var(--color-slate-blue)" }}>
-              Built on Engineering. Proven Through Execution.
-            </p>
-            <p class="text-sm leading-relaxed mt-4 font-light" style={{ color: "var(--color-slate-blue)" }}>
-              Trust is earned through engineering excellence, technical integrity and consistent execution. Every project reflects our commitment to solving complex power electronics and propulsion challenges through collaborative development, rigorous validation and long-term partnership.
-            </p>
-          </div>
+        <div class="mb-16">
+          <h2 class="font-display font-bold uppercase text-5xl leading-tight" style={{ letterSpacing: "0.02em" }}>
+            Why Customers<br />Trust <span style={{ color: "var(--color-gold-500)" }}>Zepco</span>
+          </h2>
+          <p class="text-sm leading-relaxed mt-8 font-light max-w-none w-full" style={{ color: "var(--color-slate-blue)" }}>
+            Trust is earned through engineering excellence, technical integrity and consistent execution. Every project reflects our commitment to solving complex power electronics and propulsion challenges through collaborative development, rigorous validation and long-term partnership.
+          </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-5 gap-px" style={{ background: "rgba(196,154,46,0.1)" }}>
           {PILLARS.map((p, i) => (
