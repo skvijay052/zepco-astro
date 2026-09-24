@@ -28,14 +28,23 @@ const { title = site.title, description = site.description } = Astro.props;
   </head>
 
     <style is:global>
-      /* Homepage main section headings use normal capitalization; banner headings remain unchanged. */
+      /* Main section headings use normal capitalization; banner/hero headings remain unchanged. */
       .section-about > div h2,
       .section-industries > div h2,
       .section-capabilities > div h2,
       .section-trust > div h2,
       .section-solutions > div h2,
       .section-stories > div h2,
-      .section-contact h2 {
+      .section-contact h2,
+      .our-story-page .section-heading h2,
+      .our-story-page .section-content h2,
+      .our-story-page .today-content h2,
+      .our-story-page .future-section h2,
+      .our-story-page .story-cta h2,
+      .contact-page .contact-form-card h2,
+      .contact-page .contact-details h2,
+      .contact-page .map-heading h2,
+      .contact-page .contact-bottom h2 {
         text-transform: none !important;
       }
 
