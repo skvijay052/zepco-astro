@@ -8,6 +8,8 @@ import Capabilities from '../components/Capabilities.astro';
 import WhyTrust from '../components/WhyTrust.astro';
 import FeaturedSolutions from '../components/FeaturedSolutions.astro';
 import EngineeringStories from '../components/EngineeringStories.astro';
+import Blogs from '../components/Blogs.astro';
+import Media from '../components/Media.astro';
 import FinalCTA from '../components/FinalCTA.astro';
 import Footer from '../components/Footer.astro';
 import EngineerDrawer from '../components/EngineerDrawer.astro';
@@ -22,6 +24,8 @@ import EngineerDrawer from '../components/EngineerDrawer.astro';
     <WhyTrust />
     <FeaturedSolutions />
     <EngineeringStories />
+    <Blogs />
+    <Media />
     <FinalCTA />
   </main>
   <Footer />
@@ -36,14 +40,11 @@ import EngineerDrawer from '../components/EngineerDrawer.astro';
         { section: '#solutions', label: 'Featured Solutions', heading: 'Solutions that Power Innovation' },
         { section: '#stories', label: 'Engineering Stories', heading: 'Proof, Not Promises' },
       ];
-
       updates.forEach(({ section, label, heading }) => {
         const root = document.querySelector(section);
         if (!root) return;
-
         const labelEl = root.querySelector('.flex.items-center.gap-3.mb-4 span');
         const headingEl = root.querySelector('h2');
-
         if (labelEl) labelEl.textContent = label;
         if (headingEl) {
           headingEl.textContent = heading;
@@ -52,7 +53,6 @@ import EngineerDrawer from '../components/EngineerDrawer.astro';
         }
       });
     };
-
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', updateHomepageHeadings, { once: true });
     } else {
@@ -61,7 +61,6 @@ import EngineerDrawer from '../components/EngineerDrawer.astro';
   </script>
 
   <style is:global>
-    /* Hide the secondary/right-side heading text on the homepage sections. */
     #industries > div.relative > div.flex.flex-col > p,
     #capabilities > div > div.flex.flex-col > p,
     #trust > div > div.grid > div:last-child > p:first-child,
