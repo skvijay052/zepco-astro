@@ -65,7 +65,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--color-gold-400)
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
-/* V2 light theme. */
 html[data-theme='light'] body { background: #FFFFFF; color: #111111; }
 html[data-theme='light'] ::-webkit-scrollbar-track { background: #F7F7F7; }
 html[data-theme='light'] ::-webkit-scrollbar-thumb { background: #CFCFCF; }
@@ -95,7 +94,6 @@ html[data-theme='light'] .theme-toggle { border-color: #D0D0D0 !important; color
 html[data-theme='light'] .theme-toggle:hover,
 html[data-theme='light'] .theme-toggle:focus-visible { border-color: #018AC1 !important; color: #018AC1 !important; }
 
-/* Hero — keep the homepage banner visually identical to dark mode. */
 html[data-theme='light'] .hero { background: #03091A !important; color: #FFFFFF !important; }
 html[data-theme='light'] .hero-shade { background: linear-gradient(105deg, rgba(3,9,26,.93) 0%, rgba(3,9,26,.76) 45%, rgba(3,9,26,.35) 100%) !important; }
 html[data-theme='light'] .hero-bottom-shade { background: linear-gradient(to bottom, transparent, #03091A) !important; }
@@ -111,7 +109,6 @@ html[data-theme='light'] .hero-scroll { color: rgba(1,138,193,.5) !important; }
 html[data-theme='light'] .hero-scroll-line { background: linear-gradient(to bottom, #018AC1, transparent) !important; }
 html[data-theme='light'] .hero-content .text-slate-blue { color: #8B9BB4 !important; }
 
-/* Shared light surfaces and typography */
 html[data-theme='light'] .section-about,
 html[data-theme='light'] .section-capabilities,
 html[data-theme='light'] .section-solutions { background: #FFFFFF !important; color: #111111 !important; }
@@ -128,13 +125,9 @@ html[data-theme='light'] .section-trust h2,
 html[data-theme='light'] .section-solutions h2,
 html[data-theme='light'] .section-stories h2,
 html[data-theme='light'] .section-contact h2 { color: #111111 !important; }
-
-/* About */
 html[data-theme='light'] .section-about .md\\:col-span-8 { border-left-color: #E5E5E5 !important; }
 html[data-theme='light'] .section-about .mt-12 { background: #F7F7F7 !important; border-left-color: #018AC1 !important; }
 html[data-theme='light'] .section-about .mt-12 p { color: #1F1F1F !important; }
-
-/* Industries */
 html[data-theme='light'] .industry-glow-blue,
 html[data-theme='light'] .industry-glow-gold,
 html[data-theme='light'] .industry-haze,
@@ -150,41 +143,77 @@ html[data-theme='light'] .industry-card:is(:hover, :focus-within) { background: 
 html[data-theme='light'] .industry-card h3 { color: #111111 !important; }
 html[data-theme='light'] .industry-card p { color: #3F3F3F !important; }
 html[data-theme='light'] .industry-card > div:first-child > span { color: #018AC1 !important; }
-
-/* Capabilities */
 html[data-theme='light'] .capability-card { background: #F7F7F7 !important; border-color: #E5E5E5 !important; }
 html[data-theme='light'] .capability-card img { filter: brightness(.9) saturate(.8) !important; }
 html[data-theme='light'] .capability-card .absolute.inset-0 { background: transparent !important; }
 html[data-theme='light'] .capability-card h3 { color: #111111 !important; }
 html[data-theme='light'] .capability-card p { color: #5F5F5F !important; }
 html[data-theme='light'] .capability-card .learn-more { color: #018AC1 !important; }
-
-/* Trust */
 html[data-theme='light'] .section-trust > .max-w-7xl > .grid { background: #FFFFFF !important; }
 html[data-theme='light'] .section-trust > .max-w-7xl > .grid.mb-16 { background: transparent !important; }
 html[data-theme='light'] .section-trust .group { background: #FFFFFF !important; }
 html[data-theme='light'] .section-trust .group:hover { background: #FFFFFF !important; }
 html[data-theme='light'] .section-trust .group h3 { color: #111111 !important; }
 html[data-theme='light'] .section-trust .group p { color: #5F5F5F !important; }
-
-/* Solutions */
 html[data-theme='light'] .section-solutions > .max-w-7xl > .grid { background: #E5E5E5 !important; }
 html[data-theme='light'] .section-solutions .group img { filter: brightness(.86) saturate(.75) !important; }
 html[data-theme='light'] .section-solutions .group > .absolute.inset-0.transition-opacity { background: rgba(255,255,255,.12) !important; }
 html[data-theme='light'] .section-solutions .group h3 { color: #FFFFFF !important; text-shadow: 0 1px 3px rgba(0,0,0,.55); }
 html[data-theme='light'] .section-solutions .group .text-\\[10px\\] { color: #018AC1 !important; }
-
-/* Engineering stories */
 html[data-theme='light'] .section-stories .group > .relative { background: #FFFFFF !important; }
 html[data-theme='light'] .section-stories .group img { filter: brightness(.92) saturate(.82) !important; }
 html[data-theme='light'] .section-stories .group h3 { color: #111111 !important; }
 html[data-theme='light'] .section-stories .group .text-\\[10px\\] { color: #018AC1 !important; }
-
-/* Final CTA — keep "Let's Work Together" visually identical to dark mode. */
 html[data-theme='light'] .section-contact { background: #040C1E !important; color: #FFFFFF !important; }
 html[data-theme='light'] .section-contact h2 { color: #FFFFFF !important; }
 html[data-theme='light'] .section-contact p { color: #8B9BB4 !important; }
 html[data-theme='light'] .section-contact a { background: #018AC1 !important; color: #03091A !important; }
 html[data-theme='light'] .section-contact a:hover { background: #018AC1 !important; color: #03091A !important; }
-
 html[data-theme='dark'] body { background: #03091A; color: #FFFFFF; }
+
+/* Our Story + Contact page accent override */
+html[data-theme='light'] .our-story-page .eyebrow,
+html[data-theme='light'] .our-story-page .section-kicker,
+html[data-theme='light'] .our-story-page .hero-copy h1 em,
+html[data-theme='light'] .our-story-page h2 em,
+html[data-theme='light'] .contact-page .eyebrow,
+html[data-theme='light'] .contact-page .section-kicker,
+html[data-theme='light'] .contact-page h1 em,
+html[data-theme='light'] .contact-page h2 em,
+html[data-theme='light'] .contact-page .directions-link { color:#018AC1 !important; }
+html[data-theme='light'] .our-story-page .eyebrow span,
+html[data-theme='light'] .our-story-page .section-kicker i,
+html[data-theme='light'] .our-story-page .hero-scroll span,
+html[data-theme='light'] .contact-page .eyebrow span,
+html[data-theme='light'] .contact-page .section-kicker span { background:#018AC1 !important; }
+html[data-theme='light'] .our-story-page .principles b,
+html[data-theme='light'] .contact-page .form-status { color:#018AC1 !important; }
+html[data-theme='light'] .contact-page .contact-form input:focus,
+html[data-theme='light'] .contact-page .contact-form textarea:focus { border-color:#018AC1 !important; box-shadow:0 0 0 2px rgba(1,138,193,.1) !important; }
+html[data-theme='light'] .contact-page .contact-form button { background:#018AC1 !important; }
+html[data-theme='light'] .contact-page .contact-form button:hover { background:#018AC1 !important; }
+html[data-theme='light'] .contact-page .directions-link:hover { color:#018AC1 !important; }
+html[data-theme='light'] .contact-page .map-pin { color:#018AC1 !important; }
+
+html[data-theme='dark'] .our-story-page .eyebrow,
+html[data-theme='dark'] .our-story-page .section-kicker,
+html[data-theme='dark'] .our-story-page .hero-copy h1 em,
+html[data-theme='dark'] .our-story-page h2 em,
+html[data-theme='dark'] .contact-page .eyebrow,
+html[data-theme='dark'] .contact-page .section-kicker,
+html[data-theme='dark'] .contact-page h1 em,
+html[data-theme='dark'] .contact-page h2 em,
+html[data-theme='dark'] .contact-page .directions-link { color:#018AC1 !important; }
+html[data-theme='dark'] .our-story-page .eyebrow span,
+html[data-theme='dark'] .our-story-page .section-kicker i,
+html[data-theme='dark'] .our-story-page .hero-scroll span,
+html[data-theme='dark'] .contact-page .eyebrow span,
+html[data-theme='dark'] .contact-page .section-kicker span { background:#018AC1 !important; }
+html[data-theme='dark'] .our-story-page .principles b,
+html[data-theme='dark'] .contact-page .form-status { color:#018AC1 !important; }
+html[data-theme='dark'] .contact-page .contact-form input:focus,
+html[data-theme='dark'] .contact-page .contact-form textarea:focus { border-color:#018AC1 !important; box-shadow:0 0 0 2px rgba(1,138,193,.1) !important; }
+html[data-theme='dark'] .contact-page .contact-form button { background:#018AC1 !important; }
+html[data-theme='dark'] .contact-page .contact-form button:hover { background:#018AC1 !important; }
+html[data-theme='dark'] .contact-page .directions-link:hover { color:#018AC1 !important; }
+html[data-theme='dark'] .contact-page .map-pin { color:#018AC1 !important; }
