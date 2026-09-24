@@ -28,6 +28,17 @@ const { title = site.title, description = site.description } = Astro.props;
   </head>
 
     <style is:global>
+      /* Homepage main section headings use normal capitalization; banner headings remain unchanged. */
+      .section-about > div h2,
+      .section-industries > div h2,
+      .section-capabilities > div h2,
+      .section-trust > div h2,
+      .section-solutions > div h2,
+      .section-stories > div h2,
+      .section-contact h2 {
+        text-transform: none !important;
+      }
+
       [data-reveal] { opacity: 0; transform: translate3d(0, 28px, 0); transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }
       [data-reveal="left"] { transform: translate3d(-32px, 0, 0); }
       [data-reveal="right"] { transform: translate3d(32px, 0, 0); }
