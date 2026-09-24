@@ -29,7 +29,6 @@ const { title = site.title, description = site.description } = Astro.props;
   </head>
 
     <style is:global>
-      /* Main section headings use normal capitalization; banner/hero headings remain unchanged. */
       .section-about > div h2,
       .section-industries > div h2,
       .section-capabilities > div h2,
@@ -47,6 +46,45 @@ const { title = site.title, description = site.description } = Astro.props;
       .contact-page .map-heading h2,
       .contact-page .contact-bottom h2 {
         text-transform: none !important;
+      }
+
+      /* Blogs and Media: use the same clean light-mode treatment as the other homepage sections. */
+      html[data-theme="light"] #blogs,
+      html[data-theme="light"] #media {
+        color: #111827 !important;
+      }
+      html[data-theme="light"] #blogs {
+        background: #ffffff !important;
+      }
+      html[data-theme="light"] #media {
+        background: #f7f8fa !important;
+      }
+      html[data-theme="light"] #blogs h2,
+      html[data-theme="light"] #media h2,
+      html[data-theme="light"] #blogs h3,
+      html[data-theme="light"] #media h3 {
+        color: #111827 !important;
+      }
+      html[data-theme="light"] #blogs > div > .grid {
+        background: rgba(17,24,39,.12) !important;
+      }
+      html[data-theme="light"] #blogs > div > .grid > a > div:nth-child(2) {
+        background: linear-gradient(to top, rgba(255,255,255,.96) 0%, rgba(255,255,255,.34) 62%, transparent 100%) !important;
+      }
+      html[data-theme="light"] #blogs > div > .grid > a img {
+        filter: brightness(.72) saturate(.55) !important;
+      }
+      html[data-theme="light"] #media > div > .grid > a > div:first-child {
+        background: #e9edf2 !important;
+      }
+      html[data-theme="light"] #media > div > .grid > a img {
+        filter: brightness(.72) saturate(.55) !important;
+      }
+      html[data-theme="light"] #media > div > .grid > a .text-\[10px\] {
+        color: rgba(138,106,28,.85) !important;
+      }
+      html[data-theme="light"] #media > div > .grid > a > div.pt-2 h3 {
+        color: #111827 !important;
       }
 
       [data-reveal] { opacity: 0; transform: translate3d(0, 28px, 0); transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }
