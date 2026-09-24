@@ -43,7 +43,6 @@ import EngineerDrawer from '../components/EngineerDrawer.astro';
 
         const labelEl = root.querySelector('.flex.items-center.gap-3.mb-4 span');
         const headingEl = root.querySelector('h2');
-        const sideText = headingEl?.parentElement?.parentElement?.querySelector(':scope > p');
 
         if (labelEl) labelEl.textContent = label;
         if (headingEl) {
@@ -51,7 +50,6 @@ import EngineerDrawer from '../components/EngineerDrawer.astro';
           headingEl.classList.remove('uppercase');
           headingEl.style.textTransform = 'none';
         }
-        if (sideText) sideText.textContent = '';
       });
     };
 
@@ -61,4 +59,15 @@ import EngineerDrawer from '../components/EngineerDrawer.astro';
       updateHomepageHeadings();
     }
   </script>
+
+  <style is:global>
+    /* Hide the secondary/right-side heading text on the homepage sections. */
+    #industries > div.relative > div.flex.flex-col > p,
+    #capabilities > div > div.flex.flex-col > p,
+    #trust > div > div.grid > div:last-child > p:first-child,
+    #solutions > div > div.flex.flex-col > p,
+    #stories > div > div.flex.flex-col > a {
+      display: none !important;
+    }
+  </style>
 </BaseLayout>
