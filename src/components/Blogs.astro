@@ -9,32 +9,19 @@ import { SOLUTIONS } from '../data/homepage';
       <div class="h-px w-8" style={{ background: "var(--color-gold-500)" }} />
       <span class="text-[10px] tracking-[0.3em] uppercase" style={{ color: "var(--color-gold-500)" }}>Our Blogs</span>
     </div>
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+    <div class="mb-16">
       <h2 class="font-display font-bold text-5xl leading-tight" style={{ letterSpacing: "0.02em", textTransform: "none" }}>
         Engineering<br />Insights
       </h2>
-      <p class="text-xs tracking-widest uppercase font-medium" style={{ color: "var(--color-gold-500)" }}>
-        Insights from Zepco
-      </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: "rgba(196,154,46,0.1)" }}>
       {SOLUTIONS.map((item) => (
         <Link href={item.href} class="relative overflow-hidden block group" style={{ aspectRatio: "4/3" }}>
-          <img
-            src={`/images/${item.img}-450.jpg`} width="600" height="450" loading="lazy" decoding="async"
-            alt={item.title}
-            class="w-full h-full object-cover transition-transform duration-700"
-            style={{ transform: "scale(1)", filter: "brightness(0.35) saturate(0.2)" }}
-          />
+          <img src={`/images/${item.img}-450.jpg`} width="600" height="450" loading="lazy" decoding="async" alt={item.title} class="w-full h-full object-cover transition-transform duration-700" style={{ transform: "scale(1)", filter: "brightness(0.35) saturate(0.2)" }} />
           <div class="absolute inset-0 transition-opacity duration-300" style={{ background: "linear-gradient(to top, rgba(3,9,26,0.95) 0%, rgba(3,9,26,0.3) 60%, transparent 100%)" }} />
           <div class="absolute inset-0 p-6 flex flex-col justify-end">
-            <h3 class="font-display font-bold text-xl leading-tight mb-2" style={{ letterSpacing: "0.04em" }}>
-              {item.title}
-            </h3>
-            <div class="flex items-center gap-2 text-[10px] tracking-widest uppercase font-medium" style={{ color: "rgba(196,154,46,0.75)" }}>
-              Read Article
-              <Icon class="w-3.5 h-3.5" />
-            </div>
+            <h3 class="font-display font-bold text-xl leading-tight mb-2" style={{ letterSpacing: "0.04em" }}>{item.title}</h3>
+            <div class="flex items-center gap-2 text-[10px] tracking-widest uppercase font-medium" style={{ color: "rgba(196,154,46,0.75)" }}>Read Article <Icon class="w-3.5 h-3.5" /></div>
           </div>
         </Link>
       ))}
