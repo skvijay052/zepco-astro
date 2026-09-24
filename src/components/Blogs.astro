@@ -14,14 +14,14 @@ import { SOLUTIONS } from '../data/homepage';
         Engineering Insights
       </h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: "rgba(196,154,46,0.1)" }}>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: "rgba(1,138,193,0.1)" }}>
       {SOLUTIONS.map((item) => (
         <Link href={item.href} class="relative overflow-hidden block group" style={{ aspectRatio: "4/3" }}>
           <img src={`/images/${item.img}-450.jpg`} width="600" height="450" loading="lazy" decoding="async" alt={item.title} class="w-full h-full object-cover transition-transform duration-700" style={{ transform: "scale(1)", filter: "brightness(0.35) saturate(0.2)" }} />
           <div class="absolute inset-0 transition-opacity duration-300" style={{ background: "linear-gradient(to top, rgba(3,9,26,0.95) 0%, rgba(3,9,26,0.3) 60%, transparent 100%)" }} />
           <div class="absolute inset-0 p-6 flex flex-col justify-end">
             <h3 class="font-display font-bold text-xl leading-tight mb-2" style={{ letterSpacing: "0.04em", color: "#ffffff" }}>{item.title}</h3>
-            <div class="flex items-center gap-2 text-[10px] tracking-widest uppercase font-medium" style={{ color: "rgba(196,154,46,0.75)" }}>Read Article <Icon class="w-3.5 h-3.5" /></div>
+            <div class="flex items-center gap-2 text-[10px] tracking-widest uppercase font-medium" style={{ color: "#018AC1" }}>Read Article <Icon class="w-3.5 h-3.5" /></div>
           </div>
         </Link>
       ))}
