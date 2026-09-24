@@ -26,4 +26,39 @@ import EngineerDrawer from '../components/EngineerDrawer.astro';
   </main>
   <Footer />
   <EngineerDrawer />
+
+  <script>
+    const updateHomepageHeadings = () => {
+      const updates = [
+        { section: '#industries', label: 'Industries We Serve', heading: 'Engineering that Powers Progress' },
+        { section: '#capabilities', label: 'Engineering Capabilities', heading: 'Deep Engineering Across the Power Electronics Stack' },
+        { section: '#trust', label: 'Why Customers Trust Zepco', heading: 'Built on Engineering. Proven Through Execution.' },
+        { section: '#solutions', label: 'Featured Solutions', heading: 'Solutions that Power Innovation' },
+        { section: '#stories', label: 'Engineering Stories', heading: 'Proof, Not Promises' },
+      ];
+
+      updates.forEach(({ section, label, heading }) => {
+        const root = document.querySelector(section);
+        if (!root) return;
+
+        const labelEl = root.querySelector('.flex.items-center.gap-3.mb-4 span');
+        const headingEl = root.querySelector('h2');
+        const sideText = headingEl?.parentElement?.parentElement?.querySelector(':scope > p');
+
+        if (labelEl) labelEl.textContent = label;
+        if (headingEl) {
+          headingEl.textContent = heading;
+          headingEl.classList.remove('uppercase');
+          headingEl.style.textTransform = 'none';
+        }
+        if (sideText) sideText.textContent = '';
+      });
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateHomepageHeadings, { once: true });
+    } else {
+      updateHomepageHeadings();
+    }
+  </script>
 </BaseLayout>
