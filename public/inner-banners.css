@@ -45,6 +45,128 @@
   background: linear-gradient(to bottom, transparent, rgba(196,154,46,.32), transparent);
 }
 
+/* Aerospace & Defence — use the same dark visual language as the main site. */
+html[data-theme='dark'] .ad-page {
+  background: #03091A !important;
+  color: #FFFFFF !important;
+}
+
+html[data-theme='dark'] .ad-challenge,
+html[data-theme='dark'] .ad-designed,
+html[data-theme='dark'] .ad-applications {
+  background: #03091A !important;
+  color: #FFFFFF !important;
+}
+
+html[data-theme='dark'] .ad-heading h2,
+html[data-theme='dark'] .ad-designed h2,
+html[data-theme='dark'] .ad-app-head h2 {
+  color: #FFFFFF !important;
+}
+
+html[data-theme='dark'] .ad-copy,
+html[data-theme='dark'] .ad-designed-head p,
+html[data-theme='dark'] .ad-app-head p {
+  border-color: rgba(139,155,180,.22) !important;
+  color: #8B9BB4 !important;
+}
+
+html[data-theme='dark'] .ad-copy .lead {
+  color: #FFFFFF !important;
+}
+
+html[data-theme='dark'] .ad-copy p,
+html[data-theme='dark'] .ad-designed-head p {
+  color: #8B9BB4 !important;
+}
+
+html[data-theme='dark'] .ad-metrics,
+html[data-theme='dark'] .ad-attributes,
+html[data-theme='dark'] .ad-app-grid {
+  background: rgba(139,155,180,.16) !important;
+}
+
+html[data-theme='dark'] .ad-metrics div,
+html[data-theme='dark'] .ad-attributes > div,
+html[data-theme='dark'] .ad-app-grid article {
+  background: #060F26 !important;
+  border-color: rgba(139,155,180,.14) !important;
+  color: #FFFFFF !important;
+}
+
+html[data-theme='dark'] .ad-metrics div,
+html[data-theme='dark'] .ad-attributes strong,
+html[data-theme='dark'] .ad-app-grid h3 {
+  color: #FFFFFF !important;
+}
+
+html[data-theme='dark'] .ad-attributes b,
+html[data-theme='dark'] .ad-metrics div,
+html[data-theme='dark'] .ad-app-grid small {
+  color: #018AC1 !important;
+}
+
+html[data-theme='dark'] .ad-attributes .featured {
+  background: #0C1B38 !important;
+}
+
+html[data-theme='dark'] .ad-attributes .featured strong {
+  color: #FFFFFF !important;
+}
+
+html[data-theme='dark'] .ad-capabilities,
+html[data-theme='dark'] .ad-why {
+  background: #060F26 !important;
+}
+
+html[data-theme='dark'] .ad-cap-grid {
+  background: rgba(79,160,220,.17) !important;
+}
+
+html[data-theme='dark'] .ad-cap {
+  background: #07172D !important;
+}
+
+html[data-theme='dark'] .ad-cap h3,
+html[data-theme='dark'] .ad-cap p {
+  color: #FFFFFF !important;
+}
+
+html[data-theme='dark'] .ad-cap p {
+  color: rgba(255,255,255,.58) !important;
+}
+
+html[data-theme='dark'] .ad-app-grid span {
+  color: #8B9BB4 !important;
+}
+
+html[data-theme='dark'] .ad-why p,
+html[data-theme='dark'] .ad-why-list div {
+  color: rgba(255,255,255,.62) !important;
+}
+
+html[data-theme='dark'] .ad-why-list {
+  border-left-color: rgba(255,255,255,.12) !important;
+}
+
+html[data-theme='dark'] .ad-cta {
+  background: #018AC1 !important;
+  color: #FFFFFF !important;
+}
+
+html[data-theme='dark'] .ad-cta p {
+  color: rgba(255,255,255,.82) !important;
+}
+
+html[data-theme='dark'] .ad-btn.dark {
+  background: #03091A !important;
+  color: #FFFFFF !important;
+}
+
+html[data-theme='dark'] .ad-btn.dark:hover {
+  background: #0C1B38 !important;
+}
+
 @media (max-width: 900px) {
   .story-hero,
   .contact-hero,
