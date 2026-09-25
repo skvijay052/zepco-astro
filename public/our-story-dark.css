@@ -22,5 +22,6 @@ html .section-capabilities a[href="#industries"]:hover,
 html .section-contact a,
 html .section-contact a:hover { color:#FFFFFF !important; }
 
-/* Our Story: remove the entire small section labels (numbers + label text) */
-.our-story-page .section-kicker{display:none !important}
+/* Our Story: keep small section label text, remove only the numbers */
+.our-story-page .section-kicker{font-size:10px !important;letter-spacing:.25em;text-transform:uppercase;font-weight:600}
+.our-story-page .section-kicker::first-letter{font-size:0}
