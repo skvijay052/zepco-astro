@@ -22,11 +22,5 @@ html .section-capabilities a[href="#industries"]:hover,
 html .section-contact a,
 html .section-contact a:hover { color:#FFFFFF !important; }
 
-/* Our Story: hide the section numbers while preserving the labels and divider lines */
-.our-story-page .section-kicker{font-size:0}
-.our-story-page .section-kicker::after{font-size:10px;letter-spacing:.25em;text-transform:uppercase;font-weight:600}
-.our-story-page .story-section#story .section-kicker::after{content:'A Conviction'}
-.our-story-page .story-section.section-blue .section-kicker::after{content:'More Than Technology'}
-.our-story-page .compromise-section .section-kicker::after{content:'Engineering Without Compromise'}
-.our-story-page .today-section .section-kicker::after{content:'Zepco Today'}
-.our-story-page .future-section .section-kicker::after{content:'Looking Ahead'}
+/* Our Story: remove the entire small section labels (numbers + label text) */
+.our-story-page .section-kicker{display:none !important}
