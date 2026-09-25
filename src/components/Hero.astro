@@ -54,7 +54,6 @@ import Icon from './Icon.astro';
     const update = () => {
       frame = 0;
       const bounds = hero.getBoundingClientRect();
-      // Allow the complete content to be read before fading on shorter screens.
       const start = Math.max(0, hero.offsetHeight - window.innerHeight);
       const ratio = reducedMotion.matches ? 0 : Math.min(Math.max((-bounds.top - start) / (window.innerHeight * .8), 0), 1);
       hero.style.setProperty('--hero-opacity', String(Math.max(0, 1 - ratio * 1.4)));
@@ -86,7 +85,7 @@ import Icon from './Icon.astro';
   .hero-eyebrow-line { height: 1px; width: 48px; flex-shrink: 0; background: var(--color-gold-500); }
   .hero-intro { display: block; font-size: clamp(1.4rem, 3.2vw, 2.6rem); letter-spacing: .12em; color: var(--color-gold-500); margin-bottom: .15em; }
   .hero-headline { display: block; font-size: clamp(3rem, 7.5vw, 6.2rem); letter-spacing: .02em; line-height: .95; }
-  .hero-primary { background: var(--color-gold-500); color: var(--color-navy-950); }
+  .hero-primary { background: var(--color-gold-500); color: #FFFFFF; }
   .hero-primary:hover { background: var(--color-gold-400); }
   .hero-secondary { border: 1px solid rgba(139,155,180,.4); color: white; }
   .hero-secondary:hover { border-color: var(--color-gold-500); color: var(--color-gold-500); }
