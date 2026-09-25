@@ -70,7 +70,7 @@ html[data-theme='light'] ::-webkit-scrollbar-track { background: #F7F7F7; }
 html[data-theme='light'] ::-webkit-scrollbar-thumb { background: #CFCFCF; }
 html[data-theme='light'] ::-webkit-scrollbar-thumb:hover { background: #5F5F5F; }
 html[data-theme='light'] [style*='var(--color-slate-blue)'] { color: #5F5F5F !important; }
-html[data-theme='light'] [style*='#ffffff'] { color: #111111 !important; }
+html[data-theme='light'] [style*='#ffffff'] { color: #ffffff !important; }
 html[data-theme='light'] .site-header { background: rgba(255,255,255,.96) !important; border-bottom-color: #E5E5E5 !important; backdrop-filter: blur(12px); }
 html[data-theme='light'] .header-cta,
 html[data-theme='light'] .mobile-cta { border-color: #018AC1 !important; color: #018AC1 !important; }
@@ -90,7 +90,7 @@ html[data-theme='light'] .desktop details[open] > summary { color: #018AC1 !impo
 html[data-theme='light'] .desktop .submenu { background: #FFFFFF !important; border-color: #E5E5E5 !important; box-shadow: 0 16px 40px rgba(0,0,0,.10) !important; }
 html[data-theme='light'] .desktop .submenu a:is(:hover, :focus-visible) { background: #F7F7F7 !important; }
 html[data-theme='light'] .submenu-number { color: #018AC1 !important; }
-html[data-theme='light'] .theme-toggle { border-color: #D0D0D0 !important; color: #5F5F5F !important; background: #FFFFFF !important; }
+html[data-theme='light'] .theme-toggle { border-color: #D0D0D0 !important; color: #5F5F5F !important; }
 html[data-theme='light'] .theme-toggle:hover,
 html[data-theme='light'] .theme-toggle:focus-visible { border-color: #018AC1 !important; color: #018AC1 !important; }
 
@@ -103,8 +103,8 @@ html[data-theme='light'] .hero-intro,
 html[data-theme='light'] .hero-eyebrow { color: #018AC1 !important; }
 html[data-theme='light'] .hero-secondary { border-color: rgba(139,155,180,.4) !important; color: #FFFFFF !important; }
 html[data-theme='light'] .hero-secondary:hover { border-color: #018AC1 !important; color: #018AC1 !important; }
-html[data-theme='light'] .hero-primary { background: #018AC1 !important; color: #03091A !important; }
-html[data-theme='light'] .hero-primary:hover { background: #018AC1 !important; color: #03091A !important; }
+html[data-theme='light'] .hero-primary { background: #018AC1 !important; color: #ffffff !important; }
+html[data-theme='light'] .hero-primary:hover { background: #018AC1 !important; color: #ffffff !important; }
 html[data-theme='light'] .hero-scroll { color: rgba(1,138,193,.5) !important; }
 html[data-theme='light'] .hero-scroll-line { background: linear-gradient(to bottom, #018AC1, transparent) !important; }
 html[data-theme='light'] .hero-content .text-slate-blue { color: #8B9BB4 !important; }
@@ -167,8 +167,8 @@ html[data-theme='light'] .section-stories .group .text-\\[10px\\] { color: #018A
 html[data-theme='light'] .section-contact { background: #040C1E !important; color: #FFFFFF !important; }
 html[data-theme='light'] .section-contact h2 { color: #FFFFFF !important; }
 html[data-theme='light'] .section-contact p { color: #8B9BB4 !important; }
-html[data-theme='light'] .section-contact a { background: #018AC1 !important; color: #03091A !important; }
-html[data-theme='light'] .section-contact a:hover { background: #018AC1 !important; color: #03091A !important; }
+html[data-theme='light'] .section-contact a { background: #018AC1 !important; color: #ffffff !important; }
+html[data-theme='light'] .section-contact a:hover { background: #018AC1 !important; color: #ffffff !important; }
 html[data-theme='dark'] body { background: #03091A; color: #FFFFFF; }
 
 /* Our Story + Contact page accent override */
@@ -217,3 +217,5 @@ html[data-theme='dark'] .contact-page .contact-form button { background:#018AC1 
 html[data-theme='dark'] .contact-page .contact-form button:hover { background:#018AC1 !important; }
 html[data-theme='dark'] .contact-page .directions-link:hover { color:#018AC1 !important; }
 html[data-theme='dark'] .contact-page .map-pin { color:#018AC1 !important; }
+html[data-theme='dark'] .industry-card { background: rgb(255 255 255 / 0%) !important;; backdrop-filter: blur(3px); } 
+html[data-theme='dark'] .industry-card:is(:hover, :focus-within) { background: rgb(247 247 247 / 5%) !important; }
