@@ -13,3 +13,11 @@ html[data-theme='dark'] .our-story-page .compromise-section .section-content p{c
 html[data-theme='dark'] .our-story-page .feature-image{background:#061827}
 html[data-theme='dark'] .our-story-page .story-cta{background:#03091a;color:#fff}
 html[data-theme='dark'] .our-story-page .story-cta p{color:#8b9bb4}
+
+/* Primary filled CTA text override */
+html .hero-primary,
+html .hero-primary:hover,
+html .section-capabilities a[href="#industries"],
+html .section-capabilities a[href="#industries"]:hover,
+html .section-contact a,
+html .section-contact a:hover { color:#FFFFFF !important; }
