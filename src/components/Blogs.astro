@@ -9,10 +9,13 @@ import { SOLUTIONS } from '../data/homepage';
       <div class="h-px w-8" style={{ background: "var(--color-gold-500)" }} />
       <span class="text-[10px] tracking-[0.3em] uppercase" style={{ color: "var(--color-gold-500)" }}>Our Blogs</span>
     </div>
-    <div class="mb-16 w-full">
+    <div class="mb-16 w-full flex items-end justify-between gap-6">
       <h2 class="font-display font-bold text-5xl leading-tight w-full" style={{ letterSpacing: "0.02em", textTransform: "none" }}>
         Engineering Insights
       </h2>
+      <Link href="#blogs" class="shrink-0 text-[10px] tracking-widest uppercase font-medium whitespace-nowrap transition-opacity duration-200 hover:opacity-70" style={{ color: "var(--color-gold-500)" }}>
+        View All
+      </Link>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: "rgba(1,138,193,0.1)" }}>
       {SOLUTIONS.map((item) => (
