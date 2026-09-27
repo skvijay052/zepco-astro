@@ -37,7 +37,7 @@ export const navigation: readonly NavigationItem[] = [
     ],
   },
   {
-    id: 'technologies', label: 'Technologies', href: '#capabilities',
+    id: 'technologies', label: 'Technologies', href: '/technology',
     children: [
       { label: 'Advanced Power Electronics', href: '/technology#power' },
       { label: 'Electric Propulsion', href: '/technology#propulsion' },
