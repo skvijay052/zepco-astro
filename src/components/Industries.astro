@@ -21,7 +21,10 @@ const INDUSTRY_IMAGES: Record<string, string> = {
   <div class="industry-backdrops absolute inset-0 pointer-events-none" aria-hidden="true">
     {INDUSTRIES.map((ind) => (
       <div class="industry-backdrop absolute inset-0" data-backdrop={ind.id}>
-        <div data-src={'/images/' + ind.background + '-900.jpg'} class="industry-photo w-full h-full"></div>
+        <div
+          class="industry-photo w-full h-full"
+          style={{ backgroundImage: "url('/images/" + ind.background + "-900.jpg')" }}
+        ></div>
         <div class="industry-vignette absolute inset-0"></div>
       </div>
     ))}
@@ -88,5 +91,9 @@ const INDUSTRY_IMAGES: Record<string, string> = {
     });
   };
 
-  document.addEventListener('DOMContentLoaded', initIndustryHover, { once: true });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initIndustryHover, { once: true });
+  } else {
+    initIndustryHover();
+  }
 </script>
