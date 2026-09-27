@@ -44,10 +44,10 @@ export const navigation: readonly NavigationItem[] = [
   {
     id: 'technologies', label: 'Technologies', href: '#capabilities',
     children: [
-      { label: 'Advanced Power Electronics', href: '#capability-power-conversion' },
-      { label: 'Electric Propulsion', href: '#capability-electric-propulsion' },
-      { label: 'Battery Systems', href: '#capabilities' },
-      { label: 'Engineering Services', href: '#capability-engineering-services' },
+      { label: 'Advanced Power Electronics', href: '/technology#power' },
+      { label: 'Electric Propulsion', href: '/technology#propulsion' },
+      { label: 'Battery Systems', href: '/technology#power' },
+      { label: 'Engineering Services', href: '/technology#services' },
     ],
   },
   {
