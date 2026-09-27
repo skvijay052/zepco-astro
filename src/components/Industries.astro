@@ -19,15 +19,24 @@ const INDUSTRY_IMAGES: Record<string, string> = {
   </div>
 
   <div class="industry-backdrops absolute inset-0 pointer-events-none" aria-hidden="true">
-    {INDUSTRIES.map((ind) => (
-      <div class="industry-backdrop absolute inset-0" data-backdrop={ind.id}>
-        <div
-          class="industry-photo w-full h-full"
-          style={{ backgroundImage: "url('/images/" + ind.background + "-900.jpg')" }}
-        ></div>
-        <div class="industry-vignette absolute inset-0"></div>
-      </div>
-    ))}
+    {INDUSTRIES.map((ind) => {
+      const hoverBackgrounds: Record<string, string> = {
+        "industry-defence": "/images/bg-overlay-1.png",
+        "industry-industrial": "/images/bg-overlay-2.png",
+        "industry-mobility": "/images/bg-overlay-3.png",
+      };
+      const backgroundImage = hoverBackgrounds[ind.id] ?? `/images/${ind.background}-900.jpg`;
+
+      return (
+        <div class="industry-backdrop absolute inset-0" data-backdrop={ind.id}>
+          <div
+            class="industry-photo w-full h-full"
+            style={{ backgroundImage: `url('${backgroundImage}')` }}
+          ></div>
+          <div class="industry-vignette absolute inset-0"></div>
+        </div>
+      );
+    })}
   </div>
 
   <div class="max-w-7xl mx-auto px-6 relative">
