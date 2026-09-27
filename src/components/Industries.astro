@@ -21,7 +21,7 @@ const INDUSTRY_IMAGES: Record<string, string> = {
   <div class="industry-backdrops absolute inset-0 pointer-events-none" aria-hidden="true">
     {INDUSTRIES.map((ind) => (
       <div class="industry-backdrop absolute inset-0" data-backdrop={ind.id}>
-        <div data-src={`/images/${ind.background}-900.jpg`} class="industry-photo w-full h-full"></div>
+        <div data-src={'/images/' + ind.background + '-900.jpg'} class="industry-photo w-full h-full"></div>
         <div class="industry-vignette absolute inset-0"></div>
       </div>
     ))}
@@ -44,7 +44,7 @@ const INDUSTRY_IMAGES: Record<string, string> = {
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px">
       {INDUSTRIES.map((ind) => (
-        <div id={ind.id} class="industry-card p-8 transition-all duration-300 text-center">
+        <div id={ind.id} class="industry-card p-8 transition-all duration-300 text-center" data-industry-card={ind.id}>
           <div class="industry-icon-wrap flex items-center justify-center mb-6 mx-auto" aria-hidden="true">
             <img
               src={INDUSTRY_IMAGES[ind.icon]}
@@ -62,3 +62,31 @@ const INDUSTRY_IMAGES: Record<string, string> = {
     </div>
   </div>
 </section>
+
+<script>
+  const initIndustryHover = () => {
+    const section = document.querySelector('#industries');
+    if (!section) return;
+
+    const cards = Array.from(section.querySelectorAll('[data-industry-card]'));
+    const backdrops = Array.from(section.querySelectorAll('[data-backdrop]'));
+    if (!cards.length || !backdrops.length) return;
+
+    const setActiveBackdrop = (id) => {
+      backdrops.forEach((backdrop) => {
+        backdrop.classList.toggle('active', Boolean(id && backdrop.dataset.backdrop === id));
+      });
+    };
+
+    cards.forEach((card) => {
+      card.addEventListener('mouseenter', () => setActiveBackdrop(card.dataset.industryCard || null));
+      card.addEventListener('mouseleave', () => setActiveBackdrop(null));
+      card.addEventListener('focusin', () => setActiveBackdrop(card.dataset.industryCard || null));
+      card.addEventListener('focusout', (event) => {
+        if (!card.contains(event.relatedTarget)) setActiveBackdrop(null);
+      });
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', initIndustryHover, { once: true });
+</script>
