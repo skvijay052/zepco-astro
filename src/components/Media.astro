@@ -1,6 +1,8 @@
 ---
 import Link from './Link.astro';
 import { STORIES } from '../data/homepage';
+
+const newsImages = ['/images/news-1.png', '/images/news-2.png', '/images/news-3.png'];
 ---
 <section data-reveal id="media" class="section-media py-28" style={{ background: "var(--color-navy-900)" }}>
   <div class="max-w-7xl mx-auto px-6">
@@ -17,10 +19,10 @@ import { STORIES } from '../data/homepage';
       </Link>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {STORIES.map((item) => (
+      {STORIES.slice(0, 3).map((item, index) => (
         <Link href={item.href} class="group block">
           <div class="overflow-hidden relative mb-4" style={{ height: "260px", background: "var(--color-navy-950)" }}>
-            <img src={`/images/${item.img}-400.jpg`} width="600" height="400" loading="lazy" decoding="async" alt={item.title} class="w-full h-full object-cover transition-transform duration-700" style={{ transform: "scale(1)" }} />
+            <img src={newsImages[index]} width="600" height="400" loading="lazy" decoding="async" alt={item.title} class="w-full h-full object-cover transition-transform duration-700" style={{ transform: "scale(1)" }} />
             <div class="absolute top-4 left-4"><span class="text-[10px] tracking-widest uppercase font-semibold px-3 py-1.5" style={{ background: "var(--color-gold-500)", color: "#ffffff" }}>Media</span></div>
           </div>
           <div class="pt-2">
