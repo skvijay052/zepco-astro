@@ -29,7 +29,7 @@ export const navigation: readonly NavigationItem[] = [
   {
     id: 'industries', label: 'Industries', href: '#industries',
     children: [
-      { label: 'Aerospace & Defence', href: '#industry-aerospace' },
+      { label: 'Aerospace & Defence', href: '/aerospace-defence' },
       { label: 'Unmanned & Autonomous Systems', href: '#industry-unmanned' },
       { label: 'Industrial Systems', href: '#industry-industrial' },
       { label: 'Electric Mobility', href: '#industry-mobility' },
