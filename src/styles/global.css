@@ -219,3 +219,17 @@ html[data-theme='dark'] .contact-page .directions-link:hover { color:#018AC1 !im
 html[data-theme='dark'] .contact-page .map-pin { color:#018AC1 !important; }
 html[data-theme='dark'] .industry-card { background: rgb(255 255 255 / 0%) !important;; backdrop-filter: blur(3px); } 
 html[data-theme='dark'] .industry-card:is(:hover, :focus-within) { background: rgb(247 247 247 / 5%) !important; }
+
+/* Industries hover background */
+.industry-backdrops { z-index: 0; opacity: 1; }
+.industry-backdrop { opacity: 0; visibility: hidden; transition: opacity .45s ease, visibility .45s ease; }
+.industry-backdrop.active { opacity: 1; visibility: visible; }
+.industry-photo { background-position: center; background-size: cover; background-repeat: no-repeat; transform: scale(1.04); transition: transform .7s ease; }
+.industry-backdrop.active .industry-photo { transform: scale(1.08); }
+.industry-vignette { background: linear-gradient(90deg, rgba(3,9,26,.88) 0%, rgba(3,9,26,.58) 50%, rgba(3,9,26,.88) 100%); }
+#industries > .max-w-7xl { z-index: 2; }
+#industries > .absolute.inset-0 { z-index: 1; }
+html[data-theme='light'] .industry-backdrop { opacity: 0; visibility: hidden; }
+html[data-theme='light'] .industry-backdrop.active { opacity: .34; visibility: visible; }
+html[data-theme='light'] .industry-photo { filter: brightness(1.22) saturate(1.08) !important; }
+html[data-theme='light'] .industry-vignette { background: linear-gradient(90deg, rgba(247,247,247,.72) 0%, rgba(247,247,247,.42) 48%, rgba(247,247,247,.62) 100%) !important; }
