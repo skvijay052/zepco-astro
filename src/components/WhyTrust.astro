@@ -1,32 +1,77 @@
 ---
 import { PILLARS } from '../data/homepage';
 ---
-<section data-reveal id="trust" class="section-trust py-28" style={{ background: "var(--color-navy-900)" }}>
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="h-px w-8" style={{ background: "var(--color-gold-500)" }} />
-          <span class="text-[10px] tracking-[0.3em] uppercase" style={{ color: "var(--color-gold-500)" }}>Trust</span>
-        </div>
-        <div class="mb-16">
-          <h2 class="font-display font-bold uppercase text-5xl leading-tight" style={{ letterSpacing: "0.02em" }}>
-            Why Customers<br />Trust <span style={{ color: "var(--color-gold-500)" }}>Zepco</span>
-          </h2>
-          <p class="text-sm leading-relaxed mt-8 font-light max-w-none w-full" style={{ color: "var(--color-slate-blue)" }}>
-            Trust is earned through engineering excellence, technical integrity and consistent execution. Every project reflects our commitment to solving complex power electronics and propulsion challenges through collaborative development, rigorous validation and long-term partnership.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-px" style={{ background: "rgba(196,154,46,0.1)" }}>
-          {PILLARS.map((p, i) => (
-            <div class="p-6 group transition-colors duration-300 hover:bg-[#0C1B38]" style={{ background: "transparent" }}>
-              <div class="font-display font-bold text-4xl mb-4 leading-none" style={{ color: "#018ac12e" }}>
-                {String(i + 1).padStart(2, "0")}
-              </div>
-              <h3 class="font-display font-bold uppercase text-base mb-3 leading-tight" style={{ letterSpacing: "0.04em", color: "#ffffff" }}>
-                {p.title}
-              </h3>
-              <p class="text-xs leading-relaxed font-light" style={{ color: "var(--color-slate-blue)" }}>{p.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+<section data-reveal id="trust" class="section-trust">
+  <div class="trust-container">
+    <div class="trust-label">
+      <span></span>
+      <span>Trust</span>
+    </div>
+
+    <div class="trust-head">
+      <h2 class="trust-heading">
+        Why Customers<br />Trust <span>Zepco</span>
+      </h2>
+      <p class="trust-intro">
+        Trust is earned through engineering excellence, technical integrity and consistent execution. Every project reflects our commitment to solving complex power electronics and propulsion challenges through collaborative development, rigorous validation and long-term partnership.
+      </p>
+    </div>
+
+    <div class="trust-grid">
+      {PILLARS.map((p, i) => (
+        <article class="trust-card">
+          <strong>{String(i + 1).padStart(2, "0")}</strong>
+          <h3>{p.title}</h3>
+          <p>{p.desc}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-trust{padding:85px 0 95px;background:#f4f9fc;color:#111}
+  .trust-container{width:min(1180px,calc(100% - 48px));margin:0 auto}
+  .trust-label{display:flex;align-items:center;gap:12px;color:var(--color-gold-500);font-size:10px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;margin-bottom:16px}
+  .trust-label span:first-child{display:block;width:32px;height:1px;background:var(--color-gold-500);flex:0 0 32px}
+  .trust-heading{font-size:3rem;line-height:1.25;letter-spacing:.02em;margin:0;font-weight:700;color:#03091a}
+  .trust-heading span{color:var(--color-gold-500)}
+  .trust-intro{max-width:930px;color:#8b9bb4;font-size:14px;line-height:1.75;margin:32px 0 52px}
+  .trust-grid{display:grid;grid-template-columns:repeat(5,1fr);background:#fff;border:1px solid #eee}
+  .trust-card{min-height:315px;padding:30px 20px 27px;border-right:1px solid #eee;transition:.25s;display:flex;flex-direction:column}
+  .trust-card:last-child{border-right:0}
+  .trust-card:hover{background:#f8fbfd;transform:translateY(-3px)}
+  .trust-card>strong{display:block;color:var(--color-gold-500);font-size:38px;line-height:1;font-weight:800;margin-bottom:42px;letter-spacing:-.04em}
+  .trust-card h3{font-size:20px;line-height:1.35;text-transform:uppercase;margin:0 0 11px;font-weight:800;color:#111}
+  .trust-card p{font-size:14px;line-height:1.62;color:#8b9bb4;margin:0}
+
+  @media(max-width:1050px){
+    .trust-grid{grid-template-columns:repeat(3,1fr)}
+    .trust-card:nth-child(3){border-right:0}
+    .trust-card:nth-child(-n+3){border-bottom:1px solid #eee}
+    .trust-card:nth-child(4){border-right:1px solid #eee}
+  }
+  @media(max-width:900px){
+    .trust-grid{grid-template-columns:repeat(2,1fr)}
+    .trust-card:nth-child(3){border-right:1px solid #eee}
+    .trust-card:nth-child(2n){border-right:0}
+    .trust-card:nth-child(3),.trust-card:nth-child(4){border-bottom:1px solid #eee}
+    .trust-card:last-child{border-bottom:0}
+  }
+  @media(max-width:600px){
+    .section-trust{padding:58px 0 65px}
+    .trust-container{width:calc(100% - 36px)}
+    .trust-heading{font-size:clamp(38px,11vw,56px)}
+    .trust-intro{font-size:13px}
+    .trust-grid{grid-template-columns:1fr}
+    .trust-card,.trust-card:nth-child(n){border-right:0;border-bottom:1px solid #eee;min-height:260px}
+    .trust-card:last-child{border-bottom:0}
+  }
+  html[data-theme='dark'] .section-trust{background:#071a2b;color:#fff}
+  html[data-theme='dark'] .trust-heading{color:#fff}
+  html[data-theme='dark'] .trust-intro,.dark .trust-card p{color:#aeb8c8}
+  html[data-theme='dark'] .trust-grid{background:#071a2b;border-color:#29405b}
+  html[data-theme='dark'] .trust-card{border-color:#29405b}
+  html[data-theme='dark'] .trust-card:hover{background:#0c1b38}
+  html[data-theme='dark'] .trust-card h3{color:#fff}
+</style>
