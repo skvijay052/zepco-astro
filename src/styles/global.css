@@ -19,7 +19,7 @@ body { height: 100%; }
   --font-sans: 'Barlow', sans-serif;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; letter-spacing: normal; }
 body { font-family: 'Inter', sans-serif; background-color: #03091A; color: #ffffff; -webkit-font-smoothing: antialiased; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #060F26; }
