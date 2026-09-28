@@ -48,6 +48,14 @@ const { title = site.title, description = site.description } = Astro.props;
         text-transform: none !important;
       }
 
+      /* Standardize the light homepage section backgrounds. */
+      html[data-theme="light"] .section-industries,
+      html[data-theme="light"] .section-trust,
+      html[data-theme="light"] .section-stories {
+        background: #F0F7FC !important;
+        color: #111111 !important;
+      }
+
       /* Blogs and Media: use the same clean light-mode treatment as the other homepage sections. */
       html[data-theme="light"] #blogs,
       html[data-theme="light"] #media {
@@ -57,7 +65,7 @@ const { title = site.title, description = site.description } = Astro.props;
         background: #ffffff !important;
       }
       html[data-theme="light"] #media {
-        background: #f7f8fa !important;
+        background: #F0F7FC !important;
       }
       html[data-theme="light"] #blogs h2,
       html[data-theme="light"] #media h2,
