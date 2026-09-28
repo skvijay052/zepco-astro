@@ -68,5 +68,16 @@ import EngineerDrawer from '../components/EngineerDrawer.astro';
     #stories > div > div.flex.flex-col > a {
       display: none !important;
     }
+
+    /* Homepage: use title-style capitalization instead of all-caps,
+       while keeping the hero banner and the Industries tagline unchanged. */
+    #main-content .uppercase {
+      text-transform: capitalize;
+    }
+
+    #main-content .hero .uppercase,
+    #main-content #industries p.uppercase {
+      text-transform: uppercase;
+    }
   </style>
 </BaseLayout>
