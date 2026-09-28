@@ -1,7 +1,13 @@
 ---
 import { INDUSTRIES } from '../data/homepage';
 
-const INDUSTRY_HOVER_IMAGES = {\n  'industry-defence': '/images/bg-overlay-1.png',\n  'industry-industrial': '/images/bg-overlay-2.png',\n  'industry-mobility': '/images/bg-overlay-3.png',\n};\n\nconst INDUSTRY_IMAGES: Record<string, string> = {
+const INDUSTRY_HOVER_IMAGES: Record<string, string> = {
+  'industry-defence': '/images/bg-overlay-1.png',
+  'industry-industrial': '/images/bg-overlay-2.png',
+  'industry-mobility': '/images/bg-overlay-3.png',
+};
+
+const INDUSTRY_IMAGES: Record<string, string> = {
   aerospace: '/images/aerospace.png',
   defence: '/images/defence.png',
   industrial: '/images/industrial.png',
@@ -23,11 +29,11 @@ const INDUSTRY_HOVER_IMAGES = {\n  'industry-defence': '/images/bg-overlay-1.png
       <div class="industry-backdrop absolute inset-0" data-backdrop={ind.id}>
         <div
           class="industry-photo w-full h-full"
-          style={{ backgroundImage: `url('${INDUSTRY_HOVER_IMAGES[ind.id] ?? `/images/${ind.background}-900.jpg`}')` }}
+          style={{ backgroundImage: `url('${INDUSTRY_HOVER_IMAGES[ind.id] ?? `/images/${ind.background}-900.jpg` }')` }}
         ></div>
         <div class="industry-vignette absolute inset-0"></div>
       </div>
-    ))}}
+    ))}
   </div>
 
   <div class="max-w-7xl mx-auto px-6 relative">
