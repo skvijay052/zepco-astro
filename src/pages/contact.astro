@@ -94,7 +94,7 @@ import FinalCTA from '../components/FinalCTA.astro';
   .story-container{width:min(1180px,calc(100% - 48px));margin:0 auto}
   .story-container{width:min(1180px,calc(100% - 48px));margin:0 auto}
    .contact-hero{min-height:90vh;position:relative;display:flex;align-items:center;background:#03091a;color:#fff;overflow:hidden}
-  .contact-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.55;animation:story-bg-drift 22s ease-in-out infinite alternate;transform-origin:center center}
+  .contact-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;opacity:.55;animation:story-bg-drift 22s ease-in-out infinite alternate;transform-origin:center center}
   @keyframes story-bg-drift{from{transform:scale(1.02) translate3d(-1.2%, -0.6%, 0)}to{transform:scale(1.08) translate3d(1.2%, 0.6%, 0)}}
   .contact-hero .hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(3,9,26,.93) 0%,rgba(3,9,26,.76) 45%,rgba(3,9,26,.35) 100%)}
   .contact-hero .hero-bottom-shade{position:absolute;bottom:0;left:0;right:0;height:12rem;background:linear-gradient(to bottom,transparent,#03091a)}
