@@ -39,9 +39,9 @@ export const navigation: readonly NavigationItem[] = [
   {
     id: 'technologies', label: 'Technologies', href: '/technology',
     children: [
-      { label: 'Advanced Power Electronics', href: '/technology#power' },
+      { label: 'Advanced Power Electronics', href: '/technology' },
       { label: 'Electric Propulsion', href: '/technology#propulsion' },
-      { label: 'Battery Systems', href: '/technology#power' },
+      { label: 'Battery Systems', href: '/technology' },
       { label: 'Engineering Services', href: '/technology#services' },
     ],
   },
