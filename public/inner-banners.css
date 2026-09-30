@@ -2,7 +2,7 @@
 .story-hero,
 .contact-hero,
 .about-hero {
-  min-height: 64vh !important;
+  min-height: 90vh !important;
 }
 
 .story-hero .hero-grid,
@@ -170,11 +170,11 @@ html[data-theme='dark'] .ad-btn.dark:hover {
 @media (max-width: 900px) {
   .story-hero,
   .contact-hero,
-  .about-hero { min-height: 58vh !important; }
+  .about-hero { min-height: 90vh !important; }
 }
 
 @media (max-width: 600px) {
   .story-hero,
   .contact-hero,
-  .about-hero { min-height: 54vh !important; }
+  .about-hero { min-height: 90vh !important; }
 }
